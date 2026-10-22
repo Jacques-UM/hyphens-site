@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HYPHENS, banc d'essai de marque</title>
+<link rel="icon" data-hyphens href="data:,">
+<link rel="stylesheet" href="https://use.typekit.net/ted1nei.css">
+<link rel="stylesheet" href="tokens/hyphens-tokens.css">
+<script src="tokens/hyphens-palettes.js"></script>
+<script src="hyphens-brand.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--hy-font); color: var(--hy-texte); background: var(--hy-fond); }
+  .barre-outils { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center;
+    padding: 12px max(16px, 3vw); background: #fff; border-bottom: 1px solid #ddd; font-size: 13px; color: #333; }
+  .barre-outils label { display: flex; gap: 8px; align-items: center; }
+  .barre-outils select, .barre-outils input { font: inherit; }
+  .idee { color: #777; flex: 1 1 260px; }
+  header.site { display: flex; justify-content: space-between; align-items: center; padding: 22px max(16px, 5vw); border-bottom: 1px solid var(--hy-trait); }
+  header.site nav { display: flex; gap: 28px; font-size: 15px; color: var(--hy-texte-secondaire); }
+  .hero { padding: 96px max(16px, 5vw); display: grid; gap: 28px; }
+  .hero hyphens-logo { font-size: clamp(48px, 9vw, 120px); }
+  .hero p { font-size: 22px; max-width: 34ch; margin: 0; color: var(--hy-texte-secondaire); }
+  .bande { padding: 72px max(16px, 5vw); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .carte { background: var(--hy-surface); padding: 22px; display: grid; gap: 8px; }
+  .carte small { font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: 11px; color: var(--hy-logo-interieur); }
+  .carte b { font-size: 34px; }
+  .signal { display: inline-block; background: var(--hy-signal); color: #fff; font-size: 12px; font-weight: 600; padding: 3px 8px; justify-self: start; }
+  footer.site { padding: 56px max(16px, 5vw); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .icones { padding: 48px max(16px, 5vw); display: flex; flex-wrap: wrap; gap: 44px; align-items: center; font-size: 72px; border-top: 1px solid var(--hy-trait); }
+  .icones figure { margin: 0; display: grid; gap: 12px; justify-items: center; }
+  .icones figcaption { font-size: 13px; color: var(--hy-texte-secondaire); }
+  .tailles { padding: 48px max(16px, 5vw); display: flex; gap: 40px; align-items: end; flex-wrap: wrap; border-top: 1px solid var(--hy-trait); }
+  .tailles figure { margin: 0; display: grid; gap: 8px; justify-items: start; font-size: 12px; color: var(--hy-texte-secondaire); }
+</style>
+</head>
+<body>
+<div class="barre-outils">
+  <label>Palette <select id="pal"></select></label>
+  <label>Barre <select id="var">
+    <option value="prolongee">prolongée</option><option value="detachee">détachée</option>
+    <option value="detachee-courte">détachée courte</option><option value="aucune">aucune</option></select></label>
+  <label>Taille du H <input id="sc" type="range" min="1" max="1.8" step="0.05" value="1.15"><output id="scv">1,15</output></label>
+  <span class="idee" id="idee"></span>
+</div>
+
+<header class="site">
+  <hyphens-logo style="font-size:28px"></hyphens-logo>
+  <nav><span>Missions</span><span>Références</span><span>Méthode</span><span>Contact</span></nav>
+</header>
+
+<section class="hero">
+  <hyphens-logo></hyphens-logo>
+  <p>Maîtrise d'œuvre d'exécution. Texte d'exemple, à remplacer par le positionnement validé.</p>
+</section>
+
+<section class="bande" data-tone="fonce">
+  <div class="carte" style="background:transparent;border:1px solid rgba(255,255,255,.2)"><small style="color:var(--hy-logo-interieur)">Zone foncée</small><hyphens-logo style="font-size:40px"></hyphens-logo></div>
+  <div class="carte" style="background:transparent;border:1px solid rgba(255,255,255,.2)"><small style="color:var(--hy-logo-interieur)">Symbole</small><hyphens-mark style="font-size:72px"></hyphens-mark></div>
+</section>
+
+<section class="bande">
+  <div class="carte"><small>Lot 07 · menuiseries</small><b>12 réserves</b><span class="signal">3 en retard</span><span style="font-size:13px;color:var(--hy-texte-secondaire)">Données fictives d'exemple</span></div>
+  <div class="carte"><small>Avancement</small><b>68 %</b><span style="font-size:13px;color:var(--hy-texte-secondaire)">Données fictives d'exemple</span></div>
+  <div class="carte"><small>Symbole</small><hyphens-mark style="font-size:64px"></hyphens-mark></div>
+</section>
+
+<section class="icones">
+  <figure><hyphens-icon name="reception"></hyphens-icon><figcaption>Réception</figcaption></figure>
+  <figure><hyphens-icon name="equerre"></hyphens-icon><figcaption>Équerre</figcaption></figure>
+  <figure><hyphens-icon name="carres-emboites"></hyphens-icon><figcaption>Carrés emboîtés</figcaption></figure>
+  <figure><hyphens-icon name="reperes"></hyphens-icon><figcaption>Repères d'angle</figcaption></figure>
+  <figure><hyphens-icon name="assises"></hyphens-icon><figcaption>Assises</figcaption></figure>
+  <figure><hyphens-icon name="niveau"></hyphens-icon><figcaption>Niveau</figcaption></figure>
+</section>
+<section class="icones" data-tone="fonce" style="font-size:40px">
+  <hyphens-icon name="reception"></hyphens-icon><hyphens-icon name="equerre"></hyphens-icon><hyphens-icon name="carres-emboites"></hyphens-icon>
+  <hyphens-icon name="reperes"></hyphens-icon><hyphens-icon name="assises"></hyphens-icon><hyphens-icon name="niveau"></hyphens-icon>
+  <span style="font-size:13px;opacity:.75">Sur fond foncé, 40 px</span>
+</section>
+
+<section class="tailles">
+  <figure><hyphens-logo style="font-size:16px"></hyphens-logo>16 px (barre retirée automatiquement)</figure>
+  <figure><hyphens-logo style="font-size:24px"></hyphens-logo>24 px</figure>
+  <figure><hyphens-logo style="font-size:40px"></hyphens-logo>40 px</figure>
+  <figure><hyphens-mark lines="2" style="font-size:20px"></hyphens-mark>H deux lignes, 20 px</figure>
+  <figure><hyphens-mark lines="3" style="font-size:48px"></hyphens-mark>H trois lignes, 48 px</figure>
+</section>
+
+<footer class="site" data-tone="fonce">
+  <hyphens-logo style="font-size:32px"></hyphens-logo>
+  <span style="font-size:13px;opacity:.8">HYPHENS SAS · Paris 14e</span>
+</footer>
+
+<script>
+  var P = HyphensBrand.palettes(), pal = document.getElementById("pal"), vr = document.getElementById("var"),
+      sc = document.getElementById("sc"), scv = document.getElementById("scv"), idee = document.getElementById("idee");
+  var q = new URLSearchParams(location.search);
+  Object.keys(P).forEach(function (k) { var o = document.createElement("option"); o.value = k; o.textContent = P[k].nom; pal.appendChild(o); });
+  pal.value = q.get("palette") || HyphensBrand.current();
+  vr.value = q.get("variant") || "prolongee";
+  sc.value = q.get("scale") || "1.15";
+  function appliquer() {
+    HyphensBrand.setPalette(pal.value);
+    idee.textContent = P[pal.value].idee;
+    scv.textContent = String(sc.value).replace(".", ",");
+    document.querySelectorAll("hyphens-logo").forEach(function (l) { l.setAttribute("variant", vr.value); l.setAttribute("scale", sc.value); });
+  }
+  [pal, vr, sc].forEach(function (e) { e.addEventListener("input", appliquer); });
+  appliquer();
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "outil": "Image Gen intégré à Codex",
+  "usage": "Illustrations fictives et concepts de composition. Aucun projet HYPHENS représenté.",
+  "visuels": [
+    {
+      "fichier": "../assets/architecture-escalier.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: website hero photograph for a French MOEX and OPC firm, architecture illustration only, not a real credited construction project. Create a refined editorial architectural photograph of a pale raw concrete stair inside a tall open atrium under careful construction, seen diagonally upward from ground floor. Solid concrete stair with sidewall or steel temporary construction guardrail, smooth poured concrete with realistic formwork joints, vertical pale oak or plywood formwork visible on right, a small area of scaffolding at very top, no people, no signs, no writing, no logos. Composition wide 3:2, stair rises from bottom center-left toward upper center, structural repeated beams and square opening on right, diffuse natural daylight, warm neutral concrete, forest visible faintly through far opening, very quiet nuanced earth tones, photo shot on architectural tilt-shift lens with vertical lines straight, art direction like a premium Swiss architecture journal. Realistic buildable structural detailing. Full photograph edge to edge, no interface, no text, no overlay, no illustration graphics, no decorative border. Output large high-quality landscape photograph suitable for crop to 4:5 on a premium website."
+    },
+    {
+      "fichier": "../assets/architecture-detail.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: premium editorial architecture detail photograph, illustrative only, no real credited project. Full landscape photograph of a quiet building under construction, pale exposed concrete wall meeting a precise vertical square concrete column and a large opening to a small tree on the left, directional afternoon sun projecting sharp diagonal shadows across a bare concrete slab, realistic formwork holes and fine material grain. Minimal exact buildable geometry, large planes, warm-neutral light gray concrete, subtle natural olive green outside, no furniture, no people, no branding, no signs, no text, no interface. Architectural tilt-shift lens with perfectly straight verticals. Refined Swiss architecture magazine photographic art direction. Native photographic colors, no tint or overlays, no borders. Wide 4:3 composition, high detail, pairs with editorial pale concrete staircase construction photography."
+    }
+  ]
+}

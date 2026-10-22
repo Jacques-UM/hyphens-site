@@ -1,0 +1,108 @@
+/* Fichier généré par brand/build_tokens.py à partir de tokens/palettes.json. Ne pas modifier à la main. */
+
+:root {
+  --hy-font: "proxima-nova", "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --hy-font-weight-regular: 400;
+  --hy-font-weight-semibold: 600;
+  --hy-font-weight-bold: 700;
+  --hy-logo-tracking: 0.06em;
+}
+
+/* Tirage de plan : Le cyanotype des anciens plans : deux bleus voisins et un papier calque. */
+:root, [data-palette="tirage-de-plan"] {
+  --hy-logo-exterieur: #0F3B5F;
+  --hy-logo-interieur: #3F7AA6;
+  --hy-logo-exterieur-fonce: #FFFFFF;
+  --hy-logo-interieur-fonce: #9CC3E0;
+  --hy-texte: #0F2233;
+  --hy-texte-secondaire: #4F6577;
+  --hy-fond: #FFFFFF;
+  --hy-surface: #EEF2F5;
+  --hy-fonce: #0B2A44;
+  --hy-trait: #C9D3DB;
+  --hy-signal: #E8B23A;
+}
+
+/* Encre et Prusse : Noir encre et bleu de Prusse. Sobre, très conseil. */
+[data-palette="encre-et-prusse"] {
+  --hy-logo-exterieur: #141B22;
+  --hy-logo-interieur: #0F3B5F;
+  --hy-logo-exterieur-fonce: #FFFFFF;
+  --hy-logo-interieur-fonce: #7FA3C4;
+  --hy-texte: #141B22;
+  --hy-texte-secondaire: #5A626A;
+  --hy-fond: #FFFFFF;
+  --hy-surface: #F4F3EF;
+  --hy-fonce: #141B22;
+  --hy-trait: #D2D2CD;
+  --hy-signal: #C8553D;
+}
+
+/* Sapin et Prusse : Le vert et le bleu deviennent les deux couches du H : sapin dehors, Prusse dedans. */
+[data-palette="sapin-et-prusse"] {
+  --hy-logo-exterieur: #17322B;
+  --hy-logo-interieur: #0F3B5F;
+  --hy-logo-exterieur-fonce: #FFFFFF;
+  --hy-logo-interieur-fonce: #8DB3D3;
+  --hy-texte: #17322B;
+  --hy-texte-secondaire: #56655F;
+  --hy-fond: #FFFFFF;
+  --hy-surface: #EEF0EC;
+  --hy-fonce: #17322B;
+  --hy-trait: #CFD5CF;
+  --hy-signal: #C9A227;
+}
+
+/* Forêt et lichen : Deux verts d'une même famille sur fond béton clair. Calme, durable. */
+[data-palette="foret-et-lichen"] {
+  --hy-logo-exterieur: #17322B;
+  --hy-logo-interieur: #4E7A63;
+  --hy-logo-exterieur-fonce: #ECEAE4;
+  --hy-logo-interieur-fonce: #9CC2A9;
+  --hy-texte: #17322B;
+  --hy-texte-secondaire: #55625B;
+  --hy-fond: #FFFFFF;
+  --hy-surface: #ECEAE4;
+  --hy-fonce: #17322B;
+  --hy-trait: #D3D0C7;
+  --hy-signal: #B5532F;
+}
+
+/* Ardoise et acier : Gris bleutés de toiture et de charpente métallique. La plus neutre. */
+[data-palette="ardoise-et-acier"] {
+  --hy-logo-exterieur: #232A31;
+  --hy-logo-interieur: #5E7385;
+  --hy-logo-exterieur-fonce: #F2F3F3;
+  --hy-logo-interieur-fonce: #A9BBCB;
+  --hy-texte: #232A31;
+  --hy-texte-secondaire: #5E666E;
+  --hy-fond: #FFFFFF;
+  --hy-surface: #F2F3F3;
+  --hy-fonce: #232A31;
+  --hy-trait: #D5D8DB;
+  --hy-signal: #E06A2C;
+}
+
+/* Pierre et terre : Tons chauds de matériaux. Plus premium, plus immobilier haut de gamme. */
+[data-palette="pierre-et-terre"] {
+  --hy-logo-exterieur: #2E2925;
+  --hy-logo-interieur: #8C6E52;
+  --hy-logo-exterieur-fonce: #F3EFE8;
+  --hy-logo-interieur-fonce: #CDB295;
+  --hy-texte: #2E2925;
+  --hy-texte-secondaire: #6B6158;
+  --hy-fond: #FFFFFF;
+  --hy-surface: #F3EFE8;
+  --hy-fonce: #2E2925;
+  --hy-trait: #DCD4C8;
+  --hy-signal: #C0612B;
+}
+
+/* Toute zone marquée data-tone="fonce" (en-tête sombre, pied de page...) */
+[data-tone="fonce"] {
+  --hy-logo-exterieur: var(--hy-logo-exterieur-fonce);
+  --hy-logo-interieur: var(--hy-logo-interieur-fonce);
+  --hy-texte: var(--hy-logo-exterieur-fonce);
+  background: var(--hy-fonce);
+  color: var(--hy-logo-exterieur-fonce);
+}
