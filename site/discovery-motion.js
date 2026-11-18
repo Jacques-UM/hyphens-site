@@ -28,11 +28,12 @@
   function reveal() {
     if (revealed || preference.matches || typeof section.animate !== 'function') return;
     revealed = true;
+    section.setAttribute('data-revealed', '');
     section.querySelectorAll('.discovery-heading, .discovery-panel').forEach((element, index) => {
       const animation = element.animate([
-        { opacity: .45, transform: 'translateY(16px)' },
+        { opacity: 0, transform: 'translateY(40px)' },
         { opacity: 1, transform: 'translateY(0)' }
-      ], { duration: revealDuration, delay: index * 80, fill: 'backwards', easing });
+      ], { duration: revealDuration * 1.6, delay: index * 140, fill: 'backwards', easing });
       animations.add(animation);
       animation.finished.then(() => animations.delete(animation), () => animations.delete(animation));
     });
@@ -41,11 +42,13 @@
     stopAnimations();
     if (frame) cancelAnimationFrame(frame);
     frame = 0;
-    if (preference.matches) section.style.removeProperty('--discovery-progress');
+    if (preference.matches) { section.style.removeProperty('--discovery-progress'); section.setAttribute('data-revealed', ''); }
     else schedule();
   }
   // Le contenu reste visible sans JavaScript ou sans IntersectionObserver.
   if ('IntersectionObserver' in window) {
+    section.querySelectorAll('.discovery-panel').forEach((panel, index) => panel.style.setProperty('--panel-index', index));
+    if (!preference.matches) section.setAttribute('data-reveal-ready', '');
     const observer = new IntersectionObserver(entries => {
       visible = entries[0].isIntersecting;
       if (visible) { reveal(); schedule(); }

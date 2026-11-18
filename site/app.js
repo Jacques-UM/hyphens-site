@@ -69,30 +69,6 @@
     document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
   }
 
-  const filterButtons = [...document.querySelectorAll('[data-reference-filter]')];
-  const referenceCards = [...document.querySelectorAll('[data-reference-category]')];
-  const referenceCount = document.querySelector('#reference-count');
-  filterButtons.forEach(button => button.addEventListener('click', () => {
-    const filter = button.dataset.referenceFilter;
-    let visible = 0;
-    filterButtons.forEach(control => control.setAttribute('aria-pressed', String(control === button)));
-    referenceCards.forEach(card => {
-      const show = filter === 'all' || card.dataset.referenceCategory === filter;
-      card.hidden = !show;
-      if (show) {
-        card.dataset.revealed = 'true';
-        animate(card, [{ opacity: .45, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 350, delay: visible * 40 });
-        visible += 1;
-      }
-    });
-    if (referenceCount) referenceCount.textContent = `${visible} emplacement${visible > 1 ? 's' : ''} affiché${visible > 1 ? 's' : ''}. Références à renseigner.`;
-  }));
-
-  const pageTitle = document.querySelector('.hero h1, .page-intro h1');
-  animate(pageTitle, [{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 850 });
-  animate(document.querySelector('.hero-image-wrap'), [{ opacity: .2, clipPath: 'inset(7% 0 0 0)' }, { opacity: 1, clipPath: 'inset(0 0 0 0)' }], { duration: 1100 });
-  animate(document.querySelector('.hero-image-wrap > img'), [{ transform: 'scale(1.045)' }, { transform: 'scale(1)' }], { duration: 1350 });
-
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -104,67 +80,4 @@
     }, { threshold: .08, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('[data-reveal]:not(.page-intro)').forEach(element => revealObserver.observe(element));
   }
-  // Le contenu reste natif et visible sans JavaScript. La hauteur n'est figée
-  // que pendant la transition, y compris lorsqu'un clic inverse le mouvement.
-  const accordions = [...document.querySelectorAll('details')].map(details => ({
-    details,
-    summary: details.querySelector('summary'),
-    content: details.querySelector('.mission-content, dl'),
-    group: details.getAttribute('name'),
-    targetOpen: details.open,
-    animation: null
-  })).filter(state => state.summary && state.content);
-
-  function settleAccordion(state, open) {
-    state.details.open = open;
-    state.details.style.height = '';
-    state.details.style.overflow = '';
-    state.targetOpen = open;
-    state.animation = null;
-  }
-
-  function transitionAccordion(state, open) {
-    const details = state.details;
-    const start = details.getBoundingClientRect().height;
-    const previous = state.animation;
-    state.animation = null;
-    previous?.cancel();
-    state.targetOpen = open;
-    if (reducedMotion.matches || typeof details.animate !== 'function') {
-      settleAccordion(state, open);
-      return;
-    }
-    details.style.height = 'auto';
-    details.open = open;
-    const end = details.getBoundingClientRect().height;
-    details.open = true;
-    details.style.height = `${start}px`;
-    details.style.overflow = 'hidden';
-    if (Math.abs(end - start) < 1) {
-      settleAccordion(state, open);
-      return;
-    }
-    const animation = animate(details, [{ height: `${start}px` }, { height: `${end}px` }], { duration: 380 });
-    if (!animation) { settleAccordion(state, open); return; }
-    state.animation = animation;
-    const finish = () => { if (state.animation === animation) settleAccordion(state, open); };
-    animation.finished.then(finish, finish);
-  }
-
-  accordions.forEach(state => {
-    // Le groupe natif fermerait l'autre volet avant la fin de son animation.
-    // La règle d'un seul volet ciblé reste appliquée ci-dessous.
-    if (state.group) state.details.removeAttribute('name');
-    state.summary.addEventListener('click', event => {
-      event.preventDefault();
-      const open = !state.targetOpen;
-      if (open && state.group) accordions.forEach(other => {
-        if (other !== state && other.group === state.group && other.targetOpen) transitionAccordion(other, false);
-      });
-      transitionAccordion(state, open);
-    });
-    state.details.addEventListener('toggle', () => {
-      if (!state.animation) state.targetOpen = state.details.open;
-    });
-  });
 })();

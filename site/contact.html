@@ -8,19 +8,20 @@
   <meta name="theme-color" content="#fff5e8">
   <title>HYPHENS | Parlons de votre projet.</title>
   <link rel="icon" data-hyphens href="data:,">
-  <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="refonte-2026.css">
-  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css?v=20261117-contact-1">
-  <link rel="stylesheet" href="home-ui.css?v=20261117-contact-1">
-  <link rel="stylesheet" href="home-contact.css?v=20261117-contact-1">
-  <link rel="stylesheet" href="contact.css?v=20261117-contact-1">
-  <script src="../brand/tokens/hyphens-palettes.js"></script>
-  <script src="../brand/hyphens-brand.js?v=20261117-contact-1"></script>
-  <script src="contact.js?v=20261117-contact-1" defer></script>
-  <link rel="stylesheet" href="interaction-polish.css?v=20261117-finish-1">
-  <script src="interaction-polish.js?v=20261117-finish-2" defer></script>
-  <link rel="stylesheet" href="brand-intro.css?v=20261117-intro-1">
+  <!-- Socle partagé, puis feuilles de page, puis finitions communes. -->
+  <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="styles.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="refonte-2026.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="home-ui.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="home-contact.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="contact.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="interaction-polish.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="brand-intro.css?v=20261118-demo-1">
+  <script src="../brand/tokens/hyphens-palettes.js?v=20261118-demo-1"></script>
+  <script src="../brand/hyphens-brand.js?v=20261118-demo-1"></script>
+  <script src="contact.js?v=20261118-demo-1" defer></script>
+  <script src="interaction-polish.js?v=20261118-demo-1" defer></script>
 </head>
 <body class="home-motion contact-page">
   <script src="brand-intro.js?v=20261117-intro-1"></script>
@@ -44,28 +45,51 @@
         <hyphens-mark class="contact-context-mark" aria-hidden="true"></hyphens-mark>
         <h2>Le premier lien commence ici.</h2>
         <p>Décrivez votre opération et ce qui compte pour vous. Quelques informations suffisent pour préciser votre besoin.</p>
-        <ul><li>La nature et la localisation du projet.</li><li>Son stade d’avancement.</li><li>Vos attentes et vos priorités.</li></ul>
+        <ul class="contact-checklist"><li>La nature et la localisation du projet.</li><li>Son stade d’avancement.</li><li>Vos attentes et vos priorités.</li></ul>
+        <address class="contact-address">
+          <span class="contact-address-label">Siège</span>
+          HYPHENS SAS<br>175 boulevard Brune<br>75014 Paris
+        </address>
       </aside>
       <div class="contact-form-panel">
         <form id="project-form" novalidate>
           <fieldset id="project-fields" disabled>
             <legend>Votre projet, en quelques mots</legend>
-            <p class="contact-form-note" id="contact-required">Les champs marqués d’un * sont obligatoires.</p>
-            <div class="contact-fields-row">
-              <label for="contact-name">Votre nom *<input id="contact-name" name="name" autocomplete="name" maxlength="100" required></label>
-              <label for="contact-organisation">Votre organisation<input id="contact-organisation" name="organisation" autocomplete="organization" maxlength="150"></label>
+            <ol class="contact-steps" aria-hidden="true"><li data-step="1">Vous</li><li data-step="2">Votre réponse</li><li data-step="3">Votre projet</li></ol>
+            <p class="contact-form-note" id="contact-required">Les champs marqués d’un * sont obligatoires. Pour vous joindre, l’email ou le téléphone suffit.</p>
+
+            <div class="contact-group" data-group="1">
+              <h3><span aria-hidden="true">1</span> Qui êtes-vous ?</h3>
+              <div class="contact-fields-row">
+                <div class="contact-field"><label for="contact-name">Votre nom *</label><input id="contact-name" name="name" autocomplete="name" maxlength="100" required aria-describedby="contact-name-error"><p class="contact-error" id="contact-name-error" role="alert"></p></div>
+                <div class="contact-field"><label for="contact-organisation">Votre organisation</label><input id="contact-organisation" name="organisation" autocomplete="organization" maxlength="150"></div>
+              </div>
             </div>
-            <label for="contact-email">Votre adresse email *<input id="contact-email" name="email" type="email" autocomplete="email" maxlength="200" required></label>
-            <label for="contact-mission">Votre besoin<select id="contact-mission" name="mission"><option value="À définir ensemble">À définir ensemble</option><option>Maîtrise d’œuvre d’exécution</option><option>Pilotage et coordination OPC</option><option>Réception et suivi des réserves</option></select></label>
-            <label for="contact-message">Parlez-nous de votre projet *<textarea id="contact-message" name="message" rows="6" maxlength="4000" placeholder="Nature de l’opération, localisation, avancement, attentes…" required></textarea></label>
-            <p class="contact-storage-note">Votre message reste dans cette page jusqu’à ce que vous le copiez ou le téléchargiez.</p>
+
+            <div class="contact-group" data-group="2">
+              <h3><span aria-hidden="true">2</span> Comment vous répondre ?</h3>
+              <p class="contact-hint" id="contact-reach-hint">Un email ou un téléphone suffit. Renseignez celui que vous préférez.</p>
+              <div class="contact-fields-row">
+                <div class="contact-field"><label for="contact-email">Votre adresse email</label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="200" aria-describedby="contact-reach-hint contact-reach-error"></div>
+                <div class="contact-field"><label for="contact-phone">Votre téléphone</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" aria-describedby="contact-reach-hint contact-reach-error"></div>
+              </div>
+              <p class="contact-error" id="contact-reach-error" role="alert"></p>
+            </div>
+
+            <div class="contact-group" data-group="3">
+              <h3><span aria-hidden="true">3</span> Quel est votre projet ?</h3>
+              <div class="contact-field"><label for="contact-mission">Votre besoin</label><select id="contact-mission" name="mission"><option value="À définir ensemble">À définir ensemble</option><option>Maîtrise d’œuvre d’exécution</option><option>Pilotage et coordination OPC</option><option>Réception et suivi des réserves</option></select></div>
+              <div class="contact-field"><label for="contact-message">Parlez-nous de votre projet *</label><textarea id="contact-message" name="message" rows="6" maxlength="4000" placeholder="Nature de l’opération, localisation, avancement, attentes…" required aria-describedby="contact-message-count contact-message-error"></textarea><div class="contact-field-foot"><p class="contact-error" id="contact-message-error" role="alert"></p><span class="contact-count" id="contact-message-count">0 / 4000</span></div></div>
+            </div>
+
+            <p class="contact-storage-note">Ce formulaire ne transmet rien pour l’instant : votre demande est préparée dans cette page, puis vous la copiez ou la téléchargez.</p>
             <button type="submit" class="button-primary">Préparer ma demande <span aria-hidden="true">↗</span></button>
           </fieldset>
         </form>
         <section id="project-preview" class="project-preview" hidden aria-labelledby="project-preview-title">
           <hyphens-icon name="reception" aria-hidden="true"></hyphens-icon>
           <h2 id="project-preview-title" tabindex="-1">Votre demande est prête.</h2>
-          <p>Copiez ou téléchargez votre message pour le conserver.</p>
+          <p class="contact-honest">Elle n’a pas été envoyée : ce site n’est pas encore relié à une adresse de réception. Copiez ou téléchargez votre message pour le conserver et le transmettre à HYPHENS.</p>
           <pre id="project-preview-text"></pre>
           <div class="contact-preview-actions"><button id="copy-project" class="button-primary" type="button">Copier le message <span aria-hidden="true">↗</span></button><button id="download-project" class="text-link" type="button">Télécharger</button><button id="edit-project" class="text-link" type="button">Modifier ma demande</button></div>
           <p id="project-status" role="status" aria-live="polite"></p>
@@ -76,7 +100,7 @@
   </main>
   <footer class="site-footer page-gutter" data-tone="fonce">
     <div class="footer-main"><a href="index.html" aria-label="HYPHENS, retour à l’accueil"><hyphens-logo aria-hidden="true"></hyphens-logo></a><p>Maîtrise d’œuvre d’exécution<br>Pilotage &amp; coordination</p><a href="#contenu" class="back-top">Retour en haut <span aria-hidden="true">↑</span></a></div>
-    <div class="footer-details"><nav class="footer-pages" aria-label="Pages HYPHENS"><a href="index.html">Accueil</a><a href="missions.html">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a><a href="contact.html" aria-current="page">Contact</a></nav><p class="footer-address">HYPHENS SAS<br>Paris</p></div>
+    <div class="footer-details"><nav class="footer-pages" aria-label="Pages HYPHENS"><a href="index.html">Accueil</a><a href="missions.html">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a><a href="contact.html" aria-current="page">Contact</a></nav><p class="footer-address">HYPHENS SAS<br>175 boulevard Brune<br>75014 Paris</p></div>
     <div class="footer-bottom"><span>© 2026 HYPHENS</span><span class="footer-signature">Le sens du détail. La force du lien.</span></div>
   </footer>
 </body>

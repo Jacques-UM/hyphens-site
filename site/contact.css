@@ -44,3 +44,41 @@
 }
 @media (max-height: 600px) { .contact-page .contact-context { position: relative; top: auto; } }
 @media (prefers-reduced-motion: reduce) { .contact-page #project-fields :is(input,select,textarea) { transition: none; } }
+
+/* ===== Polissage du 18 novembre 2026 : étapes, états de champs, adresse du siège ===== */
+.contact-page .contact-checklist { list-style: none; padding: 0; }
+.contact-page .contact-checklist li { position: relative; padding-left: var(--ui-space-5); }
+.contact-page .contact-checklist li::before { content: ''; position: absolute; left: 0; top: .7em; width: .8rem; height: 2px; background: var(--hy-orange); }
+.contact-page .contact-address { margin-top: var(--ui-space-6); padding-top: var(--ui-space-5); border-top: 1px solid color-mix(in srgb,var(--hy-violine) 22%,transparent); font-style: normal; line-height: 1.55; }
+.contact-page .contact-address-label { display: block; margin-bottom: var(--ui-space-2); font-size: var(--ui-type-caption); letter-spacing: .14em; text-transform: uppercase; color: var(--hy-violine); opacity: .75; }
+.contact-page .contact-steps { list-style: none; display: grid; grid-template-columns: repeat(3,1fr); gap: var(--ui-space-2); margin: 0; padding: 0; }
+.contact-page .contact-steps li { position: relative; padding-top: var(--ui-space-3); font-size: var(--ui-type-caption); letter-spacing: .08em; color: color-mix(in srgb,var(--hy-violine) 70%,var(--hy-beige)); transition: color var(--ui-duration-base); }
+.contact-page .contact-steps li::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; border-radius: 2px; background: color-mix(in srgb,var(--hy-violine) 14%,transparent); }
+.contact-page .contact-steps li::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; border-radius: 2px; background: var(--hy-orange); transform: scaleX(0); transform-origin: left; transition: transform var(--ui-duration-reveal) var(--ui-ease); }
+.contact-page .contact-steps li[data-done] { color: var(--hy-violine); }
+.contact-page .contact-steps li[data-done]::after { transform: scaleX(1); }
+.contact-page .contact-group { display: flex; flex-direction: column; gap: var(--ui-space-4); min-width: 0; padding: var(--ui-space-5); border: 1px solid color-mix(in srgb,var(--hy-violine) 16%,transparent); border-radius: var(--ui-radius-card); background: color-mix(in srgb,var(--hy-corail) 4%,var(--hy-beige)); transition: border-color var(--ui-duration-base),background var(--ui-duration-base); }
+.contact-page .contact-group:focus-within { border-color: color-mix(in srgb,var(--hy-violine) 55%,transparent); background: var(--hy-beige); }
+.contact-page .contact-group[data-done] { border-color: color-mix(in srgb,var(--hy-orange) 55%,transparent); }
+.contact-page .contact-group h3 { display: flex; align-items: center; gap: var(--ui-space-3); margin: 0; font-size: var(--ui-type-lead); font-weight: 500; letter-spacing: -.02em; color: var(--hy-violine); }
+.contact-page .contact-group h3 span { display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; border: 1px solid var(--hy-orange); font-size: var(--ui-type-label); color: var(--hy-orange); transition: background var(--ui-duration-base),color var(--ui-duration-base); }
+.contact-page .contact-group[data-done] h3 span { background: var(--hy-orange); color: var(--hy-beige); }
+.contact-page .contact-hint { margin: calc(var(--ui-space-2) * -1) 0 0; font-size: var(--ui-type-label); color: color-mix(in srgb,var(--hy-encre) 80%,var(--hy-beige)); }
+.contact-page .contact-field { display: flex; flex-direction: column; gap: var(--ui-space-2); min-width: 0; }
+.contact-page .contact-field > label { font-size: var(--ui-type-label); font-weight: 500; color: var(--hy-violine); }
+.contact-page #project-fields :is(input,select,textarea):hover { border-color: var(--hy-violine); }
+.contact-page #project-fields :is(input,textarea):not(:placeholder-shown):valid:not(:focus) { border-color: color-mix(in srgb,var(--hy-violine) 70%,transparent); }
+.contact-page #project-fields [aria-invalid="true"] { border-color: var(--hy-orange); box-shadow: 0 0 0 1px var(--hy-orange); }
+.contact-page .contact-error { margin: 0; min-height: 0; font-size: var(--ui-type-label); line-height: 1.4; color: var(--hy-violine); font-weight: 500; }
+.contact-page .contact-error:not(:empty)::before { content: '! '; color: var(--hy-orange); font-weight: 700; }
+.contact-page .contact-field-foot { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--ui-space-4); }
+.contact-page .contact-count { margin-left: auto; font-size: var(--ui-type-caption); font-variant-numeric: tabular-nums; color: color-mix(in srgb,var(--hy-encre) 75%,var(--hy-beige)); }
+.contact-page .contact-honest { max-width: 52ch; padding: var(--ui-space-4); border-left: 3px solid var(--hy-orange); background: color-mix(in srgb,var(--hy-beige) 70%,transparent); }
+.contact-page .project-preview:not([hidden]) { animation: contact-rise var(--ui-duration-reveal) var(--ui-ease) both; }
+@keyframes contact-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.contact-page #project-fields .button-primary:active { transform: translateY(1px); }
+@media (max-width: 767px) { .contact-page .contact-group { padding: var(--ui-space-4); } .contact-page .contact-steps li { font-size: .6875rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .contact-page .contact-steps li::after, .contact-page .contact-group, .contact-page .contact-group h3 span { transition: none; }
+  .contact-page .project-preview:not([hidden]) { animation: none; }
+}

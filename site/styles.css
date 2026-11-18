@@ -120,14 +120,6 @@ figcaption { font-size: 11px; color: var(--hy-texte-secondaire); line-height: 1.
   .button-primary > span, .discover-arrow { transition: transform 220ms ease; }
   .button-primary:hover > span, .discover-pages > a:hover .discover-arrow { transform: translate(3px, -3px); }
 }
-.prototype-toolbar { position: fixed; z-index: 20; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 24px; width: max-content; max-width: calc(100% - 32px); padding: 14px 20px; border: 1px solid var(--hy-trait); background: var(--hy-fond); color: var(--hy-texte); box-shadow: 0 4px 25px color-mix(in srgb, var(--hy-fonce) 10%, transparent); font-size: 13px; }
-.toolbar-intro { display: flex; align-items: center; gap: 10px; padding-right: 20px; border-right: 1px solid var(--hy-trait); }
-.toolbar-intro strong { font-weight: 600; }
-.prototype-dot { width: 9px; height: 9px; background: var(--hy-logo-interieur); border-radius: 50%; }
-.prototype-toolbar label { display: flex; align-items: center; gap: 10px; }
-.control-label, .toolbar-status { color: var(--hy-texte-secondaire); font-size: 12px; }
-.prototype-toolbar select { max-width: 170px; padding: 5px 22px 5px 5px; color: var(--hy-texte); border: 0; background: var(--hy-fond); cursor: pointer; }
-.toolbar-status { border-left: 1px solid var(--hy-trait); padding-left: 22px; }
 dialog { max-height: calc(100dvh - 40px); overflow-y: auto; overscroll-behavior: contain; width: min(680px, calc(100% - 32px)); padding: 35px 42px; color: var(--hy-texte); background: var(--hy-fond); border: 1px solid var(--hy-trait); }
 dialog::backdrop { background: color-mix(in srgb, var(--hy-fonce) 66%, transparent); }
 .dialog-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
@@ -167,7 +159,6 @@ textarea::placeholder { color: var(--hy-texte-secondaire); }
   .contact-content { align-items: start; flex-direction: column; gap: 36px; }
   .contact-action { display: flex; align-items: center; gap: 28px; }
   .contact-action > p { margin-top: 0; }
-  .toolbar-status { display: none; }
   .approach-body { gap: 45px; grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
@@ -229,14 +220,6 @@ textarea::placeholder { color: var(--hy-texte-secondaire); }
   .back-top { width: 100%; margin-left: 0; justify-content: space-between; font-size: 13px; }
   .footer-bottom { flex-direction: column; font-size: 11px; gap: 14px; }
   .footer-bottom button { align-self: start; }
-  .prototype-toolbar { bottom: 10px; padding: 10px 12px; max-width: calc(100% - 20px); gap: 12px; font-size: 12px; }
-  .toolbar-intro { padding-right: 12px; gap: 7px; }
-  .toolbar-intro span:last-child { font-size: 0; }
-  .toolbar-intro strong { font-size: 10px; }
-  .prototype-toolbar label { flex-direction: column; align-items: start; gap: 0; }
-  .control-label { font-size: 10px; }
-  .prototype-toolbar select { font-size: 12px; max-width: 145px; padding: 4px 0; }
-  .prototype-dot { width: 6px; height: 6px; }
   dialog { padding: 25px; max-height: calc(100dvh - 24px); }
   .dialog-top { margin-bottom: 20px; }
   .dialog-note { font-size: 13px; }
@@ -247,8 +230,6 @@ textarea::placeholder { color: var(--hy-texte-secondaire); }
   .hero h1 { font-size: 59px; }
   .hero h1 > br:nth-of-type(1), .hero-second > br { display: inline; }
   .hero-image-wrap { height: 375px; }
-  .toolbar-intro { display: none; }
-  .prototype-toolbar { gap: 16px; }
   .form-grid { grid-template-columns: 1fr; gap: 0; }
 }
 /* La navigation passe en menu avant que les nouveaux liens ne se resserrent. */

@@ -32,6 +32,9 @@
   --ui-radius-card: 1rem;
   --ui-radius-image: 1.25rem;
   --ui-header-height: 4.5rem;
+  --ui-header-compact: 3.75rem;
+  --ui-radius-control: .5rem;
+  --ui-shadow-raised: 0 1px 0 color-mix(in srgb, var(--hy-violine) 10%, transparent), 0 10px 30px -18px color-mix(in srgb, var(--hy-encre) 35%, transparent);
   --ui-control-height: 3rem;
   --ui-duration-fast: 160ms;
   --ui-duration-base: 240ms;
@@ -41,5 +44,5 @@
   --ui-ease: cubic-bezier(.22, 1, .36, 1);
 }
 @media (min-width: 768px) {
-  :root { --ui-radius-card: 1.5rem; --ui-radius-image: 2rem; --ui-header-height: 5.5rem; }
+  :root { --ui-radius-card: 1.5rem; --ui-radius-image: 2rem; --ui-header-height: 5.5rem; --ui-header-compact: 4.25rem; }
 }

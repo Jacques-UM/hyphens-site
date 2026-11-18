@@ -24,7 +24,7 @@
 .home-motion .home-role-copy h2 { font-size: var(--ui-type-section); line-height: var(--ui-leading-title); letter-spacing: -.035em; margin-top: var(--ui-space-5); }
 .home-motion .home-role-copy > p:last-child { max-width: 60ch; margin-top: var(--ui-space-5); font-size: var(--ui-type-body); line-height: var(--ui-leading-body); }
 .home-motion .home-role-figure { position: relative; width: 100%; align-self: stretch; margin: 0; min-width: 0; overflow: hidden; }
-.home-motion .home-role-image { position: absolute; left: 0; top: -12px; width: 100%; height: calc(100% + 24px); object-fit: cover; object-position: 52% center; will-change: transform; }
+.home-motion .home-role-image { position: absolute; left: 0; top: -40px; width: 100%; height: calc(100% + 80px); object-fit: cover; object-position: 52% center; will-change: transform; }
 .home-motion .home-role-cuts { position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--hy-orange); pointer-events: none; }
 .home-motion .home-role-figure figcaption { position: absolute; right: var(--ui-space-4); bottom: var(--ui-space-4); max-width: calc(100% - 32px); background: var(--hy-beige); color: var(--hy-violine); padding: var(--ui-space-2) var(--ui-space-3); font-size: var(--ui-type-caption); line-height: 1.5; }
 .home-motion .home-services { position: relative; isolation: isolate; overflow: hidden; background: var(--hy-violine); color: var(--hy-beige); padding-block: var(--ui-section-space); }
@@ -68,7 +68,7 @@
 .home-motion .home-approach-heading { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--ui-space-5); }
 .home-motion .home-approach-heading h2 { font-size: var(--ui-type-section); line-height: var(--ui-leading-title); letter-spacing: -.035em; }
 .home-motion .home-approach-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ui-space-9); align-items: start; margin-top: var(--ui-content-gap); }
-.home-motion .home-approach-visual { position: sticky; z-index: 1; align-self: start; top: var(--ui-space-5); display: grid; gap: var(--ui-space-4); }
+.home-motion .home-approach-visual { position: sticky; z-index: 1; align-self: start; top: calc(var(--ui-header-offset, 0px) + var(--ui-space-5)); display: grid; gap: var(--ui-space-4); transition: top var(--ui-duration-base) var(--ui-ease); }
 .home-motion .home-approach-visual[data-sticky-overflow] { position: relative; top: auto; }
 .home-motion .home-approach-visual img { width: 100%; height: clamp(180px,calc(100svh - 280px),560px); object-fit: cover; object-position: 50% 52%; border-radius: var(--ui-radius-image); }
 .home-motion .home-approach-visual figcaption { font-size: var(--ui-type-caption); line-height: 1.5; padding-top: var(--ui-space-2); }
@@ -134,6 +134,66 @@
 }
 @media (prefers-reduced-motion: reduce) {
  .home-motion .home-services-pattern { animation: none; }
- .home-motion .home-service-link,.home-motion .home-service-link::before,.home-motion .home-service-link span,.home-motion .home-step { transition: none; }
+ .home-motion .home-service-link,.home-motion .home-service-link::before,.home-motion .home-service-link span,.home-motion .home-step,.home-motion .home-approach-visual { transition: none; }
  .home-motion .home-step[data-active] > hyphens-icon { transform: none; }
+}
+
+/* Polissage du 18 novembre : entrée du hero, rythme des sections et parallaxe. */
+.home-motion .home-hero h1 .hero-line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
+.home-motion .home-hero h1 .hero-line > span { display: block; }
+.home-motion .home-hero-frame { will-change: transform; }
+.home-motion .home-hero-scroll { position: absolute; z-index: 1; left: 50%; bottom: var(--ui-space-6); transform: translateX(-50%); pointer-events: none; }
+.home-motion .home-hero-scroll-track { position: relative; display: block; width: 1px; height: 56px; overflow: hidden; background: color-mix(in srgb,var(--hy-beige) 28%,transparent); }
+.home-motion .home-hero-scroll-dot { position: absolute; left: 0; top: 0; display: block; width: 1px; height: 22px; background: var(--hy-corail); transform: translateY(-24px); }
+/* Les transitions de fond : la section violine vient se poser sur le beige. */
+.home-motion .home-services { border-radius: clamp(24px,4vw,56px) clamp(24px,4vw,56px) 0 0; }
+.home-motion .home-approach-visual figure { position: relative; margin: 0; overflow: hidden; border-radius: var(--ui-radius-image); }
+.home-motion .home-approach-visual img { object-position: 50% 42%; }
+.home-motion main [data-apparition="mots"] .mot { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.home-motion main [data-apparition="mots"] .mot > span { display: inline-block; }
+.home-motion main [data-apparition="rideau"] { position: relative; }
+.home-motion main [data-apparition="rideau"]::before { content: ''; position: absolute; z-index: 2; inset: 0; background: var(--hy-beige); transform: scaleX(0); transform-origin: right center; pointer-events: none; }
+@media (max-width: 767px) {
+ .home-motion .home-hero-scroll { display: none; }
+ .home-motion .home-services { border-radius: 28px 28px 0 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+ /* Attente de la fin de la signature : état initial du hero. */
+ .hero-attente .home-motion .home-hero-kicker,
+ .hero-attente .home-motion .home-hero-bottom,
+ .hero-attente .home-motion .home-hero-scroll { opacity: 0; transform: translateY(16px); }
+ .hero-attente .home-motion .home-hero-scroll { transform: translate(-50%,16px); }
+ .hero-attente .home-motion .home-hero h1 .hero-line > span { transform: translateY(108%); }
+ .hero-attente .home-motion .home-hero-shapes hyphens-mark:first-child { opacity: 0; transform: translate3d(-60px,80px,0); }
+ .hero-attente .home-motion .home-hero-shapes hyphens-mark:last-child { opacity: 0; transform: translate3d(60px,-80px,0); }
+ .hero-attente .home-motion .home-hero-frame img { transform: scale(1.12); }
+ /* Repli si le script ne lève jamais l'attente. */
+ .hero-attente .home-motion :is(.home-hero-kicker,.home-hero-bottom,.home-hero h1 .hero-line > span,.home-hero-frame img) { animation: hero-secours 1ms 3.2s forwards; }
+ .hero-attente .home-motion .home-hero-scroll { animation: hero-secours-repere 1ms 3.2s forwards; }
+ .hero-attente .home-motion .home-hero-shapes hyphens-mark:first-child { animation: hero-secours-forme-1 1ms 3.2s forwards; }
+ .hero-attente .home-motion .home-hero-shapes hyphens-mark:last-child { animation: hero-secours-forme-2 1ms 3.2s forwards; }
+ @keyframes hero-secours { to { opacity: 1; transform: none; } }
+ @keyframes hero-secours-repere { to { opacity: 1; transform: translateX(-50%); } }
+ @keyframes hero-secours-forme-1 { to { opacity: .6; transform: none; } }
+ @keyframes hero-secours-forme-2 { to { opacity: .4; transform: none; } }
+ .hero-entree .home-motion .home-hero-kicker { transition: opacity 700ms var(--ui-ease) 80ms, transform 900ms var(--ui-ease) 80ms; }
+ .hero-entree .home-motion .home-hero h1 .hero-line > span { transition: transform 1100ms var(--ui-ease) 180ms; }
+ .hero-entree .home-motion .home-hero h1 .hero-line + .hero-line > span { transition-delay: 320ms; }
+ .hero-entree .home-motion .home-hero-bottom { transition: opacity 800ms var(--ui-ease) 620ms, transform 1000ms var(--ui-ease) 620ms; }
+ .hero-entree .home-motion .home-hero-scroll { transition: opacity 800ms var(--ui-ease) 1100ms, transform 1000ms var(--ui-ease) 1100ms; }
+ .hero-entree .home-motion .home-hero-shapes hyphens-mark { transition: opacity 1400ms var(--ui-ease) 120ms, transform 1800ms var(--ui-ease) 120ms; }
+ .hero-entree .home-motion .home-hero-frame img { transition: transform 2600ms cubic-bezier(.16,1,.3,1); }
+ .home-motion .home-hero-scroll-dot { animation: hero-defilement 2.4s var(--ui-ease) 2s infinite; }
+ @keyframes hero-defilement { 0% { transform: translateY(-24px); } 60%,100% { transform: translateY(58px); } }
+
+ /* Apparitions au défilement, actives seulement quand le script est prêt. */
+ .motion-pret .home-motion main [data-apparition]:not([data-apparition="mots"]):not([data-apparition="rideau"]) { opacity: 0; transform: translateY(28px); transition: opacity 800ms var(--ui-ease) var(--motion-delay,0ms), transform 1000ms var(--ui-ease) var(--motion-delay,0ms); }
+ .motion-pret .home-motion main [data-apparition="mots"] .mot > span { transform: translateY(110%); transition: transform 900ms var(--ui-ease) calc(var(--i,0) * 55ms + 60ms); }
+ .motion-pret .home-motion main [data-apparition="rideau"]::before { transform: scaleX(1); transition: transform 1200ms cubic-bezier(.77,0,.18,1) 100ms; }
+ .motion-pret .home-motion main [data-apparition="rideau"] img { scale: 1.12; transition: scale 1600ms var(--ui-ease) 200ms; }
+ .motion-pret .home-motion main [data-apparition][data-visible]:not([data-apparition="mots"]):not([data-apparition="rideau"]) { opacity: 1; transform: none; }
+ .motion-pret .home-motion [data-apparition="mots"][data-visible] .mot > span { transform: none; }
+ .motion-pret .home-motion main [data-apparition="rideau"][data-visible]::before { transform: scaleX(0); }
+ .motion-pret .home-motion main [data-apparition="rideau"][data-visible] img { scale: 1; }
+ .home-motion .home-services[data-tone="fonce"] [data-apparition="rideau"]::before { background: var(--hy-violine); }
 }

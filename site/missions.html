@@ -8,20 +8,21 @@
   <meta name="theme-color" content="#fff5e8">
   <title>HYPHENS | Nos missions</title>
   <link rel="icon" data-hyphens href="data:,">
-  <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css">
-  <link rel="stylesheet" href="refonte-2026.css">
-  <link rel="stylesheet" href="home-ui.css">
-  <link rel="stylesheet" href="home-contact.css?v=20261117-site-1">
-  <link rel="stylesheet" href="missions.css?v=20261117-polish-3">
-  <script src="../brand/tokens/hyphens-palettes.js"></script>
-  <script src="../brand/hyphens-brand.js?v=20261117-icons-2"></script>
-  <script src="app.js?v=20261117-site-1" defer></script>
-  <script src="missions-motion.js?v=20261117-motion-2" defer></script>
-  <link rel="stylesheet" href="interaction-polish.css?v=20261117-finish-1">
-  <script src="interaction-polish.js?v=20261117-finish-2" defer></script>
-  <link rel="stylesheet" href="brand-intro.css?v=20261117-intro-1">
+  <!-- Socle partagé, puis feuilles de page, puis finitions communes. -->
+  <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="styles.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="refonte-2026.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="home-ui.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="home-contact.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="missions.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="interaction-polish.css?v=20261118-demo-1">
+  <link rel="stylesheet" href="brand-intro.css?v=20261118-demo-1">
+  <script src="../brand/tokens/hyphens-palettes.js?v=20261118-demo-1"></script>
+  <script src="../brand/hyphens-brand.js?v=20261118-demo-1"></script>
+  <script src="app.js?v=20261118-demo-1" defer></script>
+  <script src="missions-motion.js?v=20261118-demo-1" defer></script>
+  <script src="interaction-polish.js?v=20261118-demo-1" defer></script>
 </head>
 <body class="home-motion missions-page">
   <script src="brand-intro.js?v=20261117-intro-1"></script>
@@ -40,55 +41,65 @@
   <main id="contenu">
     <section class="mis-intro page-gutter" aria-labelledby="mis-title">
       <div class="mis-intro-copy">
-      <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Nos missions</p>
-      <div class="mis-intro-layout">
+        <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Nos missions</p>
         <h1 id="mis-title">Une même exigence.</h1>
-        <div class="mis-intro-aside">
-          <p class="mis-lead">Trois façons de faire avancer votre projet.</p>
-          <p>Un périmètre défini avec vous, selon les besoins et l’organisation de votre opération.</p>
-          <a class="text-link" href="#moex">Voir les missions <span aria-hidden="true">↓</span></a>
-        </div>
+        <p class="mis-lead">Trois façons de faire avancer votre projet.</p>
+        <p class="mis-intro-text">Un périmètre défini avec vous, selon les besoins et l’organisation de votre opération.</p>
+        <a class="text-link" href="#moex">Voir les missions <span aria-hidden="true">↓</span></a>
       </div>
+      <div class="mis-summary">
+        <figure class="mis-summary-media" aria-hidden="true"><img src="assets/architecture-escalier.webp" width="1536" height="1024" alt="" fetchpriority="high" decoding="async"></figure>
+        <ol class="mis-summary-list" aria-label="Sommaire des trois missions">
+          <li><a href="#moex"><span class="mis-num" aria-hidden="true">01</span><span class="mis-summary-title">Maîtrise d’œuvre d’exécution</span><span class="mis-summary-verb">Suivre</span><span class="mis-arrow" aria-hidden="true">↘</span></a></li>
+          <li><a href="#opc"><span class="mis-num" aria-hidden="true">02</span><span class="mis-summary-title">Pilotage &amp; coordination OPC</span><span class="mis-summary-verb">Coordonner</span><span class="mis-arrow" aria-hidden="true">↘</span></a></li>
+          <li><a href="#reception"><span class="mis-num" aria-hidden="true">03</span><span class="mis-summary-title">Réception &amp; suivi des réserves</span><span class="mis-summary-verb">Accompagner</span><span class="mis-arrow" aria-hidden="true">↘</span></a></li>
+        </ol>
       </div>
-      <figure class="mis-hero-media" aria-hidden="true"><img src="assets/architecture-detail.webp" width="1448" height="1086" alt="" fetchpriority="high" decoding="async"></figure>
       <hyphens-mark class="mis-hero-mark" fragment="first" aria-hidden="true"></hyphens-mark>
     </section>
     <nav class="mis-index page-gutter" aria-label="Les trois missions">
       <a href="#moex"><hyphens-icon name="execution" aria-hidden="true"></hyphens-icon><span>Maîtrise d’œuvre d’exécution</span><span aria-hidden="true">↘</span></a>
-      <a href="#opc"><hyphens-icon name="planning" aria-hidden="true"></hyphens-icon><span>Pilotage & coordination OPC</span><span aria-hidden="true">↘</span></a>
-      <a href="#reception"><hyphens-icon name="verification" aria-hidden="true"></hyphens-icon><span>Réception & suivi des réserves</span><span aria-hidden="true">↘</span></a>
+      <a href="#opc"><hyphens-icon name="planning" aria-hidden="true"></hyphens-icon><span>Pilotage &amp; coordination OPC</span><span aria-hidden="true">↘</span></a>
+      <a href="#reception"><hyphens-icon name="verification" aria-hidden="true"></hyphens-icon><span>Réception &amp; suivi des réserves</span><span aria-hidden="true">↘</span></a>
+      <span class="mis-progress" aria-hidden="true"></span>
     </nav>
 
     <section class="mis-list page-gutter" aria-label="Détail des missions">
-      <article id="moex" class="mis-item" aria-labelledby="moex-title">
+      <article id="moex" class="mis-item mis-reveal" aria-labelledby="moex-title">
         <div class="mis-item-visual"><img src="assets/photos/chantier-structure.webp" width="1800" height="1199" alt="Structure de bâtiment en béton avec baies ouvertes." loading="lazy" decoding="async"><div class="mis-item-head"><hyphens-icon name="execution" aria-hidden="true"></hyphens-icon><span class="mis-item-label">Suivre</span></div></div>
         <div class="mis-item-body">
+          <p class="mis-chapter" aria-hidden="true"><span>01</span> / 03</p>
           <h2 id="moex-title">Maîtrise d’œuvre d’exécution</h2>
           <p class="mis-item-lead">Garder le projet en ligne de mire, jusque dans sa réalisation.</p>
           <p>Suivre l’exécution, rendre les sujets techniques lisibles et préparer les décisions qui font avancer le chantier.</p>
-          <ul aria-label="Axes de la mission MOEX"><li>Suivi de l’exécution</li><li>Dialogue avec les entreprises</li><li>Points d’avancement et décisions</li></ul>
+          <p class="mis-axes-title">Axes d’intervention</p>
+          <ol class="mis-axes" aria-label="Axes de la mission MOEX"><li><span class="mis-axis-n" aria-hidden="true">1</span>Suivi de l’exécution</li><li><span class="mis-axis-n" aria-hidden="true">2</span>Dialogue avec les entreprises</li><li><span class="mis-axis-n" aria-hidden="true">3</span>Points d’avancement et décisions</li></ol>
           <a class="mission-cta" href="contact.html?mission=Ma%C3%AEtrise%20d%E2%80%99%C5%93uvre%20d%E2%80%99ex%C3%A9cution">Échanger sur cette mission <span aria-hidden="true">↗</span></a>
         </div>
       </article>
 
-      <article id="opc" class="mis-item" aria-labelledby="opc-title">
+      <article id="opc" class="mis-item mis-reveal" aria-labelledby="opc-title">
         <div class="mis-item-visual"><img src="assets/photos/plans-terrain.webp" width="1800" height="2400" alt="Mains consultant des plans sur une table de chantier." loading="lazy" decoding="async"><div class="mis-item-head"><hyphens-icon name="planning" aria-hidden="true"></hyphens-icon><span class="mis-item-label">Coordonner</span></div></div>
         <div class="mis-item-body">
-          <h2 id="opc-title">Pilotage & coordination OPC</h2>
+          <p class="mis-chapter" aria-hidden="true"><span>02</span> / 03</p>
+          <h2 id="opc-title">Pilotage &amp; coordination OPC</h2>
           <p class="mis-item-lead">Donner un rythme commun aux interventions.</p>
           <p>Organiser les séquences de travaux, articuler les interfaces et partager une lecture claire des échéances.</p>
-          <ul aria-label="Axes de la mission OPC"><li>Ordonnancement des interventions</li><li>Coordination des acteurs</li><li>Suivi du planning</li></ul>
+          <p class="mis-axes-title">Axes d’intervention</p>
+          <ol class="mis-axes" aria-label="Axes de la mission OPC"><li><span class="mis-axis-n" aria-hidden="true">1</span>Ordonnancement des interventions</li><li><span class="mis-axis-n" aria-hidden="true">2</span>Coordination des acteurs</li><li><span class="mis-axis-n" aria-hidden="true">3</span>Suivi du planning</li></ol>
           <a class="mission-cta" href="contact.html?mission=Pilotage%20et%20coordination%20OPC">Échanger sur cette mission <span aria-hidden="true">↗</span></a>
         </div>
       </article>
 
-      <article id="reception" class="mis-item" aria-labelledby="reception-title">
-        <div class="mis-item-visual"><img src="assets/architecture-detail.webp" width="1448" height="1086" alt="Détail de finition et de jonction d’une structure en béton." loading="lazy" decoding="async"><div class="mis-item-head"><hyphens-icon name="verification" aria-hidden="true"></hyphens-icon><span class="mis-item-label">Accompagner</span></div></div>
+      <article id="reception" class="mis-item mis-reveal" aria-labelledby="reception-title">
+        <div class="mis-item-visual"><img src="assets/photos/architecture-courbes.webp" width="1800" height="1200" alt="Dessous d’une structure en béton aux courbes régulières, en noir et blanc." loading="lazy" decoding="async"><div class="mis-item-head"><hyphens-icon name="verification" aria-hidden="true"></hyphens-icon><span class="mis-item-label">Accompagner</span></div></div>
         <div class="mis-item-body">
-          <h2 id="reception-title">Réception & suivi des réserves</h2>
+          <p class="mis-chapter" aria-hidden="true"><span>03</span> / 03</p>
+          <h2 id="reception-title">Réception &amp; suivi des réserves</h2>
           <p class="mis-item-lead">Accorder aux derniers détails la même attention qu’aux premières étapes.</p>
           <p>Accompagner la préparation de la réception et le suivi des points restant à traiter.</p>
-          <ul aria-label="Axes de la réception"><li>Préparation de la réception</li><li>Identification des points ouverts</li><li>Suivi de la levée des réserves</li></ul>
+          <p class="mis-axes-title">Axes d’intervention</p>
+          <ol class="mis-axes" aria-label="Axes de la réception"><li><span class="mis-axis-n" aria-hidden="true">1</span>Préparation de la réception</li><li><span class="mis-axis-n" aria-hidden="true">2</span>Identification des points ouverts</li><li><span class="mis-axis-n" aria-hidden="true">3</span>Suivi de la levée des réserves</li></ol>
           <a class="mission-cta" href="contact.html?mission=R%C3%A9ception%20et%20suivi%20des%20r%C3%A9serves">Échanger sur cette mission <span aria-hidden="true">↗</span></a>
         </div>
       </article>
@@ -107,7 +118,7 @@
 
   <footer class="site-footer page-gutter" data-tone="fonce">
     <div class="footer-main"><a href="index.html" aria-label="HYPHENS, retour à l’accueil"><hyphens-logo aria-hidden="true"></hyphens-logo></a><p>Maîtrise d’œuvre d’exécution<br>Pilotage & coordination</p><a href="#contenu" class="back-top">Retour en haut <span aria-hidden="true">↑</span></a></div>
-    <div class="footer-details"><nav class="footer-pages" aria-label="Pages HYPHENS"><a href="index.html">Accueil</a><a href="missions.html" aria-current="page">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a><a href="contact.html">Contact</a></nav><p class="footer-address">HYPHENS SAS<br>Paris</p></div>
+    <div class="footer-details"><nav class="footer-pages" aria-label="Pages HYPHENS"><a href="index.html">Accueil</a><a href="missions.html" aria-current="page">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a><a href="contact.html">Contact</a></nav><p class="footer-address">HYPHENS SAS<br>175 boulevard Brune<br>75014 Paris</p></div>
     <div class="footer-bottom"><span>© 2026 HYPHENS</span><span class="footer-signature">Le sens du détail. La force du lien.</span></div>
   </footer>
 

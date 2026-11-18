@@ -60,3 +60,14 @@
  .home-discovery .discovery-cta { align-items:flex-start; gap:var(--ui-space-2); }
  .home-discovery .discovery-cta > span { width:36px; height:36px; flex-basis:36px; }
 }
+
+/* Polissage du 18 novembre : parallaxe discrète des photos et révélation par rideau. */
+.home-discovery .discovery-art img { height: calc(100% + 32px); margin-top: -16px; translate: 0 calc((var(--discovery-progress, .5) - .5) * -32px); }
+.home-discovery .discovery-art::before { content: ''; position: absolute; z-index: 1; inset: 0; background: var(--hy-beige); transform: scaleY(0); transform-origin: top center; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .home-discovery[data-reveal-ready] .discovery-art::before { transform: scaleY(1); transition: transform 1100ms cubic-bezier(.77,0,.18,1) calc(var(--panel-index, 0) * 140ms + 150ms); }
+  .home-discovery[data-reveal-ready][data-revealed] .discovery-art::before { transform: scaleY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-discovery .discovery-art img { translate: none; }
+}

@@ -103,3 +103,83 @@
  .missions-page .mis-item-visual { min-height:0; }
  .missions-page .mis-item-body { padding-block:0; }
 }
+
+/* ===== Polissage du 18 novembre 2026 : hero composé, sommaire, chapitres ===== */
+/* Hero : titre à gauche, sommaire des trois missions sur photo à droite, dès le premier écran. */
+.missions-page .mis-intro { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:var(--ui-space-9); align-items:center; background:linear-gradient(135deg,var(--hy-encre),color-mix(in srgb,var(--hy-violine) 55%,var(--hy-encre))); }
+.missions-page .mis-intro::before { background:radial-gradient(60% 70% at 85% 20%,color-mix(in srgb,var(--hy-orange) 14%,transparent),transparent 70%); }
+.missions-page .mis-intro-copy { width:auto; max-width:34rem; }
+.missions-page .mis-intro-copy .mis-lead { margin-top:var(--ui-space-6); font-size:var(--ui-type-lead); line-height:1.4; }
+.missions-page .mis-intro-text { margin-top:var(--ui-space-4); max-width:42ch; font-size:var(--ui-type-body); line-height:var(--ui-leading-body); }
+.missions-page .mis-intro-copy .text-link { margin-top:var(--ui-space-5); color:var(--hy-beige); border-color:var(--hy-beige); }
+.missions-page .mis-intro-copy .text-link:is(:hover,:focus-visible) { color:var(--hy-corail); border-color:var(--hy-corail); }
+.missions-page .mis-summary { position:relative; z-index:2; display:grid; border-radius:var(--ui-radius-image); overflow:hidden; background:var(--hy-beige); color:var(--hy-violine); box-shadow:0 1.5rem 3rem color-mix(in srgb,var(--hy-encre) 40%,transparent); }
+.missions-page .mis-summary-media { margin:0; aspect-ratio:2.1; overflow:hidden; }
+.missions-page .mis-summary-media img { width:100%; height:100%; object-fit:cover; object-position:50% 40%; transition:transform 1.2s var(--ui-ease); }
+.missions-page .mis-summary:hover .mis-summary-media img { transform:scale(1.04); }
+.missions-page .mis-summary-list { list-style:none; margin:0; padding:0; }
+.missions-page .mis-summary-list li + li { border-top:1px solid color-mix(in srgb,var(--hy-violine) 16%,transparent); }
+.missions-page .mis-summary-list a { position:relative; display:grid; grid-template-columns:auto minmax(0,1fr) auto auto; align-items:center; gap:var(--ui-space-4); padding:var(--ui-space-4) var(--ui-space-5); color:inherit; transition:background var(--ui-duration-base),color var(--ui-duration-base),padding var(--ui-duration-base) var(--ui-ease); }
+.missions-page .mis-summary-list a:is(:hover,:focus-visible) { background:var(--hy-violine); color:var(--hy-beige); padding-left:var(--ui-space-6); }
+.missions-page .mis-num { font-size:var(--ui-type-label); letter-spacing:.08em; color:var(--hy-orange); font-variant-numeric:tabular-nums; }
+.missions-page .mis-summary-title { font-size:var(--ui-type-body); line-height:1.25; font-weight:500; }
+.missions-page .mis-summary-verb { font-size:var(--ui-type-label); opacity:.75; }
+.missions-page .mis-arrow { transition:transform var(--ui-duration-base) var(--ui-ease); }
+.missions-page .mis-summary-list a:is(:hover,:focus-visible) .mis-arrow { transform:translate(3px,3px); }
+.missions-page .mis-hero-mark { right:-8%; bottom:-40%; opacity:.3; }
+
+/* Sommaire collant avec progression de lecture. */
+.missions-page .mis-index { padding-bottom:calc(var(--ui-space-3) + 3px); }
+.missions-page .mis-progress { position:absolute; left:0; right:0; bottom:0; height:3px; background:color-mix(in srgb,var(--hy-violine) 12%,transparent); }
+.missions-page .mis-progress::after { content:''; position:absolute; inset:0; background:var(--hy-orange); transform-origin:left center; transform:scaleX(var(--mis-progress,0)); }
+.missions-page .mis-index a[aria-current] hyphens-icon { --hy-icon-accent:var(--hy-corail); }
+
+/* Chapitres : grand numéro, axes numérotés, repère de position. */
+.missions-page .mis-chapter { margin:0 0 var(--ui-space-4); display:flex; align-items:baseline; gap:var(--ui-space-2); font-size:var(--ui-type-label); letter-spacing:.08em; color:var(--hy-orange); }
+.missions-page .mis-chapter span { font-size:clamp(3.5rem,2.6rem + 3.6vw,6rem); line-height:.9; letter-spacing:-.05em; font-weight:300; color:currentColor; }
+.missions-page .mis-item-body p.mis-axes-title { margin:var(--ui-space-6) 0 0; font-size:var(--ui-type-caption); letter-spacing:.14em; text-transform:uppercase;  }
+.missions-page .mis-item-body p.mis-axes-title { color:color-mix(in srgb,currentColor 70%,transparent); }
+.missions-page .mis-axes { list-style:none; margin:var(--ui-space-3) 0 var(--ui-space-6); padding:0; }
+.missions-page .mis-axes li { display:flex; align-items:center; gap:var(--ui-space-4); padding-block:var(--ui-space-4); border-top:1px solid color-mix(in srgb,var(--hy-violine) 16%,transparent); font-size:var(--ui-type-body); line-height:1.35; transition:padding var(--ui-duration-base) var(--ui-ease); }
+.missions-page .mis-axes li:last-child { border-bottom:1px solid color-mix(in srgb,var(--hy-violine) 16%,transparent); }
+.missions-page .mis-axes li:hover { padding-left:var(--ui-space-3); }
+.missions-page .mis-axis-n { flex:0 0 auto; display:grid; place-items:center; width:2rem; height:2rem; border-radius:50%; border:1px solid var(--hy-orange); font-size:var(--ui-type-label); color:var(--hy-orange); font-variant-numeric:tabular-nums; }
+.missions-page #opc .mis-axes li { border-color:color-mix(in srgb,var(--hy-beige) 24%,transparent); }
+.missions-page #opc .mis-axis-n,.missions-page #opc .mis-chapter { color:var(--hy-corail); }
+.missions-page #opc .mis-axis-n { border-color:var(--hy-corail); }
+.missions-page .mis-item-visual img { transition:transform 1.4s var(--ui-ease); }
+.missions-page .mis-item:hover .mis-item-visual img { transform:scale(1.035); }
+.missions-page #reception .mis-item-visual { aspect-ratio:auto; }
+@media(min-width:768px) {
+ .missions-page #reception { grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); }
+ .missions-page #reception .mis-item-visual { grid-column:1; }
+ .missions-page .mis-item-visual { min-height:480px; }
+}
+
+/* Apparitions au défilement : actives avec JavaScript et sans réduction des mouvements. */
+@media(prefers-reduced-motion:no-preference) {
+ .mis-js .mis-reveal .mis-item-visual,.mis-js .mis-reveal .mis-item-body > * { opacity:0; transform:translateY(24px); transition:opacity var(--ui-duration-reveal) var(--ui-ease),transform var(--ui-duration-reveal) var(--ui-ease); }
+ .mis-js .mis-reveal .mis-item-visual { transform:translateY(32px) scale(.98); }
+ .mis-js .mis-reveal.is-in .mis-item-visual,.mis-js .mis-reveal.is-in .mis-item-body > * { opacity:1; transform:none; }
+ .mis-js .mis-reveal.is-in .mis-item-body > :nth-child(2) { transition-delay:70ms; }
+ .mis-js .mis-reveal.is-in .mis-item-body > :nth-child(3) { transition-delay:130ms; }
+ .mis-js .mis-reveal.is-in .mis-item-body > :nth-child(4) { transition-delay:190ms; }
+ .mis-js .mis-reveal.is-in .mis-item-body > :nth-child(5) { transition-delay:250ms; }
+ .mis-js .mis-reveal.is-in .mis-item-body > :nth-child(6) { transition-delay:310ms; }
+ .mis-js .mis-reveal.is-in .mis-item-body > :nth-child(7) { transition-delay:370ms; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .missions-page .mis-summary-media img,.missions-page .mis-item-visual img,.missions-page .mis-summary-list a,.missions-page .mis-arrow,.missions-page .mis-axes li { transition:none; }
+ .missions-page .mis-summary:hover .mis-summary-media img,.missions-page .mis-item:hover .mis-item-visual img { transform:none; }
+}
+@media(max-width:1000px) {
+ .missions-page .mis-intro { grid-template-columns:1fr; gap:var(--ui-space-7); }
+ .missions-page .mis-intro-copy { max-width:40rem; }
+}
+@media(max-width:767px) {
+ .missions-page .mis-summary-list a { grid-template-columns:auto minmax(0,1fr) auto; padding-inline:var(--ui-space-4); }
+ .missions-page .mis-summary-verb { display:none; }
+ .missions-page .mis-summary-media { aspect-ratio:2.4; }
+ .missions-page .mis-progress { display:none; }
+ .missions-page .mis-index { padding-bottom:var(--ui-space-3); }
+}

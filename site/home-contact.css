@@ -72,6 +72,57 @@
 .home-motion .contact .button-primary:focus-visible { outline-color: var(--hy-violine); }
 .home-motion .contact .button-primary:active { transform: translateY(1px); }
 
+/* Polissage du 18 novembre : appel final contrasté, posé sur le pied de page encre.
+   Partagé avec Missions, L'équipe et Références. */
+.home-motion .contact {
+  background: var(--hy-violine);
+  color: var(--hy-beige);
+  border-top: 0;
+  border-radius: clamp(24px, 4vw, 56px) clamp(24px, 4vw, 56px) 0 0;
+  padding-block: calc(var(--ui-section-space) * 1.4);
+}
+.home-motion .contact::before {
+  inset: 0;
+  background: var(--hy-beige);
+  opacity: .06;
+  clip-path: none;
+  mask: url('assets/grain-texture.svg') repeat;
+  mask-size: 192px 192px;
+}
+.home-motion .contact-mark { opacity: .28; top: -40px; bottom: auto; will-change: transform; }
+.home-motion .contact .section-label { color: var(--hy-corail); }
+.home-motion .contact h2 {
+  color: var(--hy-beige);
+  font-size: clamp(2.5rem, 1.6rem + 3.6vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  max-width: 16ch;
+}
+.home-motion .contact-content { gap: var(--ui-space-8); }
+.home-motion .contact-action {
+  padding-top: var(--ui-space-6);
+  border-top: 1px solid color-mix(in srgb, var(--hy-beige) 24%, transparent);
+}
+.home-motion .contact-action > p { color: var(--hy-beige); }
+.home-motion .contact .button-primary {
+  background: var(--hy-beige);
+  border-color: var(--hy-beige);
+  color: var(--hy-violine);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--hy-encre) 28%, transparent);
+}
+.home-motion .contact .button-primary:is(:hover, :focus-visible) {
+  background: var(--hy-corail);
+  border-color: var(--hy-corail);
+  color: var(--hy-encre);
+  transform: translateY(-2px);
+}
+.home-motion .contact .button-primary:focus-visible { outline: 2px solid var(--hy-beige); outline-offset: 4px; }
+.home-motion .contact + .site-footer, .home-motion main + .site-footer { margin-top: 0; }
+@media (max-width: 767px) {
+  .home-motion .contact { border-radius: 28px 28px 0 0; }
+  .home-motion .contact::before { clip-path: none; }
+}
+
 .home-motion .site-footer {
   position: relative;
   background: var(--hy-encre);
@@ -160,8 +211,8 @@
   .home-motion .back-top { grid-column: 2; grid-row: 1; }
 }
 @media (max-width: 767px) {
-  .home-motion .contact::before { clip-path: inset(25% 0 0 24% round 48px 0 0 0); }
-  .home-motion .contact-mark { right: -30px; bottom: -40px; font-size: 260px; opacity: .1; }
+  .home-motion .contact::before { clip-path: none; }
+  .home-motion .contact-mark { right: -40px; top: -30px; bottom: auto; font-size: 220px; opacity: .18; }
   .home-motion .contact-action { flex-direction: column; align-items: flex-start; gap: var(--ui-space-5); }
   .home-motion .contact-action > p { max-width: 32ch; }
   .home-motion .footer-main { gap: var(--ui-space-5); padding-bottom: var(--ui-space-6); }
@@ -181,5 +232,6 @@
   .home-motion .back-top > span { transition: none; }
   .home-motion .contact .button-primary:is(:hover, :focus-visible) > span,
   .home-motion .contact .button-primary:active,
+  .home-motion .contact .button-primary:is(:hover, :focus-visible),
   .home-motion .back-top:is(:hover, :focus-visible) > span { transform: none; }
 }

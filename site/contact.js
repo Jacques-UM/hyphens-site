@@ -31,30 +31,88 @@
   const requestedMission = new URL(location.href).searchParams.get('mission');
   if ([...form.elements.mission.options].some(option => option.value === requestedMission)) form.elements.mission.value = requestedMission;
 
-  for (const key of ['name', 'message']) {
-    const input = form.elements[key];
-    input.addEventListener('input', () => input.setCustomValidity(''));
+  const $ = selector => form.querySelector(selector);
+  const rules = {
+    name: () => form.elements.name.value.trim() ? '' : 'Indiquez votre nom.',
+    reach: () => {
+      const email = form.elements.email.value.trim();
+      const phone = form.elements.phone.value.trim();
+      if (!email && !phone) return 'Indiquez un email ou un téléphone, l’un des deux suffit.';
+      if (email && !form.elements.email.checkValidity()) return 'Cette adresse email semble incomplète.';
+      if (phone && phone.replace(/\D/g, '').length < 6) return 'Ce numéro de téléphone semble incomplet.';
+      return '';
+    },
+    message: () => form.elements.message.value.trim() ? '' : 'Décrivez brièvement votre projet.'
+  };
+  const targets = {
+    name: ['#contact-name'], reach: ['#contact-email', '#contact-phone'], message: ['#contact-message']
+  };
+  function showError(key, text) {
+    const box = $(`#contact-${key}-error`);
+    box.textContent = text;
+    targets[key].forEach(selector => {
+      const field = $(selector);
+      if (text) field.setAttribute('aria-invalid', 'true'); else field.removeAttribute('aria-invalid');
+    });
+    box.closest('.contact-group, .contact-field')?.toggleAttribute('data-invalid', Boolean(text));
   }
+  const steps = [...document.querySelectorAll('.contact-steps li')];
+  function updateSteps() {
+    const done = [
+      !rules.name(),
+      !rules.reach(),
+      !rules.message()
+    ];
+    steps.forEach((step, index) => step.toggleAttribute('data-done', done[index]));
+    form.querySelectorAll('.contact-group').forEach((group, index) => group.toggleAttribute('data-done', done[index]));
+  }
+  const counter = $('#contact-message-count');
+  function updateCount() { counter.textContent = `${form.elements.message.value.length} / 4000`; }
+  form.addEventListener('input', event => {
+    const field = event.target;
+    for (const key of Object.keys(targets)) {
+      if (targets[key].some(selector => $(selector) === field) && field.hasAttribute('aria-invalid')) showError(key, rules[key]());
+    }
+    if (field === form.elements.message) updateCount();
+    updateSteps();
+  });
+  form.addEventListener('focusout', event => {
+    const field = event.target;
+    for (const key of Object.keys(targets)) {
+      if (!targets[key].some(selector => $(selector) === field)) continue;
+      // L'erreur de contact n'apparaît qu'une fois les deux champs quittés ou remplis d'une valeur invalide.
+      if (key === 'reach' && !form.elements.email.value.trim() && !form.elements.phone.value.trim()) continue;
+      if (field.value.trim() || key === 'name' || key === 'message') showError(key, rules[key]());
+    }
+    updateSteps();
+  });
+  updateCount();
+  updateSteps();
   form.addEventListener('submit', event => {
     event.preventDefault();
-    for (const key of ['name', 'message']) {
-      const input = form.elements[key];
-      input.setCustomValidity(input.value.trim() ? '' : 'Veuillez renseigner ce champ.');
+    let first = null;
+    for (const key of Object.keys(targets)) {
+      const text = rules[key]();
+      showError(key, text);
+      if (text && !first) first = $(targets[key][0]);
     }
-    if (!form.reportValidity()) return;
+    updateSteps();
+    if (first) { first.focus(); return; }
     const values = Object.fromEntries(new FormData(form));
     const clean = key => String(values[key] || '').trim();
     previewText.textContent = [
       'HYPHENS | Présentation de projet', '',
       `Nom : ${clean('name')}`,
       `Organisation : ${clean('organisation') || 'Non précisée'}`,
-      `Email : ${clean('email')}`,
+      `Email : ${clean('email') || 'Non précisé'}`,
+      `Téléphone : ${clean('phone') || 'Non précisé'}`,
       `Besoin : ${clean('mission')}`, '', clean('message')
     ].join('\n');
     form.hidden = true;
     preview.hidden = false;
     status.textContent = '';
     document.querySelector('#project-preview-title').focus();
+    preview.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
   });
   document.querySelector('#edit-project').addEventListener('click', () => {
     preview.hidden = true;
