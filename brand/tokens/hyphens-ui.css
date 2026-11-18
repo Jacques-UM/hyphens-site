@@ -1,0 +1,45 @@
+/* Source des règles UI web. Les couleurs restent dans palettes.json. */
+:root {
+  --ui-type-display: clamp(2.25rem, 1.414rem + 3.429vw, 4.5rem);
+  --ui-type-page: clamp(2.25rem, 1.6rem + 2.667vw, 4rem);
+  --ui-type-section: clamp(2rem, 1.536rem + 1.905vw, 3.25rem);
+  --ui-type-card: clamp(1.5rem, 1.314rem + .762vw, 2rem);
+  --ui-type-lead: clamp(1.125rem, 1.032rem + .381vw, 1.375rem);
+  --ui-type-body: clamp(1rem, .954rem + .19vw, 1.125rem);
+  --ui-type-action: 1rem;
+  --ui-type-label: .875rem;
+  --ui-type-caption: .75rem;
+  --ui-leading-title: 1.08;
+  --ui-leading-card: 1.15;
+  --ui-leading-body: 1.6;
+  --ui-space-1: .25rem;
+  --ui-space-2: .5rem;
+  --ui-space-3: .75rem;
+  --ui-space-4: 1rem;
+  --ui-space-5: 1.5rem;
+  --ui-space-6: 2rem;
+  --ui-space-7: 2.5rem;
+  --ui-space-8: 3rem;
+  --ui-space-9: 4rem;
+  --ui-space-10: 5rem;
+  --ui-space-11: 6rem;
+  --ui-section-space: clamp(3rem, 2.257rem + 3.048vw, 5rem);
+  --ui-compact-space: clamp(2.5rem, 1.943rem + 2.286vw, 4rem);
+  --ui-content-gap: clamp(2rem, 1.814rem + .762vw, 2.5rem);
+  --ui-card-padding: clamp(1.5rem, 1.314rem + .762vw, 2rem);
+  --ui-content-width: 80rem;
+  --ui-card-width: 70rem;
+  --ui-radius-card: 1rem;
+  --ui-radius-image: 1.25rem;
+  --ui-header-height: 4.5rem;
+  --ui-control-height: 3rem;
+  --ui-duration-fast: 160ms;
+  --ui-duration-base: 240ms;
+  --ui-duration-disclosure: 420ms;
+  --ui-duration-reveal: 560ms;
+  --ui-duration-image: 400ms;
+  --ui-ease: cubic-bezier(.22, 1, .36, 1);
+}
+@media (min-width: 768px) {
+  :root { --ui-radius-card: 1.5rem; --ui-radius-image: 2rem; --ui-header-height: 5.5rem; }
+}

@@ -1,15 +1,24 @@
 /* Fichier généré par brand/build_tokens.py à partir de tokens/palettes.json. Ne pas modifier à la main. */
 
+@font-face { font-family: "Apfel Grotezk"; src: url("../fonts/ApfelGrotezk-Regular.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: "Apfel Grotezk"; src: url("../fonts/ApfelGrotezk-Mittel.woff2") format("woff2"); font-style: normal; font-weight: 500 600; font-display: swap; }
+@font-face { font-family: "Apfel Grotezk"; src: url("../fonts/ApfelGrotezk-Fett.woff2") format("woff2"); font-style: normal; font-weight: 700 900; font-display: swap; }
+
 :root {
-  --hy-font: "proxima-nova", "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --hy-orange: #e94f2a;
+  --hy-violine: #631844;
+  --hy-corail: #f28e5d;
+  --hy-encre: #331229;
+  --hy-beige: #fff5e8;
+  --hy-font: "Apfel Grotezk", "Helvetica Neue", Arial, sans-serif;
   --hy-font-weight-regular: 400;
   --hy-font-weight-semibold: 600;
   --hy-font-weight-bold: 700;
-  --hy-logo-tracking: 0.06em;
+  --hy-logo-tracking: 0;
 }
 
 /* Tirage de plan : Le cyanotype des anciens plans : deux bleus voisins et un papier calque. */
-:root, [data-palette="tirage-de-plan"] {
+[data-palette="tirage-de-plan"] {
   --hy-logo-exterieur: #0F3B5F;
   --hy-logo-interieur: #3F7AA6;
   --hy-logo-exterieur-fonce: #FFFFFF;
@@ -98,11 +107,27 @@
   --hy-signal: #C0612B;
 }
 
+/* Charte novembre 2026 : Identité issue du PDF de charte validé comme source : orange, violine, corail, encre et beige. */
+:root, [data-palette="charte-2026"] {
+  --hy-logo-exterieur: #631844;
+  --hy-logo-interieur: #e94f2a;
+  --hy-logo-exterieur-fonce: #fff5e8;
+  --hy-logo-interieur-fonce: #f28e5d;
+  --hy-texte: #331229;
+  --hy-texte-secondaire: #631844;
+  --hy-fond: #fff5e8;
+  --hy-surface: #f28e5d;
+  --hy-fonce: #631844;
+  --hy-trait: #631844;
+  --hy-signal: #e94f2a;
+}
+
 /* Toute zone marquée data-tone="fonce" (en-tête sombre, pied de page...) */
 [data-tone="fonce"] {
   --hy-logo-exterieur: var(--hy-logo-exterieur-fonce);
   --hy-logo-interieur: var(--hy-logo-interieur-fonce);
   --hy-texte: var(--hy-logo-exterieur-fonce);
+  --hy-texte-secondaire: var(--hy-logo-exterieur-fonce);
   background: var(--hy-fonce);
   color: var(--hy-logo-exterieur-fonce);
 }

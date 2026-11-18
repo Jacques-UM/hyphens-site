@@ -1,163 +1,139 @@
 <!doctype html>
-<html lang="fr" data-palette="foret-et-lichen">
+<html lang="fr" data-palette="charte-2026">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Prototype exploratoire HYPHENS : maîtrise d’œuvre d’exécution, OPC et suivi de travaux. Identité et contenus soumis à validation.">
-  <meta name="theme-color" content="">
+  <meta name="description" content="HYPHENS : maîtrise d’œuvre d’exécution, pilotage et coordination OPC. Le sens du détail, la force du lien.">
+  <meta name="theme-color" content="#fff5e8">
   <title>HYPHENS | Le sens du détail. La force du lien.</title>
   <link rel="icon" data-hyphens href="data:,">
-  <link rel="preconnect" href="https://use.typekit.net">
-  <link rel="stylesheet" href="https://use.typekit.net/ted1nei.css">
   <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refonte-2026.css">
+  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css?v=20261117-site-1">
+  <link rel="stylesheet" href="home-ui.css?v=20261117-ui-2">
+  <link rel="stylesheet" href="home-motion.css?v=20261117-site-1">
+  <link rel="stylesheet" href="clients-carousel.css?v=20261117-ui-2">
+  <link rel="stylesheet" href="discovery-motion.css?v=20261117-polish-3">
+  <link rel="stylesheet" href="home-contact.css?v=20261117-site-1">
   <script src="../brand/tokens/hyphens-palettes.js"></script>
-  <script src="../brand/hyphens-brand.js"></script>
-  <script src="app.js" defer></script>
+  <script src="../brand/hyphens-brand.js?v=20261117-site-1"></script>
+  <script src="app.js?v=20261117-site-1" defer></script>
+  <script src="home-motion.js?v=20261117-site-1" defer></script>
+  <script src="clients-carousel.js?v=20261117-ui-2" defer></script>
+  <script src="discovery-motion.js?v=20261117-ui-2" defer></script>
+  <link rel="stylesheet" href="interaction-polish.css?v=20261117-finish-1">
+  <script src="interaction-polish.js?v=20261117-finish-2" defer></script>
+  <link rel="stylesheet" href="brand-intro.css?v=20261117-intro-1">
 </head>
-<body>
+<body class="home-motion">
+  <script src="brand-intro.js?v=20261117-intro-1"></script>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
-    <a class="brand-link" href="#accueil" aria-label="HYPHENS, accueil"><hyphens-logo position="milieu" variant="prolongee" taille="grand" aria-hidden="true"></hyphens-logo></a>
+    <a class="brand-link" href="#accueil" aria-label="HYPHENS, accueil"><hyphens-logo aria-hidden="true"></hyphens-logo></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
     <nav id="navigation" class="navigation" aria-label="Navigation principale">
       <a href="missions.html">Missions</a>
       <a href="equipe.html">L’équipe</a>
       <a href="references.html">Références</a>
-      <a class="nav-contact" href="#contact">Parlons de votre projet <span class="arrow-diagonal" aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="contact.html">Parlons de votre projet <span class="arrow-diagonal" aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main id="contenu">
-    <section id="accueil" class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 id="hero-title">Le sens<br> du détail.<br><span class="hero-second">La force<br> du lien.</span></h1>
-        <div class="hero-bottom">
-          <p>Maîtrise d’œuvre d’exécution & OPC.<br>Une présence engagée, du projet au chantier.</p>
-          <a class="text-link" href="#missions">Découvrir nos missions <span aria-hidden="true">↓</span></a>
-        </div>
+    <section id="accueil" class="home-hero" aria-labelledby="hero-title">
+      <div class="home-hero-copy">
+        <p class="home-hero-kicker">Maîtrise d’œuvre d’exécution</p>
+        <h1 id="hero-title"><span>Le sens du détail.</span><span>La force du lien.</span></h1>
+        <div class="home-hero-bottom"><p>Maîtrise d’œuvre d’exécution & OPC.<br>Une présence engagée, du projet au chantier.</p><a class="text-link" href="#missions">Découvrir nos missions <span aria-hidden="true">↓</span></a></div>
       </div>
-      <figure class="hero-media">
-        <div class="hero-image-wrap">
-          <img src="assets/architecture-escalier.png" width="1536" height="1024" alt="Vue illustrative d’un escalier en béton brut dans un bâtiment en cours de construction." fetchpriority="high">
-          <span class="image-register" aria-hidden="true"><span></span><span></span><span></span></span>
-        </div>
-        <figcaption>Visuel d’illustration généré. Aucun projet HYPHENS représenté.</figcaption>
+      <div class="home-hero-media" aria-hidden="true"><div class="home-hero-frame"><img src="assets/architecture-escalier.webp" width="1536" height="1024" alt="" fetchpriority="high"></div></div>
+      <div class="home-hero-shapes" aria-hidden="true"><hyphens-mark fragment="first" aria-hidden="true"></hyphens-mark><hyphens-mark fragment="second" aria-hidden="true"></hyphens-mark></div>
+
+    </section>
+
+    <section id="notre-role" class="home-role page-gutter" aria-labelledby="intro-title">
+      <div class="home-role-copy"><p class="section-label"><span class="hyphen" aria-hidden="true"></span> Notre rôle</p><h2 id="intro-title">Faire le lien. Tenir le cap.</h2><p>Entre l’intention architecturale et la réalité du chantier, il y a des décisions, des échanges et des détails qui comptent. HYPHENS accompagne maîtres d’ouvrage et architectes avec une conviction : la qualité d’un projet se construit aussi dans la qualité de la relation.</p></div>
+      <figure class="home-role-figure">
+        <img class="home-role-image" src="assets/architecture-detail.webp" width="1448" height="1086" alt="Illustration d’une structure en béton éclairée par la lumière naturelle." loading="lazy" decoding="async">
+        <svg class="home-role-cuts" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path d="M1000 0H875V58C875 132 925 165 1000 165Z"/>
+        </svg>
+
       </figure>
     </section>
 
-    <section class="introduction page-gutter" aria-labelledby="intro-title">
-      <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Notre rôle</p>
-      <div class="intro-copy" data-reveal>
-        <h2 id="intro-title">Faire le lien.<br> Tenir le cap.</h2>
-        <p>Entre l’intention architecturale et la réalité du chantier, il y a des décisions, des échanges et des détails qui comptent. HYPHENS accompagne maîtres d’ouvrage et architectes avec une conviction : la qualité d’un projet se construit aussi dans la qualité de la relation.</p>
-      </div>
+    <section id="missions" class="home-services page-gutter" data-tone="fonce" aria-labelledby="missions-title">
+      <div id="missions-background" class="home-services-art" aria-hidden="true"><span class="home-services-pattern"></span></div>
+      <div class="home-services-heading"><p class="section-label"><span class="hyphen" aria-hidden="true"></span> Nos missions</p><h2 id="missions-title">Une même exigence.</h2><p>Trois façons de faire avancer votre projet.</p></div>
+      <div class="home-services-grid">
+        <article class="home-service"><h3>Maîtrise d’œuvre d’exécution</h3><p class="home-service-summary">Garder le projet en ligne de mire, jusque dans sa réalisation.</p><button class="home-service-toggle" type="button" aria-expanded="true" aria-controls="mission-more-moex" hidden>Voir moins <span aria-hidden="true">−</span></button><div class="home-service-more" id="mission-more-moex"><div class="home-service-more-inner"><p>Suivre l’exécution, rendre les sujets techniques lisibles et préparer les décisions qui font avancer le chantier.</p><ul><li>Suivi de l’exécution</li><li>Dialogue avec les entreprises</li><li>Points d’avancement et décisions</li></ul></div></div><a class="home-service-link" href="missions.html#moex">Découvrir la mission <span aria-hidden="true">↗</span></a></article>
+        <article class="home-service"><h3>Pilotage & coordination OPC</h3><p class="home-service-summary">Donner un rythme commun aux interventions.</p><button class="home-service-toggle" type="button" aria-expanded="true" aria-controls="mission-more-opc" hidden>Voir moins <span aria-hidden="true">−</span></button><div class="home-service-more" id="mission-more-opc"><div class="home-service-more-inner"><p>Organiser les séquences de travaux, articuler les interfaces et partager une lecture claire des échéances.</p><ul><li>Ordonnancement des interventions</li><li>Coordination des acteurs</li><li>Suivi du planning</li></ul></div></div><a class="home-service-link" href="missions.html#opc">Découvrir la mission <span aria-hidden="true">↗</span></a></article>
+        <article class="home-service"><h3>Réception & suivi des réserves</h3><p class="home-service-summary">Accorder aux derniers détails la même attention qu’aux premières étapes.</p><button class="home-service-toggle" type="button" aria-expanded="true" aria-controls="mission-more-reception" hidden>Voir moins <span aria-hidden="true">−</span></button><div class="home-service-more" id="mission-more-reception"><div class="home-service-more-inner"><p>Accompagner la préparation de la réception et le suivi des points restant à traiter.</p><ul><li>Préparation de la réception</li><li>Identification des points ouverts</li><li>Suivi de la levée des réserves</li></ul></div></div><a class="home-service-link" href="missions.html#reception">Découvrir la mission <span aria-hidden="true">↗</span></a></article>
+      </div><p class="home-services-note">Un périmètre défini avec vous, selon les besoins et l’organisation de votre opération.</p>
+      <button class="home-services-motion-toggle" type="button" aria-controls="missions-background" hidden>Figer le fond</button>
     </section>
 
-    <section id="missions" class="missions page-gutter" data-tone="fonce" aria-labelledby="missions-title">
-      <div class="missions-intro" data-reveal>
-        <hyphens-mark aria-hidden="true"></hyphens-mark>
-        <h2 id="missions-title">Une même<br>exigence.</h2>
-        <p>Trois façons de faire<br>avancer votre projet.</p>
-      </div>
-      <div class="mission-list">
-        <details class="mission" name="missions" open>
-          <summary><span>Maîtrise d’œuvre<br class="desktop-break"> d’exécution</span><span class="expand-icon" aria-hidden="true"></span></summary>
-          <div class="mission-content">
-            <p>Garder le projet en ligne de mire, jusque dans sa réalisation. Suivre l’exécution, rendre les sujets techniques lisibles et préparer les décisions qui font avancer le chantier.</p>
-            <ul aria-label="Axes de la mission MOEX"><li>Suivi de l’exécution</li><li>Dialogue avec les entreprises</li><li>Points d’avancement et décisions</li></ul>
-            <button class="mission-cta" data-contact="Maîtrise d’œuvre d’exécution" type="button">Échanger sur cette mission <span aria-hidden="true">↗</span></button>
-          </div>
-        </details>
-        <details class="mission" name="missions">
-          <summary><span>Pilotage &<br class="desktop-break"> coordination OPC</span><span class="expand-icon" aria-hidden="true"></span></summary>
-          <div class="mission-content">
-            <p>Donner un rythme commun aux interventions. Organiser les séquences de travaux, articuler les interfaces et partager une lecture claire des échéances.</p>
-            <ul aria-label="Axes de la mission OPC"><li>Ordonnancement des interventions</li><li>Coordination des acteurs</li><li>Suivi du planning</li></ul>
-            <button class="mission-cta" data-contact="Pilotage et coordination OPC" type="button">Échanger sur cette mission <span aria-hidden="true">↗</span></button>
-          </div>
-        </details>
-        <details class="mission" name="missions">
-          <summary><span>Réception &<br class="desktop-break"> suivi des réserves</span><span class="expand-icon" aria-hidden="true"></span></summary>
-          <div class="mission-content">
-            <p>Accorder aux derniers détails la même attention qu’aux premières étapes. Accompagner la préparation de la réception et le suivi des points restant à traiter.</p>
-            <ul aria-label="Axes de la réception"><li>Préparation de la réception</li><li>Identification des points ouverts</li><li>Suivi de la levée des réserves</li></ul>
-            <button class="mission-cta" data-contact="Réception et suivi des réserves" type="button">Échanger sur cette mission <span aria-hidden="true">↗</span></button>
-          </div>
-        </details>
-        <p class="mission-note">Un périmètre défini avec vous, selon les besoins et l’organisation de votre opération.</p>
-      </div>
+    <section id="clients" hidden class="clients-section page-gutter" aria-labelledby="clients-title">
+      <div class="clients-heading"><div><h2 id="clients-title">Nos clients</h2><p class="clients-note">Emplacements provisoires, logos clients à confirmer.</p></div><div class="clients-controls" hidden><button class="clients-previous" type="button" aria-label="Voir les emplacements précédents" aria-controls="clients-list">←</button><button class="clients-next" type="button" aria-label="Voir les emplacements suivants" aria-controls="clients-list">→</button><button class="clients-pause" type="button" aria-controls="clients-list">Mettre en pause</button></div></div>
+      <ul id="clients-list" class="clients-list" tabindex="0" aria-label="Emplacements provisoires de logos, défilement horizontal"><li><span>Emplacement logo</span></li><li><span>Emplacement logo</span></li><li><span>Emplacement logo</span></li><li><span>Emplacement logo</span></li><li><span>Emplacement logo</span></li><li><span>Emplacement logo</span></li></ul>
     </section>
 
-    <section id="approche" class="approach page-gutter" aria-labelledby="approach-title">
-      <div class="approach-heading" data-reveal>
-        <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Notre approche</p>
-        <h2 id="approach-title">La qualité du lien<br> fait la qualité du projet.</h2>
-      </div>
-      <div class="approach-body" data-reveal>
-        <figure class="detail-media">
-          <img src="assets/architecture-detail.png" width="1448" height="1086" alt="Vue illustrative d’un détail de structure en béton et de lumière naturelle." loading="lazy" decoding="async">
-          <figcaption>Visuel d’illustration généré. Aucun projet HYPHENS représenté.</figcaption>
-        </figure>
-        <div class="principles">
-          <article><h3>Écouter avant d’engager.</h3><p>Comprendre vos enjeux, vos contraintes et vos priorités. Prendre le temps de cadrer une intervention qui répond au projet.</p></article>
-          <article><h3>Relier les expertises.</h3><p>Faire dialoguer la maîtrise d’ouvrage, les architectes et les entreprises autour des sujets concrets de l’exécution.</p></article>
-          <article><h3>Rester au contact du terrain.</h3><p>Suivre ce qui se joue sur le chantier. Rendre visibles les points ouverts et garder un échange direct avec vous.</p></article>
+    <section id="approche" class="home-approach page-gutter" aria-labelledby="approach-title">
+      <div class="home-approach-heading"><p class="section-label"><span class="hyphen" aria-hidden="true"></span> Notre approche</p><h2 id="approach-title">La qualité du lien fait la qualité du projet.</h2></div>
+      <div class="home-approach-layout">
+        <div class="home-approach-visual">
+          <figure><img src="assets/architecture-detail.webp" width="1448" height="1086" alt="Vue illustrative d’un détail de structure en béton et de lumière naturelle." loading="lazy" decoding="async"></figure>
+          <div class="home-approach-tracker" aria-hidden="true">
+            <div class="home-approach-current"><hyphens-icon class="home-current-icon" name="ecouter"></hyphens-icon><span class="home-current-label">Écouter avant d’engager.</span></div>
+            <div class="home-approach-rail"><span class="home-rail-fill"></span><div class="home-rail-nodes"><i data-step-node="0" data-active="true"><hyphens-icon name="ecouter"></hyphens-icon></i><i data-step-node="1"><hyphens-icon name="relier"></hyphens-icon></i><i data-step-node="2"><hyphens-icon name="terrain"></hyphens-icon></i></div></div>
+          </div>
+        </div>
+        <div class="home-approach-steps">
+          <article class="home-step" data-step="0" data-icon="ecouter" data-active="true" aria-labelledby="approach-step-1"><hyphens-icon name="ecouter"></hyphens-icon><h3 id="approach-step-1">Écouter avant d’engager.</h3><p>Comprendre vos enjeux, vos contraintes et vos priorités. Prendre le temps de cadrer une intervention qui répond au projet.</p></article>
+          <article class="home-step" data-step="1" data-icon="relier" aria-labelledby="approach-step-2"><hyphens-icon name="relier"></hyphens-icon><h3 id="approach-step-2">Relier les expertises.</h3><p>Faire dialoguer la maîtrise d’ouvrage, les architectes et les entreprises autour des sujets concrets de l’exécution.</p></article>
+          <article class="home-step" data-step="2" data-icon="terrain" aria-labelledby="approach-step-3"><hyphens-icon name="terrain"></hyphens-icon><h3 id="approach-step-3">Rester au contact du terrain.</h3><p>Suivre ce qui se joue sur le chantier. Rendre visibles les points ouverts et garder un échange direct avec vous.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="conviction page-gutter" aria-labelledby="conviction-title" data-reveal>
-      <hyphens-mark aria-hidden="true"></hyphens-mark>
-      <h2 id="conviction-title">La qualité.<br>Une attention de chaque instant.</h2>
-      <p>Un projet ne se résume pas à un planning.<br>Il se construit avec des personnes.</p>
-    </section>
+    <section id="decouvrir" class="home-discovery page-gutter" aria-labelledby="discovery-title">
+      <div class="discovery-heading"><p class="section-label"><span class="hyphen" aria-hidden="true"></span> Découvrir HYPHENS</p><h2 id="discovery-title">Le lien prend forme.</h2></div>
+      <div class="discovery-panels">
+        <a class="discovery-panel discovery-team" href="equipe.html">
+          <div class="discovery-art" aria-hidden="true"><img src="assets/architecture-escalier.webp" alt="" width="1448" height="1086" loading="lazy" decoding="async"></div>
+          <div class="discovery-panel-copy"><span class="discovery-label">L’équipe</span><h3>Un engagement commun.</h3><span class="discovery-cta">Découvrir l’équipe <span aria-hidden="true">↗</span></span></div>
 
-    <section class="discover-pages page-gutter" aria-label="Découvrir HYPHENS" data-reveal>
-      <a href="equipe.html"><span>L’équipe</span><h2>Des personnes.<br> Un engagement commun.</h2><p>La trame d’une présentation des personnes et de leur rôle, à renseigner.</p><span class="discover-arrow" aria-hidden="true">↗</span></a>
-      <a href="references.html"><span>Références</span><h2>L’exigence<br> prend forme.</h2><p>Une galerie prête à accueillir les opérations et les missions validées.</p><span class="discover-arrow" aria-hidden="true">↗</span></a>
+        </a>
+        <a class="discovery-panel discovery-work" href="references.html">
+          <div class="discovery-art" aria-hidden="true"><img src="assets/photos/architecture-courbes.webp" alt="" width="1800" height="1200" loading="lazy" decoding="async"></div>
+          <div class="discovery-panel-copy"><span class="discovery-label">Références</span><h3>L’exigence prend forme.</h3><span class="discovery-cta">Explorer les références <span aria-hidden="true">↗</span></span></div>
+
+        </a>
+      </div>
     </section>
 
     <section id="contact" class="contact page-gutter" aria-labelledby="contact-title">
-      <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Et si nous en parlions ?</p>
+      <hyphens-mark class="contact-mark" aria-hidden="true"></hyphens-mark>
+      <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Parlons de votre projet</p>
       <div class="contact-content" data-reveal>
-        <h2 id="contact-title">Votre projet mérite<br> toute notre attention.</h2>
-        <div class="contact-action"><button class="button-primary" data-contact type="button">Présenter mon projet <span aria-hidden="true">↗</span></button><p>Un premier échange pour comprendre<br>votre opération et vos attentes.</p></div>
+        <h2 id="contact-title">Donnons une suite à votre projet.</h2>
+        <div class="contact-action"><a class="button-primary" href="contact.html">Présenter mon projet <span aria-hidden="true">↗</span></a><p>Parlez-nous de votre opération, de vos enjeux et de vos attentes.</p></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer page-gutter">
-    <div class="footer-main"><a href="#accueil" aria-label="HYPHENS, retour à l’accueil"><hyphens-logo position="milieu" variant="prolongee" taille="grand" aria-hidden="true"></hyphens-logo></a><p>Maîtrise d’œuvre d’exécution<br>Pilotage & coordination</p><a href="#accueil" class="back-top">Retour en haut <span aria-hidden="true">↑</span></a></div>
-    <nav class="footer-pages" aria-label="Pages HYPHENS"><a href="index.html">Accueil</a><a href="missions.html">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a></nav>
-    <div class="footer-bottom"><span>HYPHENS · Prototype exploratoire</span><button type="button" id="about-prototype">À propos de ce prototype</button><span>Identité et contenus soumis à validation humaine.</span></div>
+  <footer class="site-footer page-gutter" data-tone="fonce">
+    <div class="footer-main"><a href="#accueil" aria-label="HYPHENS, retour à l’accueil"><hyphens-logo aria-hidden="true"></hyphens-logo></a><p>Maîtrise d’œuvre d’exécution<br>Pilotage & coordination</p><a href="#accueil" class="back-top">Retour en haut <span aria-hidden="true">↑</span></a></div>
+    <div class="footer-details"><nav class="footer-pages" aria-label="Pages HYPHENS"><a href="index.html">Accueil</a><a href="missions.html">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a><a href="contact.html">Contact</a></nav><p class="footer-address">HYPHENS SAS<br>Paris</p></div>
+    <div class="footer-bottom"><span>© 2026 HYPHENS</span><span class="footer-signature">Le sens du détail. La force du lien.</span></div>
   </footer>
 
-  <aside class="prototype-toolbar" aria-label="Réglages de l’identité visuelle du prototype">
-    <div class="toolbar-intro"><span class="prototype-dot" aria-hidden="true"></span><span>Atelier <strong>HYPHENS</strong></span></div>
-    <label class="palette-control"><span class="control-label">Palette</span><select id="palette-select" aria-label="Palette de couleurs"></select></label>
-    <label class="variant-control"><span class="control-label">Barre du logo</span><select id="variant-select" aria-label="Variante de la barre du logo"><option value="prolongee">Prolongée</option><option value="detachee">Détachée</option><option value="aucune">Sans barre</option></select></label>
-    <span class="toolbar-status" id="palette-status">Identité en exploration</span>
-  </aside>
 
-  <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-note">
-    <div class="dialog-top"><hyphens-mark aria-hidden="true"></hyphens-mark><button type="button" class="close-dialog" aria-label="Fermer le formulaire">Fermer <span aria-hidden="true">×</span></button></div>
-    <h2 id="dialog-title">Tout commence<br>par un échange.</h2>
-    <p id="dialog-note" class="dialog-note">Démonstration locale : aucun message n’est envoyé. Les informations saisies restent dans cette page.</p>
-    <form id="contact-form">
-      <div class="form-grid"><label>Votre nom <span aria-hidden="true">*</span><input name="name" autocomplete="name" maxlength="100" required></label><label>Votre organisation<input name="organisation" autocomplete="organization" maxlength="150"></label></div>
-      <label>Votre adresse email <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" maxlength="200" required></label>
-      <label>Votre besoin<select name="mission"><option value="À définir ensemble">À définir ensemble</option><option>Maîtrise d’œuvre d’exécution</option><option>Pilotage et coordination OPC</option><option>Réception et suivi des réserves</option></select></label>
-      <label>Parlez-nous de votre projet <span aria-hidden="true">*</span><textarea name="message" rows="3" maxlength="4000" placeholder="Nature de l’opération, localisation, stade d’avancement, attentes…" required></textarea></label>
-      <p class="form-required">* Champs nécessaires à la prévisualisation.</p>
-      <button type="submit" class="button-primary">Prévisualiser la demande <span aria-hidden="true">↗</span></button>
-    </form>
-    <section id="brief-preview" class="brief-preview" hidden aria-labelledby="preview-title"><h3 id="preview-title" tabindex="-1">Votre demande est prête à relire.</h3><p>Aucun envoi effectué. Vous pouvez copier ou télécharger ce brouillon.</p><pre id="brief-text"></pre><div class="preview-actions"><button id="copy-brief" class="button-primary" type="button">Copier le texte</button><button id="download-brief" class="text-link" type="button">Télécharger le brief</button><button id="edit-brief" class="text-link" type="button">Modifier</button></div><p id="copy-status" role="status" aria-live="polite"></p></section>
-  </dialog>
 
-  <dialog id="prototype-dialog" class="info-dialog" aria-labelledby="prototype-title"><button type="button" class="close-dialog" aria-label="Fermer les informations">Fermer <span aria-hidden="true">×</span></button><h2 id="prototype-title">Une identité<br>à explorer ensemble.</h2><p>Ce site est un prototype de travail. Le positionnement, les textes, le périmètre des missions, l’identité visuelle et les coordonnées doivent être validés par HYPHENS avant toute publication.</p><p>Les images ont été générées pour illustrer une direction artistique. Elles ne représentent aucune réalisation HYPHENS. Aucune référence client, aucun témoignage ni chiffre d’activité n’est présenté.</p><p>Le parcours de contact produit un brouillon local. Aucun service d’envoi, outil de mesure d’audience ou stockage de vos informations de contact n’est connecté. Seuls les réglages de palette et de barre sont mémorisés sur ce navigateur.</p><p>Les mentions légales et les informations de confidentialité destinées au site public restent à établir avant publication. La police Adobe Fonts est chargée depuis le service Adobe lorsqu’une connexion est disponible.</p><button type="button" class="text-link close-info">Revenir au prototype</button></dialog>
 
-  <noscript><p class="noscript-note">Les missions restent consultables sans JavaScript. Activez JavaScript pour comparer les palettes et tester le formulaire local.</p></noscript>
+
+
 </body>
 </html>

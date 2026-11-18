@@ -1,0 +1,144 @@
+/* Direction novembre 2026 : composition éditoriale et charte partagée. */
+:root { --site-gutter: clamp(24px, 5vw, 88px); --site-space: clamp(80px, 9vw, 150px); }
+body { color: var(--hy-encre); background: var(--hy-beige); }
+h1,h2,h3 { color: var(--hy-violine); font-weight: 500; letter-spacing: -.045em; }
+.site-header { height: 104px; background: var(--hy-beige); border-bottom: 1px solid color-mix(in srgb,var(--hy-violine) 20%,transparent); }
+.site-header hyphens-logo { font-size: 38px; }
+.navigation { gap: clamp(24px,3vw,48px); }
+.nav-contact { background: var(--hy-violine); color: var(--hy-beige); border: 0; padding: 13px 20px !important; }
+.nav-contact:hover { background: var(--hy-encre); }
+.hero { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 0; padding: 0; background: var(--hy-beige); }
+.hero-copy { position: relative; z-index: 1; min-width: 0; padding: clamp(60px,7vw,110px) 0 clamp(65px,7vw,105px) var(--site-gutter); justify-content: start; gap: 0; }
+.hero-kicker { margin-bottom: clamp(32px,4vw,65px); color: var(--hy-violine); font-size: 15px; }
+.hero h1 { position: relative; width: 120%; font-size: clamp(70px,7.8vw,130px); line-height: .94; letter-spacing: -.065em; }
+.hero-second { color: inherit; }
+.hero-bottom { display: flex; align-items: end; gap: 45px; margin-top: clamp(40px,5vw,75px); }
+.hero-bottom p { color: var(--hy-encre); }
+.hero-bottom .text-link { white-space: nowrap; }
+.hero-media { align-self: stretch; padding-top: clamp(60px,7vw,110px); }
+.hero-image-wrap { height: clamp(510px,46vw,700px); }
+.hero-image-wrap:before { content: ''; position: absolute; z-index: 1; top: 0; right: 0; width: 15%; height: 12%; background: var(--hy-corail); }
+.image-register { display: none; }
+.hero-media figcaption { padding-right: var(--site-gutter); }
+.introduction { grid-template-columns: .5fr 1fr; gap: 10vw; }
+.intro-copy h2,.approach-heading h2,.missions-intro h2,.contact h2 { font-weight: 500; }
+.intro-copy > p { max-width: 650px; color: var(--hy-encre); }
+.section-label { color: inherit; font-size: 15px; }
+.hyphen { width: 30px; flex-basis: 30px; height: 2px; background: var(--hy-orange); }
+.missions { position: relative; overflow: hidden; background: var(--hy-violine); color: var(--hy-beige); grid-template-columns: .8fr 1fr; gap: 10vw; }
+.missions > *:not(.missions-pattern) { position: relative; z-index: 1; }
+.missions-pattern { position: absolute; width: 44%; height: 100%; left: -10%; bottom: -35%; color: var(--hy-beige); opacity: .1; pointer-events: none; }
+.missions h2,.mis-method h2,.team-dialogue h2 { color: var(--hy-beige); }
+.missions-intro > p,.mission-content ul,.mission-note { color: var(--hy-beige); }
+.missions-intro hyphens-mark { margin-bottom: 80px; }
+.mission,.mission:first-child { border-color: color-mix(in srgb,var(--hy-beige) 40%,transparent); }
+.mission summary:hover,.mission-cta:hover { color: var(--hy-corail); }
+.mission-cta { border-color: var(--hy-beige); }
+.approach-heading { display: grid; grid-template-columns: .5fr 1fr; gap: 10vw; }
+.approach-heading .section-label { margin: 10px 0 0; }
+.approach-body { grid-template-columns: 1.1fr .8fr; gap: 9vw; }
+.detail-media img { aspect-ratio: .98; }
+.principles h3 { color: var(--hy-violine); }
+.conviction { background: var(--hy-corail); margin: 0; padding: 55px var(--site-gutter); border: 0; grid-template-columns: 70px 1fr auto; }
+.conviction p { color: var(--hy-encre); }
+.discover-pages { gap: 24px; }
+.discover-pages > a { padding: 32px; min-height: 270px; border: 0; background: color-mix(in srgb,var(--hy-corail) 25%,var(--hy-beige)); }
+.discover-pages > a:nth-child(2) { margin-top: 70px; background: color-mix(in srgb,var(--hy-violine) 8%,var(--hy-beige)); }
+.discover-arrow { top: 28px; right: 32px; }
+.contact,.ref-contact { background: var(--hy-corail); color: var(--hy-encre); }
+.contact h2,.ref-contact h2 { color: var(--hy-violine); }
+.button-primary { background: var(--hy-violine); border-color: var(--hy-violine); color: var(--hy-beige); }
+.button-primary:hover { background: var(--hy-encre); border-color: var(--hy-encre); color: var(--hy-beige); }
+.site-footer { background: var(--hy-violine); color: var(--hy-beige); padding-top: 70px; padding-bottom: 38px; }
+.footer-main { align-items: start; padding-bottom: 70px; }
+.footer-main hyphens-logo { font-size: 52px; }
+.footer-main > p,.footer-bottom { color: var(--hy-beige); }
+.footer-bottom { border-color: color-mix(in srgb,var(--hy-beige) 35%,transparent); }
+.footer-bottom a { text-decoration: underline; text-underline-offset: 4px; }
+.mis-intro,.team-intro,.ref-intro { padding-top: clamp(75px,8vw,125px); }
+.mis-intro h1 span + span { color: var(--hy-violine); }
+.mis-index a span,.mis-number { color: var(--hy-orange); }
+.mis-item-head hyphens-mark { font-size: 70px; }
+.mis-item { grid-template-columns: .5fr 1fr; gap: 10vw; }
+.mis-method,.team-dialogue { background: var(--hy-violine); color: var(--hy-beige); }
+.mis-method h3,.team-dialogue h3 { color: var(--hy-beige); }
+.mis-principles article,.team-relationship { border-color: color-mix(in srgb,var(--hy-beige) 45%,transparent); }
+.team-dialogue-intro { color: var(--hy-beige); }
+.team-portrait-placeholder,.ref-awaiting-media { background: color-mix(in srgb,var(--hy-corail) 45%,var(--hy-beige)); border: 0; }
+.ref-filters button { background: transparent; }
+.ref-filters button[aria-pressed="true"] { color: var(--hy-violine); border-color: var(--hy-orange); }
+.ref-grid { gap: 90px clamp(24px,4vw,70px); }
+.ref-media-stair img { aspect-ratio: 1.1; }
+.ref-contact-content > div > p,.contact-action > p { color: var(--hy-encre); }
+@media (max-width: 1000px) {
+ .hero { grid-template-columns: 1fr 1fr; }
+ .hero h1 { font-size: clamp(62px,8vw,85px); }
+ .hero-bottom { display: block; }
+ .hero-image-wrap { height: 550px; }
+ .approach-heading { grid-template-columns: 1fr; gap: 28px; }
+ .site-header hyphens-logo { font-size: 32px; }
+}
+@media (max-width: 760px) {
+ .site-header { height: 86px; }
+ .navigation { top: 86px; background: var(--hy-beige); }
+ .hero { display: flex; flex-direction: column; gap: 0; }
+ .hero-copy { padding: 50px var(--site-gutter) 38px; }
+ .hero-kicker { margin-bottom: 32px; }
+ .hero h1 { width: 100%; max-width: none; font-size: clamp(53px,11.5vw,82px); line-height: .99; }
+ .hero h1 > br:nth-of-type(1),.hero-second > br { display: none; }
+ .hero-bottom { margin-top: 32px; }
+ .hero-media { padding: 0 0 0 var(--site-gutter); }
+ .hero-image-wrap { height: auto; aspect-ratio: 1.05; }
+ .introduction { display: block; }
+ .introduction .section-label { margin-bottom: 32px; }
+ .missions { display: block; }
+ .missions-intro { margin-bottom: 55px; }
+ .missions-intro hyphens-mark { position: static; margin-bottom: 36px; }
+ .missions-pattern { width: 80%; bottom: -25%; }
+ .approach-heading { display: block; }
+ .approach-heading .section-label { margin-bottom: 30px; }
+ .approach-body { display: block; margin-top: 35px; }
+ .principles { margin-top: 35px; }
+ .conviction { grid-template-columns: 45px 1fr; gap: 25px; padding: 45px var(--site-gutter); }
+ .conviction p { grid-column: 2; }
+ .discover-pages { grid-template-columns: 1fr; }
+ .discover-pages > a:nth-child(2) { margin-top: 0; }
+ .footer-main { flex-wrap: wrap; gap: 25px; padding-bottom: 45px; }
+ .footer-main hyphens-logo { font-size: 38px; }
+ .footer-main > p { margin-left: 0; }
+ .mis-item { display: block; }
+ .mis-item-head hyphens-mark { font-size: 50px; }
+ .ref-contact-content { flex-direction: column; align-items: start; }
+}
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation: none !important; transition: none !important; } }
+/* Les entrées des pages secondaires gardent le motif en retrait du texte. */
+.mis-intro,.team-intro,.ref-intro { position: relative; overflow: hidden; isolation: isolate; }
+.page-pattern { position: absolute; z-index: -1; right: -6%; top: -15%; width: 42%; height: 125%; color: var(--hy-violine); opacity: .1; pointer-events: none; }
+.mis-intro-layout,.team-intro-layout { grid-template-columns: 1fr .45fr; }
+.mis-intro-aside,.team-intro-aside { padding: 28px; background: color-mix(in srgb,var(--hy-corail) 32%,var(--hy-beige)); }
+.mis-index a span { color: var(--hy-violine); }
+.mis-number { color: var(--hy-violine); }
+.team-stance { padding-block: 70px; }
+.team-profile { gap: 7vw; }
+.ref-intro-bottom { grid-template-columns: .8fr 1fr; }
+.ref-intro-note { border-left: 3px solid var(--hy-orange); padding-left: 24px; }
+@media (max-width: 760px) {
+ .page-pattern { width: 70%; right: -25%; }
+ .mis-intro-layout,.team-intro-layout { display: block; }
+ .mis-intro-aside,.team-intro-aside { margin-top: 32px; padding: 24px; }
+ .ref-intro-bottom { display: block; }
+ .ref-intro-note { margin-top: 30px; }
+}
+.conviction hyphens-mark { --hy-logo-exterieur: var(--hy-violine); color: var(--hy-violine); }
+@media (max-width: 760px) { .missions-pattern { display: none; } }
+@media (max-width: 1100px) {
+ .team-intro-aside { display: block; }
+ .team-intro-aside .text-link { margin-top: 24px; }
+}
+/* Les commandes qui nécessitent JavaScript ne sont pas proposées sans script. */
+html:not([data-navigation="ready"]) [data-contact],
+html:not([data-navigation="ready"]) .ref-filters { display: none; }
+/* Le survol garde un texte contrasté ; l’orange souligne l’action. */
+.text-link:hover,.mis-index a:hover,.mis-item-body .mission-cta:hover,
+.ref-filters button:hover,.ref-future-file summary:hover { color: var(--hy-violine); border-color: var(--hy-orange); }
+.site-footer a:hover,.site-footer a[aria-current="page"] { color: var(--hy-beige); border-color: var(--hy-corail); }

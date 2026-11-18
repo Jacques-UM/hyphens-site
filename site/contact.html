@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr" data-palette="charte-2026">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Présentez votre projet à HYPHENS : maîtrise d’œuvre d’exécution, pilotage et coordination OPC.">
+  <meta name="theme-color" content="#fff5e8">
+  <title>HYPHENS | Parlons de votre projet.</title>
+  <link rel="icon" data-hyphens href="data:,">
+  <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refonte-2026.css">
+  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css?v=20261117-contact-1">
+  <link rel="stylesheet" href="home-ui.css?v=20261117-contact-1">
+  <link rel="stylesheet" href="home-contact.css?v=20261117-contact-1">
+  <link rel="stylesheet" href="contact.css?v=20261117-contact-1">
+  <script src="../brand/tokens/hyphens-palettes.js"></script>
+  <script src="../brand/hyphens-brand.js?v=20261117-contact-1"></script>
+  <script src="contact.js?v=20261117-contact-1" defer></script>
+  <link rel="stylesheet" href="interaction-polish.css?v=20261117-finish-1">
+  <script src="interaction-polish.js?v=20261117-finish-2" defer></script>
+  <link rel="stylesheet" href="brand-intro.css?v=20261117-intro-1">
+</head>
+<body class="home-motion contact-page">
+  <script src="brand-intro.js?v=20261117-intro-1"></script>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <a class="brand-link" href="index.html" aria-label="HYPHENS, accueil"><hyphens-logo aria-hidden="true"></hyphens-logo></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <nav id="navigation" class="navigation" aria-label="Navigation principale">
+      <a href="missions.html">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a>
+      <a class="nav-contact" href="contact.html" aria-current="page">Parlons de votre projet <span class="arrow-diagonal" aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="contenu">
+    <section class="contact-intro page-gutter" aria-labelledby="contact-page-title">
+      <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Contact</p>
+      <h1 id="contact-page-title">Parlons de votre projet.</h1>
+      <p class="contact-page-lead">Une opération, un enjeu, une question. Prenons le temps de poser les premières bases.</p>
+    </section>
+    <section class="contact-workspace page-gutter" aria-label="Présentation de votre projet">
+      <aside class="contact-context">
+        <hyphens-mark class="contact-context-mark" aria-hidden="true"></hyphens-mark>
+        <h2>Le premier lien commence ici.</h2>
+        <p>Décrivez votre opération et ce qui compte pour vous. Quelques informations suffisent pour préciser votre besoin.</p>
+        <ul><li>La nature et la localisation du projet.</li><li>Son stade d’avancement.</li><li>Vos attentes et vos priorités.</li></ul>
+      </aside>
+      <div class="contact-form-panel">
+        <form id="project-form" novalidate>
+          <fieldset id="project-fields" disabled>
+            <legend>Votre projet, en quelques mots</legend>
+            <p class="contact-form-note" id="contact-required">Les champs marqués d’un * sont obligatoires.</p>
+            <div class="contact-fields-row">
+              <label for="contact-name">Votre nom *<input id="contact-name" name="name" autocomplete="name" maxlength="100" required></label>
+              <label for="contact-organisation">Votre organisation<input id="contact-organisation" name="organisation" autocomplete="organization" maxlength="150"></label>
+            </div>
+            <label for="contact-email">Votre adresse email *<input id="contact-email" name="email" type="email" autocomplete="email" maxlength="200" required></label>
+            <label for="contact-mission">Votre besoin<select id="contact-mission" name="mission"><option value="À définir ensemble">À définir ensemble</option><option>Maîtrise d’œuvre d’exécution</option><option>Pilotage et coordination OPC</option><option>Réception et suivi des réserves</option></select></label>
+            <label for="contact-message">Parlez-nous de votre projet *<textarea id="contact-message" name="message" rows="6" maxlength="4000" placeholder="Nature de l’opération, localisation, avancement, attentes…" required></textarea></label>
+            <p class="contact-storage-note">Votre message reste dans cette page jusqu’à ce que vous le copiez ou le téléchargiez.</p>
+            <button type="submit" class="button-primary">Préparer ma demande <span aria-hidden="true">↗</span></button>
+          </fieldset>
+        </form>
+        <section id="project-preview" class="project-preview" hidden aria-labelledby="project-preview-title">
+          <hyphens-icon name="reception" aria-hidden="true"></hyphens-icon>
+          <h2 id="project-preview-title" tabindex="-1">Votre demande est prête.</h2>
+          <p>Copiez ou téléchargez votre message pour le conserver.</p>
+          <pre id="project-preview-text"></pre>
+          <div class="contact-preview-actions"><button id="copy-project" class="button-primary" type="button">Copier le message <span aria-hidden="true">↗</span></button><button id="download-project" class="text-link" type="button">Télécharger</button><button id="edit-project" class="text-link" type="button">Modifier ma demande</button></div>
+          <p id="project-status" role="status" aria-live="polite"></p>
+        </section>
+        <noscript><p class="contact-form-note">Activez JavaScript pour préparer votre message dans ce formulaire.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer page-gutter" data-tone="fonce">
+    <div class="footer-main"><a href="index.html" aria-label="HYPHENS, retour à l’accueil"><hyphens-logo aria-hidden="true"></hyphens-logo></a><p>Maîtrise d’œuvre d’exécution<br>Pilotage &amp; coordination</p><a href="#contenu" class="back-top">Retour en haut <span aria-hidden="true">↑</span></a></div>
+    <div class="footer-details"><nav class="footer-pages" aria-label="Pages HYPHENS"><a href="index.html">Accueil</a><a href="missions.html">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a><a href="contact.html" aria-current="page">Contact</a></nav><p class="footer-address">HYPHENS SAS<br>Paris</p></div>
+    <div class="footer-bottom"><span>© 2026 HYPHENS</span><span class="footer-signature">Le sens du détail. La force du lien.</span></div>
+  </footer>
+</body>
+</html>

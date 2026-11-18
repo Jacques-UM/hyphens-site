@@ -89,6 +89,21 @@ window.HYPHENS_PALETTES = {
     "fonce": "#2E2925",
     "trait": "#DCD4C8",
     "signal": "#C0612B"
+  },
+  "charte-2026": {
+    "nom": "Charte novembre 2026",
+    "idee": "Identité issue du PDF de charte validé comme source : orange, violine, corail, encre et beige.",
+    "logoExterieur": "#631844",
+    "logoInterieur": "#e94f2a",
+    "logoExterieurFonce": "#fff5e8",
+    "logoInterieurFonce": "#f28e5d",
+    "texte": "#331229",
+    "texteSecondaire": "#631844",
+    "fond": "#fff5e8",
+    "surface": "#f28e5d",
+    "fonce": "#631844",
+    "trait": "#631844",
+    "signal": "#e94f2a"
   }
 };
-window.HYPHENS_PALETTE_DEFAUT = "tirage-de-plan";
+window.HYPHENS_PALETTE_DEFAUT = "charte-2026";

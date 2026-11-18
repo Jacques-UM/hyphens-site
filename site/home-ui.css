@@ -1,0 +1,36 @@
+/* Pilote du socle UI partagé, limité à l'accueil pendant validation. */
+body.home-motion {
+  --site-gutter: max(1.25rem, calc((100vw - var(--ui-content-width)) / 2));
+  --site-space: var(--ui-section-space);
+  font-size: var(--ui-type-body);
+  line-height: var(--ui-leading-body);
+}
+.home-motion .site-header { height: var(--ui-header-height); max-width: none; }
+.home-motion .site-header hyphens-logo { font-size: 2rem; }
+.home-motion .navigation { font-size: var(--ui-type-action); gap: var(--ui-space-6); }
+.home-motion .navigation a { min-height: 44px; display: inline-flex; align-items: center; }
+.home-motion .nav-contact { border-radius: var(--ui-space-2); }
+.home-motion .section-label { font-size: var(--ui-type-label); line-height: 1.5; gap: var(--ui-space-4); }
+.home-motion .page-gutter { max-width: none; }
+.home-motion .text-link, .home-motion .mission-cta { min-height: 44px; font-size: var(--ui-type-action); gap: var(--ui-space-4); }
+.home-motion .button-primary { min-height: var(--ui-control-height); padding: var(--ui-space-3) var(--ui-space-5); gap: var(--ui-space-4); font-size: var(--ui-type-action); border-radius: var(--ui-space-2); transition-duration: var(--ui-duration-fast); }
+.home-motion :is(a,button,input,select,textarea,summary):focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.home-motion dialog { width: min(40rem, calc(100% - 32px)); padding: var(--ui-space-7); border-radius: var(--ui-radius-card); }
+.home-motion dialog h2 { font-size: var(--ui-type-card); line-height: var(--ui-leading-card); letter-spacing: -.025em; }
+.home-motion dialog :is(input,select,textarea) { font-size: 1rem; min-height: var(--ui-control-height); }
+.home-motion .close-dialog { min-height: 44px; font-size: var(--ui-type-action); }
+.home-motion :is(.dialog-note,.form-required) { font-size: var(--ui-type-caption); }
+@media (min-width: 768px) {
+  body.home-motion { --site-gutter: max(2rem, calc((100vw - var(--ui-content-width)) / 2)); }
+}
+@media (min-width: 1200px) {
+  body.home-motion { --site-gutter: max(3rem, calc((100vw - var(--ui-content-width)) / 2)); }
+}
+/* Le menu existant s'ouvre avant que les liens ne manquent de place. */
+@media (max-width: 1000px) {
+  .home-motion .navigation { top: var(--ui-header-height); }
+  .home-motion .menu-toggle { min-height: 44px; font-size: var(--ui-type-action); }
+}
+@media (max-width: 767px) {
+  .home-motion dialog { padding: var(--ui-space-5); }
+}

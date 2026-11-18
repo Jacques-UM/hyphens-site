@@ -1,0 +1,47 @@
+[
+  {
+    "id": "reference-1",
+    "title": "Nom de l’opération à renseigner",
+    "image": null,
+    "imageAlt": "",
+    "location": "",
+    "mission": "",
+    "client": "",
+    "architect": "",
+    "year": "",
+    "area": "",
+    "description": "",
+    "challenges": "",
+    "contribution": ""
+  },
+  {
+    "id": "reference-2",
+    "title": "Nom de l’opération à renseigner",
+    "image": null,
+    "imageAlt": "",
+    "location": "",
+    "mission": "",
+    "client": "",
+    "architect": "",
+    "year": "",
+    "area": "",
+    "description": "",
+    "challenges": "",
+    "contribution": ""
+  },
+  {
+    "id": "reference-3",
+    "title": "Nom de l’opération à renseigner",
+    "image": null,
+    "imageAlt": "",
+    "location": "",
+    "mission": "",
+    "client": "",
+    "architect": "",
+    "year": "",
+    "area": "",
+    "description": "",
+    "challenges": "",
+    "contribution": ""
+  }
+]
