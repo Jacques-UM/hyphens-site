@@ -15,15 +15,7 @@
   const overlay = document.createElement('div');
   overlay.className = 'brand-intro';
   overlay.setAttribute('aria-hidden', 'true');
-  const symbol = document.createElement('div');
-  symbol.className = 'brand-intro-symbol';
-  for (const fragment of ['first', 'second']) {
-    const mark = document.createElement('hyphens-mark');
-    mark.setAttribute('fragment', fragment);
-    mark.setAttribute('aria-hidden', 'true');
-    symbol.append(mark);
-  }
-  overlay.append(symbol);
+  overlay.append(document.createElement('hyphens-mark'));
   document.body.prepend(overlay);
 
   let timer;

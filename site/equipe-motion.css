@@ -40,7 +40,7 @@
 .team-page #member-dialog::backdrop { background:color-mix(in srgb,var(--hy-encre) 55%,transparent); backdrop-filter:blur(6px); }
 .team-page .member-sheet { position:absolute; inset:0 0 0 auto; width:min(100%,640px); overflow:hidden; isolation:isolate; background:var(--hy-beige); padding:0; border-radius:var(--ui-radius-image) 0 0 var(--ui-radius-image); clip-path:inset(0 round var(--ui-radius-image) 0 0 var(--ui-radius-image)); }
 .team-page .member-sheet-scroll { height:100%; overflow-y:auto; overscroll-behavior:contain; padding:var(--ui-space-7); }
-.team-page .member-close { position:absolute; top:var(--ui-space-5); right:var(--ui-space-5); width:44px; height:44px; display:grid; place-items:center; padding:0; line-height:1; z-index:1; font:inherit; border:1px solid currentColor; border-radius:50%; background:var(--hy-beige); color:var(--hy-violine); cursor:pointer; }
+.team-page .member-close { position:absolute; top:var(--ui-space-5); right:var(--ui-space-5); width:44px; height:44px; display:grid; place-items:center; padding:0; line-height:1; z-index:1; font:inherit; border:1px solid currentColor; border-radius:var(--ui-radius-control); background:var(--hy-beige); color:var(--hy-violine); cursor:pointer; }
 .team-page .member-portrait { display:flex; position:relative; align-items:center; justify-content:center; min-height:200px; background:color-mix(in srgb,var(--hy-corail) 22%,var(--hy-beige)); border-radius:var(--ui-radius-card); overflow:hidden; }
 .team-page .member-portrait hyphens-mark { position:absolute; font-size:150px; opacity:.15; }
 .team-page .member-portrait > span { z-index:1; font-size:var(--ui-type-label); }

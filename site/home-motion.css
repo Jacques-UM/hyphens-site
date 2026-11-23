@@ -13,7 +13,7 @@
 .home-motion .home-hero-media { position: absolute; z-index: -2; inset: 0; margin: 0; }
 .home-motion .home-hero-frame { position: absolute; inset: 0; }
 .home-motion .home-hero-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 48%; }
-.home-motion .home-hero-mark { position: absolute; z-index: 0; right: var(--site-gutter); bottom: var(--ui-space-7); font-size: clamp(120px, 18vw, 260px); opacity: .28; pointer-events: none; }
+.home-motion .home-hero-mark { position: absolute; z-index: 0; right: var(--site-gutter); bottom: var(--ui-space-7); font-size: clamp(120px, min(28vw, 56svh), 400px); opacity: .28; pointer-events: none; }
 .home-motion .home-hero-caption { position: absolute; z-index: 1; bottom: var(--ui-space-4); right: var(--site-gutter); max-width: calc(100% - 40px); margin: 0; padding: var(--ui-space-2) var(--ui-space-3); background: var(--hy-beige); color: var(--hy-violine); font-size: var(--ui-type-caption); line-height: 1.5; }
 .home-motion .home-role { display: grid; grid-template-columns: 1.05fr .95fr; align-items: stretch; gap: 0; padding: 0; min-height: clamp(560px, 70svh, 760px); }
 .home-motion .home-role-copy { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding-block: var(--ui-section-space); padding-inline-start: var(--site-gutter); padding-inline-end: clamp(24px, 4vw, 64px); min-width: 0; }
@@ -24,6 +24,7 @@
 .home-motion .home-role-figure figcaption { position: absolute; right: var(--ui-space-4); bottom: var(--ui-space-4); max-width: calc(100% - 32px); background: var(--hy-beige); color: var(--hy-violine); padding: var(--ui-space-2) var(--ui-space-3); font-size: var(--ui-type-caption); line-height: 1.5; }
 .home-motion .home-services { position: relative; isolation: isolate; overflow: hidden; background: var(--hy-violine); color: var(--hy-beige); padding-block: var(--ui-section-space); }
 .home-motion .home-services > * { position: relative; z-index: 1; }
+.home-motion .home-services::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: var(--hy-beige); opacity: .1; mask: url('../brand/logo/charte-2026/motif.svg') 0 0 / clamp(360px, 40vw, 520px) auto repeat; }
 .home-motion .home-services::after { content: ''; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: var(--hy-beige); opacity: .07; mask: url('assets/grain-texture.svg') repeat; mask-size: 192px 192px; }
 .home-motion .home-services-heading { min-height: 0; padding-right: 0; }
 .home-motion .home-services-heading h2 { color: var(--hy-beige); font-size: var(--ui-type-section); line-height: var(--ui-leading-title); letter-spacing: -.035em; margin-top: var(--ui-space-5); }
@@ -88,7 +89,7 @@
  .home-motion .home-hero { align-items: flex-end; padding-top: var(--ui-space-10); padding-bottom: var(--ui-space-11); }
  .home-motion .home-hero::before { background: linear-gradient(0deg, color-mix(in srgb,var(--hy-encre) 98%,transparent), color-mix(in srgb,var(--hy-encre) 86%,transparent) 60%, color-mix(in srgb,var(--hy-encre) 24%,transparent)); }
  .home-motion .home-hero-frame img { object-position: 62% center; }
- .home-motion .home-hero-mark { top: var(--ui-space-6); bottom: auto; font-size: clamp(88px, 24vw, 150px); }
+ .home-motion .home-hero-mark { top: var(--ui-space-6); bottom: auto; font-size: clamp(88px, min(29vw, 17svh), 170px); }
  .home-motion .home-hero-caption { left: var(--site-gutter); right: var(--site-gutter); bottom: var(--ui-space-4); max-width: none; }
  .home-motion .home-role { display: flex; flex-direction: column; align-items: stretch; min-height: 0; }
  .home-motion .home-role-figure { min-height: clamp(320px, 75vw, 520px); }
@@ -120,7 +121,6 @@
 .home-motion .home-hero-scroll-track { position: relative; display: block; width: 1px; height: 56px; overflow: hidden; background: color-mix(in srgb,var(--hy-beige) 28%,transparent); }
 .home-motion .home-hero-scroll-dot { position: absolute; left: 0; top: 0; display: block; width: 1px; height: 22px; background: var(--hy-corail); transform: translateY(-24px); }
 /* Les transitions de fond : la section violine vient se poser sur le beige. */
-.home-motion .home-services { border-radius: clamp(24px,4vw,56px) clamp(24px,4vw,56px) 0 0; }
 .home-motion .home-approach-visual figure { position: relative; margin: 0; overflow: hidden; border-radius: var(--ui-radius-image); }
 .home-motion .home-approach-visual img { object-position: 50% 42%; }
 .home-motion main [data-apparition="mots"] .mot { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
@@ -129,7 +129,6 @@
 .home-motion main [data-apparition="rideau"]::before { content: ''; position: absolute; z-index: 2; inset: 0; background: var(--hy-beige); transform: scaleX(0); transform-origin: right center; pointer-events: none; }
 @media (max-width: 767px) {
  .home-motion .home-hero-scroll { display: none; }
- .home-motion .home-services { border-radius: 28px 28px 0 0; }
 }
 @media (prefers-reduced-motion: no-preference) {
  /* Attente de la fin de la signature : état initial du hero. */
