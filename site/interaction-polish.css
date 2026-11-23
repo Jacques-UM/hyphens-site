@@ -1,21 +1,14 @@
 /* Finitions communes, limitées aux contrôles de navigation. */
-.home-motion .navigation a:not(.nav-contact)::after {
+.home-motion .navigation a::after {
   height: 2px;
   border-radius: 999px;
   transform-origin: left center;
   transition: transform var(--ui-duration-base) var(--ui-ease);
 }
 .home-motion .navigation a:focus-visible::after { transform: scaleX(1); }
-.home-motion .navigation .nav-contact {
-  transition: background-color var(--ui-duration-base), color var(--ui-duration-base);
-}
-.home-motion .navigation .nav-contact > .arrow-diagonal {
-  display: inline-block;
-  transition: transform var(--ui-duration-base) var(--ui-ease);
-}
-.home-motion .navigation .nav-contact:is(:hover, :focus-visible) > .arrow-diagonal {
-  transform: translate(3px, -3px);
-}
+
+
+
 .home-motion .text-link {
   transition: color var(--ui-duration-base), border-color var(--ui-duration-base);
   touch-action: manipulation;
@@ -67,9 +60,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-motion .navigation .nav-contact:is(:hover, :focus-visible) > .arrow-diagonal {
-    transform: none;
-  }
+
 }
 
 /* En-tête fixe partagé. Il reste dans le flux : les heros calculés sur
@@ -133,25 +124,22 @@ html[data-header] .missions-page .mis-index {
 }
 
 /* Navigation : filet qui entre par la gauche et sort par la droite. */
-.home-motion .navigation a:not(.nav-contact)::after {
+.home-motion .navigation a::after {
   bottom: 6px;
   background: var(--hy-orange);
   transform-origin: right center;
 }
-.home-motion .navigation a:not(.nav-contact):is(:hover, :focus-visible)::after,
-.home-motion .navigation a:not(.nav-contact)[aria-current]::after {
+.home-motion .navigation a:is(:hover, :focus-visible)::after,
+.home-motion .navigation a[aria-current]::after {
   transform: scaleX(1);
   transform-origin: left center;
 }
-.home-motion .navigation a:not(.nav-contact)[aria-current="page"] { color: var(--hy-violine); }
-.home-motion .navigation .nav-contact {
-  border-radius: var(--ui-radius-control);
-  transition: background-color var(--ui-duration-fast) ease, color var(--ui-duration-fast) ease, transform var(--ui-duration-fast) ease;
-}
-.home-motion .navigation .nav-contact:focus-visible { outline-color: var(--hy-violine); }
+.home-motion .navigation a[aria-current="page"] { color: var(--hy-violine); }
+
+
 
 /* Retours d'action communs : enfoncement léger, focus toujours visible. */
-.home-motion :is(.button-primary, .nav-contact):active { transform: translateY(1px); }
+.home-motion .button-primary:active { transform: translateY(1px); }
 .home-motion .text-link { transition: color var(--ui-duration-fast) ease, border-color var(--ui-duration-fast) ease; }
 .home-motion .text-link > span[aria-hidden="true"] {
   display: inline-block;
@@ -176,6 +164,6 @@ html[data-header] .missions-page .mis-index {
   @view-transition { navigation: none; }
   .home-motion .site-header,
   .home-motion .site-header hyphens-logo { transition: none; }
-  .home-motion :is(.button-primary, .nav-contact):active,
+  .home-motion .button-primary:active,
   .home-motion .text-link:is(:hover, :focus-visible) > span[aria-hidden="true"] { transform: none; }
 }

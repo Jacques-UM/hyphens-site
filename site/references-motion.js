@@ -6,6 +6,10 @@
   const sheet = dialog?.querySelector('.project-sheet');
   const cards = [...document.querySelectorAll('.project-card[data-project]')];
   const status = document.querySelector('#projects-status');
+  const variant = new URLSearchParams(location.search).get('variante');
+  if (variant === 'liste' || variant === 'mosaique') {
+    document.querySelector('.projects-grid')?.setAttribute('data-variant', variant);
+  }
   if (!dialog || !sheet || typeof dialog.showModal !== 'function') return;
 
   const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
@@ -67,7 +71,7 @@
     const facts = dialog.querySelector('#project-facts');
     facts.replaceChildren();
     [
-      ['location', 'Localisation'], ['mission', 'Mission HYPHENS'],
+      ['attribution', 'Référence de'], ['location', 'Localisation'], ['mission', 'Mission'],
       ['client', 'Maîtrise d’ouvrage'], ['architect', 'Architecte'],
       ['year', 'Année'], ['area', 'Surface']
     ].forEach(([key, label]) => {
@@ -81,15 +85,7 @@
       group.append(term, detail);
       facts.append(group);
     });
-    if (!facts.children.length) {
-      const group = document.createElement('div');
-      const term = document.createElement('dt');
-      const detail = document.createElement('dd');
-      term.textContent = 'L’opération';
-      detail.textContent = 'Les informations de cette opération seront ajoutées ici.';
-      group.append(term, detail);
-      facts.append(group);
-    }
+    facts.hidden = !facts.children.length;
     let hasPresentation = false;
     ['description', 'challenges', 'contribution'].forEach(key => {
       const content = dialog.querySelector(`#project-${key}`);
@@ -99,8 +95,7 @@
       hasPresentation ||= Boolean(value);
     });
     const empty = dialog.querySelector('#project-empty');
-    empty.textContent = 'La présentation détaillée de cette référence sera ajoutée ici.';
-    empty.hidden = hasPresentation;
+    empty.hidden = hasPresentation || !facts.hidden;
   }
 
   function openProject(card) {
@@ -188,9 +183,12 @@
       cards.forEach(card => {
         const project = projects.get(card.dataset.project);
         const title = text(project.title) || 'Nom de l’opération à renseigner';
-        const heading = card.querySelector('[data-project-title]');
-        if (heading) heading.textContent = title;
-        card.setAttribute('aria-label', `Découvrir la référence : ${title}`);
+        const attribution = text(project.attribution);
+        const byline = card.querySelector('[data-project-attribution]');
+        card.querySelector('[data-project-title]').textContent = title;
+        byline.textContent = attribution ? `Référence de ${attribution}` : '';
+        byline.hidden = !attribution;
+        card.setAttribute('aria-label', `Ouvrir la fiche : ${title}${attribution ? `, référence de ${attribution}` : ''}`);
         if (project.image) renderVisual(project, card.querySelector('[data-project-visual]'));
         card.disabled = false;
       });

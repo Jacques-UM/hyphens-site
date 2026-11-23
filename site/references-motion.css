@@ -4,23 +4,20 @@
 .references-page .projects-hero::before { content:''; position:absolute; inset:0; z-index:-2; background:linear-gradient(90deg,color-mix(in srgb,var(--hy-encre) 94%,transparent),color-mix(in srgb,var(--hy-encre) 76%,transparent) 50%,color-mix(in srgb,var(--hy-encre) 15%,transparent)); }
 .references-page .projects-hero::after { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; background:var(--hy-beige); opacity:.04; mask:url('assets/grain-texture.svg') repeat; }
 .references-page .projects-hero-copy { position:relative; z-index:1; width:min(100%,52rem); }
-.references-page .projects-hero h1 { font-size:var(--ui-type-display); color:inherit; line-height:var(--ui-leading-title); letter-spacing:-.04em; margin:var(--ui-space-6) 0; max-width:none; }
-.references-page .projects-hero-copy > p:not(.section-label) { font-size:var(--ui-type-lead); max-width:42ch; }
+.references-page .projects-hero h1 { font-size:var(--ui-type-display); color:inherit; line-height:var(--ui-leading-title); letter-spacing:-.04em; margin:0; max-width:none; }
 .references-page .projects-hero .text-link { color:var(--hy-beige); margin-top:var(--ui-space-6); }
-.references-page .projects-hero-mark { position:absolute; right:5%; top:8%; transform:rotate(12deg); font-size:clamp(240px,30vw,480px); opacity:.55; z-index:-1; pointer-events:none; }
+.references-page .projects-hero-mark { position:absolute; right:var(--site-gutter); bottom:var(--ui-space-6); font-size:clamp(100px,16vw,220px); opacity:.35; z-index:-1; pointer-events:none; }
 .references-page #project-dialog { position:fixed; inset:0; margin:0; padding:0; width:100%; max-width:none; height:100%; max-height:none; border:0; border-radius:0; background:transparent; color:var(--hy-encre); overflow:hidden; }
 .references-page #project-dialog::backdrop { background:color-mix(in srgb,var(--hy-encre) 55%,transparent); backdrop-filter:blur(6px); }
 .references-page .project-sheet { position:absolute; inset:0 0 0 auto; width:min(100%,640px); overflow:hidden; isolation:isolate; background:var(--hy-beige); padding:0; border-radius:var(--ui-radius-image) 0 0 var(--ui-radius-image); clip-path:inset(0 round var(--ui-radius-image) 0 0 var(--ui-radius-image)); }
 .references-page .project-sheet-scroll { height:100%; overflow-y:auto; overscroll-behavior:contain; padding:var(--ui-space-7); }
 .references-page .project-close { position:absolute; top:var(--ui-space-5); right:var(--ui-space-5); width:44px; height:44px; display:grid; place-items:center; padding:0; line-height:1; z-index:1; font:inherit; border:1px solid currentColor; border-radius:50%; background:var(--hy-beige); color:var(--hy-violine); cursor:pointer; }
 .references-page .project-portrait { display:flex; position:relative; align-items:center; justify-content:center; min-height:200px; background:color-mix(in srgb,var(--hy-corail) 22%,var(--hy-beige)); border-radius:var(--ui-radius-card); overflow:hidden; }
-.references-page .project-portrait hyphens-mark { position:absolute; font-size:150px; opacity:.15; }
-.references-page .project-portrait > span { z-index:1; font-size:var(--ui-type-label); }
+.references-page .project-portrait > span { font-size:var(--ui-type-label); }
 .references-page .project-content { padding-top:var(--ui-space-6); }
 .references-page #project-title { font-size:var(--ui-type-card); margin-top:var(--ui-space-3); color:var(--hy-violine); }
 .references-page .project-detail { margin-top:var(--ui-space-6); padding-top:var(--ui-space-5); border-top:1px solid color-mix(in srgb,var(--hy-violine) 20%,transparent); }
 .references-page .project-detail h3 { font-size:var(--ui-type-lead); color:var(--hy-violine); margin-bottom:var(--ui-space-2); }
-.references-page .project-content .text-link { margin-top:var(--ui-space-7); }
 .references-page .project-close { isolation:isolate; overflow:hidden; contain:paint; flex-shrink:0; transition:background var(--ui-duration-base),color var(--ui-duration-base),transform var(--ui-duration-fast) var(--ui-ease); }
 .references-page .project-close-icon { position:relative; display:block; pointer-events:none; transform-origin:center; width:20px; height:20px; transition:transform var(--ui-duration-disclosure) var(--ui-ease); }
 .references-page .project-close:is(:hover,:focus-visible) { background:var(--hy-violine); color:var(--hy-beige); }
@@ -30,27 +27,24 @@
 .references-page #project-dialog[data-closing]::backdrop { animation:project-backdrop-out var(--ui-duration-base) ease-out both; }
 @keyframes project-backdrop-in { from { opacity:0; } to { opacity:1; } }
 @keyframes project-backdrop-out { from { opacity:1; } to { opacity:0; } }
-.references-page .projects-section { position:relative; isolation:isolate; overflow:hidden; padding-block:var(--ui-section-space); background:radial-gradient(ellipse at 100% 0,color-mix(in srgb,var(--hy-corail) 18%,var(--hy-beige)),var(--hy-beige) 65%); }
-.references-page .projects-section::before { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; background:var(--hy-violine); opacity:.035; mask:url('assets/grain-texture.svg') repeat; }
+.references-page .projects-section { padding-block:var(--ui-section-space); background:var(--hy-beige); }
 .references-page .projects-heading { margin-bottom:var(--ui-space-7); }
-.references-page .projects-heading h2 { font-size:var(--ui-type-section); line-height:var(--ui-leading-title); color:var(--hy-violine); letter-spacing:-.035em; margin-top:var(--ui-space-5); }
+.references-page .projects-heading h2 { font-size:var(--ui-type-section); line-height:var(--ui-leading-title); color:var(--hy-violine); letter-spacing:-.035em; }
 .references-page .projects-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--ui-space-5); }
-.references-page .project-card { min-width:0; padding:0; text-align:left; font:inherit; color:var(--hy-violine); background:var(--hy-beige); border:1px solid color-mix(in srgb,var(--hy-violine) 18%,transparent); border-radius:var(--ui-radius-card); overflow:hidden; transition:transform var(--ui-duration-base) var(--ui-ease),border-color var(--ui-duration-base); }
-.references-page .project-card-visual { position:relative; display:grid; place-items:center; aspect-ratio:1.4; overflow:hidden; background:color-mix(in srgb,var(--hy-corail) 24%,var(--hy-beige)); }
-.references-page .project-card:nth-child(2) .project-card-visual { background:color-mix(in srgb,var(--hy-violine) 12%,var(--hy-beige)); }
-.references-page .project-card:nth-child(3) .project-card-visual { background:color-mix(in srgb,var(--hy-orange) 16%,var(--hy-beige)); }
-.references-page .project-card-visual hyphens-mark { position:absolute; font-size:300px; opacity:.16; transform:rotate(-20deg); transition:transform var(--ui-duration-image) var(--ui-ease); }
-.references-page .project-card-visual > span { position:relative; font-size:var(--ui-type-label); padding:var(--ui-space-2) var(--ui-space-3); background:var(--hy-beige); border-radius:24px; }
-.references-page .project-card-copy { display:flex; flex-direction:column; padding:var(--ui-space-5); }
-.references-page .project-card-label { font-size:var(--ui-type-caption); }
-.references-page .project-card-title { margin-top:var(--ui-space-3); font-size:var(--ui-type-card); line-height:var(--ui-leading-card); letter-spacing:-.025em; }
-.references-page .project-card-action { margin-top:var(--ui-space-6); display:flex; align-items:center; justify-content:space-between; gap:var(--ui-space-3); font-size:var(--ui-type-label); }
-.references-page .project-arrow { width:40px; height:40px; display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; font-size:22px; transition:background var(--ui-duration-base),color var(--ui-duration-base),transform var(--ui-duration-base) var(--ui-ease); }
-.references-page .project-card:is(:hover,:focus-visible) { transform:translateY(-5px); border-color:var(--hy-violine); }
-.references-page .project-card:is(:hover,:focus-visible) hyphens-mark { transform:rotate(-10deg) scale(1.04); }
-.references-page .project-card:is(:hover,:focus-visible) .project-arrow { color:var(--hy-beige); background:var(--hy-violine); transform:rotate(45deg); }
+.references-page .project-card { min-width:0; align-self:start; padding:0; text-align:left; font:inherit; color:var(--hy-violine); background:transparent; border:0; }
+.references-page .project-card:enabled { cursor:pointer; }
+.references-page .project-card-visual { position:relative; display:grid; place-items:center; aspect-ratio:1.35; overflow:hidden; border-radius:var(--ui-radius-image); background:color-mix(in srgb,var(--hy-corail) 22%,var(--hy-beige)); }
+.references-page .project-card-visual img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.references-page .project-card-visual > span { font-size:var(--ui-type-label); padding:var(--ui-space-2) var(--ui-space-3); }
+.references-page .project-card-copy { display:flex; align-items:baseline; justify-content:space-between; gap:var(--ui-space-3); padding-block:var(--ui-space-4); }
+.references-page .project-card-title { display:block; font-size:var(--ui-type-card); line-height:var(--ui-leading-card); letter-spacing:-.025em; }
+.references-page .project-card-attribution:not([hidden]) { display:block; margin-top:var(--ui-space-2); font-size:var(--ui-type-label); }
+.references-page .project-arrow { font-size:1.25rem; transition:transform var(--ui-duration-base) var(--ui-ease); }
+.references-page .project-card:enabled:is(:hover,:focus-visible) .project-card-title { text-decoration:underline; text-underline-offset:.2em; }
+.references-page .project-card:enabled:is(:hover,:focus-visible) .project-arrow { transform:translate(3px,-3px); }
 .references-page .project-portrait img { width:100%; height:100%; object-fit:cover; }
-.references-page #project-facts { display:grid; grid-template-columns:1fr 1fr; gap:var(--ui-space-5); margin-top:var(--ui-space-6); }
+.references-page #project-facts:not([hidden]) { display:grid; grid-template-columns:1fr 1fr; gap:var(--ui-space-5); margin-top:var(--ui-space-6); }
+.references-page #project-facts > div:only-child { grid-column:1 / -1; }
 .references-page #project-facts dt { font-size:var(--ui-type-label); color:var(--hy-violine); }
 .references-page #project-facts dd { margin:var(--ui-space-2) 0 0; }
 .references-page #project-empty { margin-top:var(--ui-space-6); }
@@ -59,27 +53,32 @@
 @media(max-width:767px) {
  .references-page .projects-hero { padding-block:var(--ui-space-7); }
  .references-page .projects-hero::before { background:color-mix(in srgb,var(--hy-encre) 80%,transparent); }
- .references-page .projects-hero-mark { right:-100px; top:auto; bottom:-120px; opacity:.3; }
+ .references-page .projects-hero-mark { opacity:.25; }
  .references-page .project-sheet { border-radius:0; clip-path:inset(0); }
  .references-page .project-sheet-scroll { padding:var(--ui-space-5); }
 }
 @media(max-width:540px) { .references-page .projects-grid { grid-template-columns:1fr; } }
 @media(prefers-reduced-motion:reduce) {
- .references-page .project-card,.references-page .project-card-visual hyphens-mark,.references-page .project-arrow,.references-page .project-close,.references-page .project-close-icon { transition:none; }
- .references-page .project-card:is(:hover,:focus-visible),.references-page .project-card:is(:hover,:focus-visible) .project-arrow,.references-page .project-close:active,.references-page .project-close:is(:hover,:focus-visible) .project-close-icon { transform:none; }
+ .references-page .project-arrow,.references-page .project-close,.references-page .project-close-icon { transition:none; }
+ .references-page .project-card:enabled:is(:hover,:focus-visible) .project-arrow,.references-page .project-close:active,.references-page .project-close:is(:hover,:focus-visible) .project-close-icon { transform:none; }
  .references-page #project-dialog[open]::backdrop,.references-page #project-dialog[data-closing]::backdrop { animation:none; }
 }
 
-.references-page .project-card-visual img { width:100%; height:100%; object-fit:cover; }
-.references-page #project-facts > div:only-child { grid-column:1 / -1; }
-
-/* Galerie : la photographie porte l'arrondi, les légendes restent ouvertes. */
-.references-page .projects-section { background:var(--hy-beige); }
-.references-page .projects-heading { display:flex; align-items:baseline; justify-content:space-between; gap:var(--ui-space-6); }
-.references-page .projects-heading h2 { margin:0; }
-.references-page .project-card { border:0; border-radius:0; overflow:visible; background:transparent; }
-.references-page .project-card-visual { border-radius:var(--ui-radius-image); aspect-ratio:1.15; }
-.references-page .project-card-copy { padding:var(--ui-space-5) 0 0; }
-.references-page .project-card-action { border-top:1px solid color-mix(in srgb,var(--hy-violine) 20%,transparent); padding-top:var(--ui-space-4); }
-@media(min-width:901px) { .references-page .project-card:nth-child(2) { padding-top:var(--ui-space-8); } }
-@media(max-width:767px) { .references-page .projects-heading { display:grid; gap:var(--ui-space-4); } }
+/* Variantes de mise en page disponibles par paramètre d’URL pour la revue. */
+.references-page .projects-grid[data-variant="liste"] { grid-template-columns:1fr; gap:0; }
+.references-page [data-variant="liste"] .project-card { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); align-items:center; gap:var(--ui-space-6); padding-block:var(--ui-space-5); border-top:1px solid color-mix(in srgb,var(--hy-violine) 20%,transparent); }
+.references-page [data-variant="liste"] .project-card-visual { aspect-ratio:1.8; }
+@media(max-width:540px) {
+ .references-page [data-variant="liste"] .project-card { grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:var(--ui-space-3); }
+ .references-page [data-variant="liste"] .project-card-title { font-size:var(--ui-type-lead); }
+ .references-page [data-variant="liste"] .project-card-visual { min-height:72px; }
+}
+@media(min-width:768px) {
+ .references-page .projects-grid[data-variant="mosaique"] { grid-template-columns:minmax(0,1.65fr) minmax(0,1fr); }
+ .references-page [data-variant="mosaique"] .project-card:first-child { display:grid; grid-template-rows:1fr auto; grid-row:span 2; align-self:stretch; }
+ .references-page [data-variant="mosaique"] .project-card:first-child .project-card-visual { aspect-ratio:auto; min-height:0; }
+ .references-page [data-variant="mosaique"] .project-card:not(:first-child) .project-card-visual { aspect-ratio:1.8; }
+}
+@media(max-width:767px) {
+ .references-page .projects-grid[data-variant="mosaique"] .project-card:first-child { grid-column:1/-1; }
+}

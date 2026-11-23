@@ -74,7 +74,7 @@
   window.addEventListener('scroll', request, { passive: true });
   window.addEventListener('resize', request, { passive: true });
   window.addEventListener('pageshow', request);
-  // Le clavier et le menu ramènent toujours l'en-tête, avec son bouton de contact.
+  // Le clavier et le menu ramènent toujours l'en-tête et ses liens de navigation.
   header.addEventListener('focusin', () => { hidden = false; update(); });
   if (toggle) new MutationObserver(update).observe(toggle, { attributes: true, attributeFilter: ['aria-expanded'] });
   update();

@@ -13,30 +13,18 @@
 .home-motion .home-hero-media { position: absolute; z-index: -2; inset: 0; margin: 0; }
 .home-motion .home-hero-frame { position: absolute; inset: 0; }
 .home-motion .home-hero-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 48%; }
+.home-motion .home-hero-mark { position: absolute; z-index: 0; right: var(--site-gutter); bottom: var(--ui-space-7); font-size: clamp(120px, 18vw, 260px); opacity: .28; pointer-events: none; }
 .home-motion .home-hero-caption { position: absolute; z-index: 1; bottom: var(--ui-space-4); right: var(--site-gutter); max-width: calc(100% - 40px); margin: 0; padding: var(--ui-space-2) var(--ui-space-3); background: var(--hy-beige); color: var(--hy-violine); font-size: var(--ui-type-caption); line-height: 1.5; }
-.home-motion .home-hero-shapes { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
-.home-motion .home-hero-shapes hyphens-mark { position: absolute; display: block; }
-.home-motion .home-hero-shapes hyphens-mark:first-child { right: 4%; bottom: -28%; font-size: clamp(360px,48vw,760px); opacity: .6; }
-.home-motion .home-hero-shapes hyphens-mark:last-child { right: 12%; top: -38%; font-size: clamp(320px,38vw,620px); opacity: .4; }
 .home-motion .home-role { display: grid; grid-template-columns: 1.05fr .95fr; align-items: stretch; gap: 0; padding: 0; min-height: clamp(560px, 70svh, 760px); }
 .home-motion .home-role-copy { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding-block: var(--ui-section-space); padding-inline-start: var(--site-gutter); padding-inline-end: clamp(24px, 4vw, 64px); min-width: 0; }
-.home-motion .home-role-copy::after { content: ''; position: absolute; right: 0; bottom: var(--ui-space-6); width: clamp(144px,14vw,224px); height: clamp(56px,5vw,80px); transform: translateX(50%); border-radius: 100px 16px 100px 16px; background: var(--hy-corail); pointer-events: none; }
 .home-motion .home-role-copy h2 { font-size: var(--ui-type-section); line-height: var(--ui-leading-title); letter-spacing: -.035em; margin-top: var(--ui-space-5); }
 .home-motion .home-role-copy > p:last-child { max-width: 60ch; margin-top: var(--ui-space-5); font-size: var(--ui-type-body); line-height: var(--ui-leading-body); }
 .home-motion .home-role-figure { position: relative; width: 100%; align-self: stretch; margin: 0; min-width: 0; overflow: hidden; }
 .home-motion .home-role-image { position: absolute; left: 0; top: -40px; width: 100%; height: calc(100% + 80px); object-fit: cover; object-position: 52% center; will-change: transform; }
-.home-motion .home-role-cuts { position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--hy-orange); pointer-events: none; }
 .home-motion .home-role-figure figcaption { position: absolute; right: var(--ui-space-4); bottom: var(--ui-space-4); max-width: calc(100% - 32px); background: var(--hy-beige); color: var(--hy-violine); padding: var(--ui-space-2) var(--ui-space-3); font-size: var(--ui-type-caption); line-height: 1.5; }
 .home-motion .home-services { position: relative; isolation: isolate; overflow: hidden; background: var(--hy-violine); color: var(--hy-beige); padding-block: var(--ui-section-space); }
-.home-motion .home-services > :not(.home-services-art) { position: relative; z-index: 1; }
-.home-motion .home-services-art { position: absolute; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
-.home-motion .home-services-pattern { position: absolute; inset: -32px; display: block; animation: home-pattern-drift 28s ease-in-out infinite alternate paused; }
-.home-motion .home-services-pattern::before,.home-motion .home-services-pattern::after { content: ''; position: absolute; inset: 0; mask: url('../brand/logo/charte-2026/motif.svg') repeat; mask-size: 520px auto; }
-.home-motion .home-services-pattern::before { background: var(--hy-encre); opacity: .3; mask-position: 2px 3px; }
-.home-motion .home-services-pattern::after { background: var(--hy-corail); opacity: .16; mask-position: 0 0; }
-.home-motion .home-services[data-background-active] .home-services-pattern { animation-play-state: running; }
+.home-motion .home-services > * { position: relative; z-index: 1; }
 .home-motion .home-services::after { content: ''; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: var(--hy-beige); opacity: .07; mask: url('assets/grain-texture.svg') repeat; mask-size: 192px 192px; }
-@keyframes home-pattern-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(20px, -18px, 0); } }
 .home-motion .home-services-heading { min-height: 0; padding-right: 0; }
 .home-motion .home-services-heading h2 { color: var(--hy-beige); font-size: var(--ui-type-section); line-height: var(--ui-leading-title); letter-spacing: -.035em; margin-top: var(--ui-space-5); }
 .home-motion .home-services-heading > p:last-child { max-width: 48ch; font-size: var(--ui-type-lead); line-height: 1.45; margin-top: var(--ui-space-5); }
@@ -53,17 +41,8 @@
 .home-motion .home-service-more { overflow: hidden; }
 .home-motion .home-service-more-inner { padding-top: var(--ui-space-4); font-size: var(--ui-type-body); line-height: var(--ui-leading-body); }
 .home-motion .home-service-more ul { margin: var(--ui-space-4) 0 var(--ui-space-5); padding-left: var(--ui-space-5); line-height: var(--ui-leading-body); }
-.home-motion .home-service-link { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: var(--ui-space-4); min-height: 48px; margin-top: auto; padding: var(--ui-space-3) var(--ui-space-4); border: 1px solid var(--hy-violine); color: var(--hy-violine); font-size: var(--ui-type-action); line-height: 1.4; transition: color var(--ui-duration-base) var(--ui-ease); }
-.home-motion .home-service-link::before { content: ''; position: absolute; z-index: -1; inset: 0; background: var(--hy-violine); transform: translateX(-101%); transition: transform var(--ui-duration-base) var(--ui-ease); }
-.home-motion .home-service-link span { font-size: 22px; transition: transform var(--ui-duration-base) var(--ui-ease); }
-.home-motion .home-service-link:is(:hover,:focus-visible) { color: var(--hy-beige); }
-.home-motion .home-service-link:focus-visible { outline: 2px solid var(--hy-violine); outline-offset: 4px; }
-.home-motion .home-service-link:is(:hover,:focus-visible)::before { transform: translateX(0); }
-.home-motion .home-service-link:is(:hover,:focus-visible) span { transform: translate(4px,-4px); }
-.home-motion .home-service-link:active span { transform: translate(1px,-1px); }
+.home-motion .home-service .home-service-link { align-self: flex-start; margin-top: var(--ui-space-4); min-height: 44px; align-items: center; }
 .home-motion .home-services-note { margin-top: var(--ui-space-6); font-size: var(--ui-type-label); line-height: 1.5; }
-.home-motion .home-services-motion-toggle { margin-top: var(--ui-space-4); min-height: 44px; padding: var(--ui-space-2) 0; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--hy-beige); font-size: var(--ui-type-label); }
-.home-motion .home-services-motion-toggle[hidden] { display: none; }
 .home-motion .home-approach { position: relative; isolation: isolate; padding-block: var(--ui-section-space); }
 .home-motion .home-approach-heading { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--ui-space-5); }
 .home-motion .home-approach-heading h2 { font-size: var(--ui-type-section); line-height: var(--ui-leading-title); letter-spacing: -.035em; }
@@ -98,7 +77,6 @@
  .home-motion .home-step { min-height: 0; padding-block: var(--ui-space-7); }
  .home-motion .home-services-grid { grid-template-columns: 1fr; gap: var(--ui-space-5); }
  .home-motion .home-service h3,.home-motion .home-service-summary { min-height: 0; }
- .home-motion .home-service-link { margin-top: var(--ui-space-5); }
  .home-motion .home-hero { padding-block: var(--ui-space-10); }
  .home-motion .home-hero-copy { max-width: 36rem; }
  .home-motion .home-hero-kicker { margin-bottom: var(--ui-space-4); }
@@ -110,13 +88,10 @@
  .home-motion .home-hero { align-items: flex-end; padding-top: var(--ui-space-10); padding-bottom: var(--ui-space-11); }
  .home-motion .home-hero::before { background: linear-gradient(0deg, color-mix(in srgb,var(--hy-encre) 98%,transparent), color-mix(in srgb,var(--hy-encre) 86%,transparent) 60%, color-mix(in srgb,var(--hy-encre) 24%,transparent)); }
  .home-motion .home-hero-frame img { object-position: 62% center; }
- .home-motion .home-hero-shapes hyphens-mark:first-child { top: -80px; bottom: auto; right: -120px; font-size: 400px; opacity: .45; }
- .home-motion .home-hero-shapes hyphens-mark:last-child { top: 80px; right: 100px; font-size: 280px; opacity: .25; }
+ .home-motion .home-hero-mark { top: var(--ui-space-6); bottom: auto; font-size: clamp(88px, 24vw, 150px); }
  .home-motion .home-hero-caption { left: var(--site-gutter); right: var(--site-gutter); bottom: var(--ui-space-4); max-width: none; }
  .home-motion .home-role { display: flex; flex-direction: column; align-items: stretch; min-height: 0; }
- .home-motion .home-role-copy::after { left: var(--site-gutter); right: auto; bottom: -28px; width: 144px; height: 56px; transform: none; }
  .home-motion .home-role-figure { min-height: clamp(320px, 75vw, 520px); }
- .home-motion .home-services-pattern::before,.home-motion .home-services-pattern::after { mask-size: 380px auto; }
  .home-motion .home-approach-heading { display: block; }
  .home-motion .home-approach-heading h2 { margin-top: var(--ui-space-4); }
  .home-motion .home-services-heading h2,.home-motion .home-role-copy h2 { margin-top: var(--ui-space-4); }
@@ -133,8 +108,7 @@
  .home-motion .home-hero { padding-block: var(--ui-space-9) var(--ui-space-11); }
 }
 @media (prefers-reduced-motion: reduce) {
- .home-motion .home-services-pattern { animation: none; }
- .home-motion .home-service-link,.home-motion .home-service-link::before,.home-motion .home-service-link span,.home-motion .home-step,.home-motion .home-approach-visual { transition: none; }
+ .home-motion .home-step,.home-motion .home-approach-visual { transition: none; }
  .home-motion .home-step[data-active] > hyphens-icon { transform: none; }
 }
 
@@ -164,24 +138,17 @@
  .hero-attente .home-motion .home-hero-scroll { opacity: 0; transform: translateY(16px); }
  .hero-attente .home-motion .home-hero-scroll { transform: translate(-50%,16px); }
  .hero-attente .home-motion .home-hero h1 .hero-line > span { transform: translateY(108%); }
- .hero-attente .home-motion .home-hero-shapes hyphens-mark:first-child { opacity: 0; transform: translate3d(-60px,80px,0); }
- .hero-attente .home-motion .home-hero-shapes hyphens-mark:last-child { opacity: 0; transform: translate3d(60px,-80px,0); }
  .hero-attente .home-motion .home-hero-frame img { transform: scale(1.12); }
  /* Repli si le script ne lève jamais l'attente. */
  .hero-attente .home-motion :is(.home-hero-kicker,.home-hero-bottom,.home-hero h1 .hero-line > span,.home-hero-frame img) { animation: hero-secours 1ms 3.2s forwards; }
  .hero-attente .home-motion .home-hero-scroll { animation: hero-secours-repere 1ms 3.2s forwards; }
- .hero-attente .home-motion .home-hero-shapes hyphens-mark:first-child { animation: hero-secours-forme-1 1ms 3.2s forwards; }
- .hero-attente .home-motion .home-hero-shapes hyphens-mark:last-child { animation: hero-secours-forme-2 1ms 3.2s forwards; }
  @keyframes hero-secours { to { opacity: 1; transform: none; } }
  @keyframes hero-secours-repere { to { opacity: 1; transform: translateX(-50%); } }
- @keyframes hero-secours-forme-1 { to { opacity: .6; transform: none; } }
- @keyframes hero-secours-forme-2 { to { opacity: .4; transform: none; } }
  .hero-entree .home-motion .home-hero-kicker { transition: opacity 700ms var(--ui-ease) 80ms, transform 900ms var(--ui-ease) 80ms; }
  .hero-entree .home-motion .home-hero h1 .hero-line > span { transition: transform 1100ms var(--ui-ease) 180ms; }
  .hero-entree .home-motion .home-hero h1 .hero-line + .hero-line > span { transition-delay: 320ms; }
  .hero-entree .home-motion .home-hero-bottom { transition: opacity 800ms var(--ui-ease) 620ms, transform 1000ms var(--ui-ease) 620ms; }
  .hero-entree .home-motion .home-hero-scroll { transition: opacity 800ms var(--ui-ease) 1100ms, transform 1000ms var(--ui-ease) 1100ms; }
- .hero-entree .home-motion .home-hero-shapes hyphens-mark { transition: opacity 1400ms var(--ui-ease) 120ms, transform 1800ms var(--ui-ease) 120ms; }
  .hero-entree .home-motion .home-hero-frame img { transition: transform 2600ms cubic-bezier(.16,1,.3,1); }
  .home-motion .home-hero-scroll-dot { animation: hero-defilement 2.4s var(--ui-ease) 2s infinite; }
  @keyframes hero-defilement { 0% { transform: translateY(-24px); } 60%,100% { transform: translateY(58px); } }

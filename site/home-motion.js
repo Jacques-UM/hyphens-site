@@ -9,9 +9,6 @@
   const hero = document.querySelector('.home-hero');
   const heroCopy = document.querySelector('.home-hero-copy');
   const heroFrame = document.querySelector('.home-hero-frame');
-  const heroShapes = document.querySelector('.home-hero-shapes');
-  const contactMark = document.querySelector('.contact .contact-mark');
-  const contactSection = document.querySelector('#contact');
   // Titres révélés mot à mot : le texte reste identique pour les lecteurs d'écran.
   document.querySelectorAll('[data-apparition="mots"]').forEach(title => {
     const words = title.textContent.trim().split(/\s+/);
@@ -34,19 +31,6 @@
   const approach = document.querySelector('.home-approach-layout');
   const approachVisual = approach.querySelector('.home-approach-visual');
   const services = document.querySelectorAll('.home-service');
-  const servicesSection = document.querySelector('.home-services');
-  const backgroundToggle = document.querySelector('.home-services-motion-toggle');
-  let backgroundVisible = false;
-  let backgroundPaused = false;
-  function syncBackground() {
-    servicesSection.toggleAttribute('data-background-active', backgroundVisible && !backgroundPaused && !motion.matches && !document.hidden);
-    backgroundToggle.hidden = motion.matches;
-    backgroundToggle.textContent = backgroundPaused ? 'Animer le fond' : 'Figer le fond';
-  }
-  backgroundToggle.addEventListener('click', () => {
-    backgroundPaused = !backgroundPaused;
-    syncBackground();
-  });
   // Sans JavaScript les volets restent ouverts et les boutons sont masqués.
   const disclosures = [...document.querySelectorAll('.home-service-toggle')].map(button => {
     const panel = document.getElementById(button.getAttribute('aria-controls'));
@@ -116,16 +100,10 @@
     if (!motion.matches && scrollY < heroHeight) {
       const ratio = scrollY / Math.max(1, heroHeight);
       heroFrame.style.transform = `translate3d(0,${(scrollY * .22).toFixed(1)}px,0)`;
-      heroShapes.style.transform = `translate3d(0,${(scrollY * -.1).toFixed(1)}px,0)`;
       heroCopy.style.transform = `translate3d(0,${(scrollY * .08).toFixed(1)}px,0)`;
       heroCopy.style.opacity = (1 - ratio * .7).toFixed(3);
     } else if (motion.matches) {
-      heroFrame.style.transform = heroShapes.style.transform = heroCopy.style.transform = heroCopy.style.opacity = '';
-    }
-    if (contactMark && contactSection) {
-      const contactRect = contactSection.getBoundingClientRect();
-      const contactProgress = clamp((innerHeight - contactRect.top) / (innerHeight + contactRect.height));
-      contactMark.style.transform = motion.matches ? '' : `translate3d(0,${((1 - contactProgress) * 60).toFixed(1)}px,0) rotate(${((1 - contactProgress) * -6).toFixed(2)}deg)`;
+      heroFrame.style.transform = heroCopy.style.transform = heroCopy.style.opacity = '';
     }
     // Au zoom ou avec de grandes polices, ne jamais fixer un bloc trop haut.
     const stickyClearance = parseFloat(getComputedStyle(document.documentElement).fontSize) * 3;
@@ -148,7 +126,6 @@
   function schedule() { if (!frame) frame = requestAnimationFrame(update); }
   function configureMotion() {
     disclosures.forEach(state => { if (state.animation) { const active = state.animation; state.animation = null; active.cancel(); state.settle(); } });
-    syncBackground();
     animations.forEach(a => a.cancel());
     animations.clear();
     if (observer) observer.disconnect();
@@ -204,12 +181,4 @@
   addEventListener('scroll', schedule, { passive: true });
   addEventListener('resize', schedule, { passive: true });
   if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(approachVisual);
-  if ('IntersectionObserver' in window) {
-    const backgroundObserver = new IntersectionObserver(entries => {
-      backgroundVisible = entries.some(entry => entry.isIntersecting);
-      syncBackground();
-    });
-    backgroundObserver.observe(servicesSection);
-  }
-  document.addEventListener('visibilitychange', syncBackground);
 })();

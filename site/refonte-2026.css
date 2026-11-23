@@ -5,8 +5,6 @@ h1,h2,h3 { color: var(--hy-violine); font-weight: 500; letter-spacing: -.045em; 
 .site-header { height: 104px; background: var(--hy-beige); border-bottom: 1px solid color-mix(in srgb,var(--hy-violine) 20%,transparent); }
 .site-header hyphens-logo { font-size: 38px; }
 .navigation { gap: clamp(24px,3vw,48px); }
-.nav-contact { background: var(--hy-violine); color: var(--hy-beige); border: 0; padding: 13px 20px !important; }
-.nav-contact:hover { background: var(--hy-encre); }
 .hero { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 0; padding: 0; background: var(--hy-beige); }
 .hero-copy { position: relative; z-index: 1; min-width: 0; padding: clamp(60px,7vw,110px) 0 clamp(65px,7vw,105px) var(--site-gutter); justify-content: start; gap: 0; }
 .hero-kicker { margin-bottom: clamp(32px,4vw,65px); color: var(--hy-violine); font-size: 15px; }

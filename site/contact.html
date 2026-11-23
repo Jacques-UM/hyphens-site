@@ -9,43 +9,38 @@
   <title>HYPHENS | Parlons de votre projet.</title>
   <link rel="icon" data-hyphens href="data:,">
   <!-- Socle partagé, puis feuilles de page, puis finitions communes. -->
-  <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="styles.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="refonte-2026.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="home-ui.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="home-contact.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="contact.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="interaction-polish.css?v=20261118-demo-1">
-  <link rel="stylesheet" href="brand-intro.css?v=20261118-demo-1">
-  <script src="../brand/tokens/hyphens-palettes.js?v=20261118-demo-1"></script>
-  <script src="../brand/hyphens-brand.js?v=20261118-demo-1"></script>
-  <script src="contact.js?v=20261118-demo-1" defer></script>
-  <script src="interaction-polish.js?v=20261118-demo-1" defer></script>
+  <link rel="stylesheet" href="../brand/tokens/hyphens-tokens.css?v=20261123-1">
+  <link rel="stylesheet" href="styles.css?v=20261123-1">
+  <link rel="stylesheet" href="refonte-2026.css?v=20261123-1">
+  <link rel="stylesheet" href="../brand/tokens/hyphens-ui.css?v=20261123-1">
+  <link rel="stylesheet" href="home-ui.css?v=20261123-1">
+  <link rel="stylesheet" href="home-contact.css?v=20261123-1">
+  <link rel="stylesheet" href="contact.css?v=20261123-1">
+  <link rel="stylesheet" href="interaction-polish.css?v=20261123-1">
+  <link rel="stylesheet" href="brand-intro.css?v=20261123-1">
+  <script src="../brand/tokens/hyphens-palettes.js?v=20261123-1"></script>
+  <script src="../brand/hyphens-brand.js?v=20261123-1"></script>
+  <script src="contact.js?v=20261123-1" defer></script>
+  <script src="interaction-polish.js?v=20261123-1" defer></script>
 </head>
 <body class="home-motion contact-page">
-  <script src="brand-intro.js?v=20261117-intro-1"></script>
+  <script src="brand-intro.js?v=20261123-1"></script>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
     <a class="brand-link" href="index.html" aria-label="HYPHENS, accueil"><hyphens-logo aria-hidden="true"></hyphens-logo></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" type="button"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
     <nav id="navigation" class="navigation" aria-label="Navigation principale">
       <a href="missions.html">Missions</a><a href="equipe.html">L’équipe</a><a href="references.html">Références</a>
-      <a class="nav-contact" href="contact.html" aria-current="page">Parlons de votre projet <span class="arrow-diagonal" aria-hidden="true">↗</span></a>
+      <a href="contact.html" aria-current="page">Contact</a>
     </nav>
   </header>
   <main id="contenu">
     <section class="contact-intro page-gutter" aria-labelledby="contact-page-title">
-      <p class="section-label"><span class="hyphen" aria-hidden="true"></span> Contact</p>
-      <h1 id="contact-page-title">Parlons de votre projet.</h1>
-      <p class="contact-page-lead">Une opération, un enjeu, une question. Prenons le temps de poser les premières bases.</p>
+      <h1 id="contact-page-title">Contact</h1>
     </section>
-    <section class="contact-workspace page-gutter" aria-label="Présentation de votre projet">
+    <section class="contact-workspace page-gutter" aria-label="Coordonnées et formulaire de contact">
       <aside class="contact-context">
-        <hyphens-mark class="contact-context-mark" aria-hidden="true"></hyphens-mark>
-        <h2>Le premier lien commence ici.</h2>
-        <p>Décrivez votre opération et ce qui compte pour vous. Quelques informations suffisent pour préciser votre besoin.</p>
-        <ul class="contact-checklist"><li>La nature et la localisation du projet.</li><li>Son stade d’avancement.</li><li>Vos attentes et vos priorités.</li></ul>
+        <h2>Coordonnées</h2>
         <address class="contact-address">
           <span class="contact-address-label">Siège</span>
           HYPHENS SAS<br>175 boulevard Brune<br>75014 Paris
@@ -79,7 +74,7 @@
             <div class="contact-group" data-group="3">
               <h3><span aria-hidden="true">3</span> Quel est votre projet ?</h3>
               <div class="contact-field"><label for="contact-mission">Votre besoin</label><select id="contact-mission" name="mission"><option value="À définir ensemble">À définir ensemble</option><option>Maîtrise d’œuvre d’exécution</option><option>Pilotage et coordination OPC</option><option>Réception et suivi des réserves</option></select></div>
-              <div class="contact-field"><label for="contact-message">Parlez-nous de votre projet *</label><textarea id="contact-message" name="message" rows="6" maxlength="4000" placeholder="Nature de l’opération, localisation, avancement, attentes…" required aria-describedby="contact-message-count contact-message-error"></textarea><div class="contact-field-foot"><p class="contact-error" id="contact-message-error" role="alert"></p><span class="contact-count" id="contact-message-count">0 / 4000</span></div></div>
+              <div class="contact-field"><label for="contact-message">Votre message *</label><textarea id="contact-message" name="message" rows="6" maxlength="4000" placeholder="Nature de l’opération, localisation, avancement, attentes…" required aria-describedby="contact-message-count contact-message-error"></textarea><div class="contact-field-foot"><p class="contact-error" id="contact-message-error" role="alert"></p><span class="contact-count" id="contact-message-count">0 / 4000</span></div></div>
             </div>
 
             <p class="contact-storage-note">Ce formulaire ne transmet rien pour l’instant : votre demande est préparée dans cette page, puis vous la copiez ou la téléchargez.</p>

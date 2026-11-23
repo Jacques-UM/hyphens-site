@@ -1,127 +1,5 @@
-/* Contact et pied de page de l'accueil. Couleurs issues de la charte. */
-.home-motion .contact {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  margin: 0;
-  padding-block: var(--ui-section-space);
-  background: var(--hy-beige);
-  color: var(--hy-encre);
-  border-top: 1px solid color-mix(in srgb, var(--hy-violine) 18%, transparent);
-}
-.home-motion .contact::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: color-mix(in srgb, var(--hy-corail) 17%, var(--hy-beige));
-  clip-path: inset(0 0 0 42% round 80px 0 0 0);
-  pointer-events: none;
-}
-.home-motion .contact-mark {
-  position: absolute;
-  z-index: -1;
-  right: var(--site-gutter);
-  bottom: -70px;
-  font-size: clamp(240px, 25vw, 380px);
-  opacity: .14;
-  pointer-events: none;
-}
-.home-motion .contact .section-label { color: var(--hy-violine); }
-.home-motion .contact-content {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--ui-space-6);
-  margin-top: var(--ui-content-gap);
-}
-.home-motion .contact h2 {
-  position: relative;
-  margin: 0;
-  max-width: none;
-  color: var(--hy-violine);
-  font-size: var(--ui-type-section);
-  line-height: var(--ui-leading-title);
-  letter-spacing: -.035em;
-  text-wrap: balance;
-}
-.home-motion .contact-action {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--ui-space-6);
-}
-.home-motion .contact-action > p {
-  max-width: 36ch;
-  margin: 0;
-  font-size: var(--ui-type-body);
-  line-height: var(--ui-leading-body);
-  color: var(--hy-encre);
-}
-.home-motion .contact .button-primary {
-  flex: 0 0 auto;
-  min-height: 56px;
-  padding-inline: var(--ui-space-5);
-  gap: var(--ui-space-6);
-  border-radius: var(--ui-radius-card);
-  transition: background var(--ui-duration-base), box-shadow var(--ui-duration-base), transform var(--ui-duration-base) var(--ui-ease);
-}
-.home-motion .contact .button-primary > span {
-  transition: transform var(--ui-duration-base) var(--ui-ease);
-}
-.home-motion .contact .button-primary:is(:hover, :focus-visible) > span { transform: translate(3px, -3px); }
-.home-motion .contact .button-primary:focus-visible { outline-color: var(--hy-violine); }
-.home-motion .contact .button-primary:active { transform: translateY(1px); }
-
-/* Polissage du 18 novembre : appel final contrasté, posé sur le pied de page encre.
-   Partagé avec Missions, L'équipe et Références. */
-.home-motion .contact {
-  background: var(--hy-violine);
-  color: var(--hy-beige);
-  border-top: 0;
-  border-radius: clamp(24px, 4vw, 56px) clamp(24px, 4vw, 56px) 0 0;
-  padding-block: calc(var(--ui-section-space) * 1.4);
-}
-.home-motion .contact::before {
-  inset: 0;
-  background: var(--hy-beige);
-  opacity: .06;
-  clip-path: none;
-  mask: url('assets/grain-texture.svg') repeat;
-  mask-size: 192px 192px;
-}
-.home-motion .contact-mark { opacity: .28; top: -40px; bottom: auto; will-change: transform; }
-.home-motion .contact .section-label { color: var(--hy-corail); }
-.home-motion .contact h2 {
-  color: var(--hy-beige);
-  font-size: clamp(2.5rem, 1.6rem + 3.6vw, 5.25rem);
-  line-height: 1.02;
-  letter-spacing: -.045em;
-  max-width: 16ch;
-}
-.home-motion .contact-content { gap: var(--ui-space-8); }
-.home-motion .contact-action {
-  padding-top: var(--ui-space-6);
-  border-top: 1px solid color-mix(in srgb, var(--hy-beige) 24%, transparent);
-}
-.home-motion .contact-action > p { color: var(--hy-beige); }
-.home-motion .contact .button-primary {
-  background: var(--hy-beige);
-  border-color: var(--hy-beige);
-  color: var(--hy-violine);
-  box-shadow: 0 10px 28px color-mix(in srgb, var(--hy-encre) 28%, transparent);
-}
-.home-motion .contact .button-primary:is(:hover, :focus-visible) {
-  background: var(--hy-corail);
-  border-color: var(--hy-corail);
-  color: var(--hy-encre);
-  transform: translateY(-2px);
-}
-.home-motion .contact .button-primary:focus-visible { outline: 2px solid var(--hy-beige); outline-offset: 4px; }
-.home-motion .contact + .site-footer, .home-motion main + .site-footer { margin-top: 0; }
-@media (max-width: 767px) {
-  .home-motion .contact { border-radius: 28px 28px 0 0; }
-  .home-motion .contact::before { clip-path: none; }
-}
+/* Pied de page commun. Couleurs issues de la charte. */
+.home-motion main + .site-footer { margin-top: 0; }
 
 .home-motion .site-footer {
   position: relative;
@@ -212,9 +90,6 @@
 }
 @media (max-width: 767px) {
   .home-motion .contact::before { clip-path: none; }
-  .home-motion .contact-mark { right: -40px; top: -30px; bottom: auto; font-size: 220px; opacity: .18; }
-  .home-motion .contact-action { flex-direction: column; align-items: flex-start; gap: var(--ui-space-5); }
-  .home-motion .contact-action > p { max-width: 32ch; }
   .home-motion .footer-main { gap: var(--ui-space-5); padding-bottom: var(--ui-space-6); }
   .home-motion .footer-main hyphens-logo { font-size: 34px; }
   .home-motion .back-top { font-size: var(--ui-type-caption); gap: var(--ui-space-2); }
@@ -227,11 +102,6 @@
   .home-motion .back-top { grid-column: 1; grid-row: 3; justify-self: start; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .home-motion .contact .button-primary,
-  .home-motion .contact .button-primary > span,
   .home-motion .back-top > span { transition: none; }
-  .home-motion .contact .button-primary:is(:hover, :focus-visible) > span,
-  .home-motion .contact .button-primary:active,
-  .home-motion .contact .button-primary:is(:hover, :focus-visible),
   .home-motion .back-top:is(:hover, :focus-visible) > span { transform: none; }
 }

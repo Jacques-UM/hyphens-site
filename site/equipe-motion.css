@@ -8,7 +8,7 @@
 .team-page .people-hero h1 { font-size:var(--ui-type-display); color:inherit; line-height:var(--ui-leading-title); letter-spacing:-.04em; margin:var(--ui-space-6) 0; max-width:none; }
 .team-page .people-hero-copy > p:not(.section-label) { font-size:var(--ui-type-lead); max-width:42ch; }
 .team-page .people-hero .text-link { color:var(--hy-beige); margin-top:var(--ui-space-6); }
-.team-page .people-hero-mark { position:absolute; right:5%; top:8%; transform:rotate(12deg); font-size:clamp(240px,30vw,480px); opacity:.55; z-index:-1; pointer-events:none; }
+.team-page .people-hero-mark { position:absolute; right:var(--site-gutter); bottom:var(--ui-space-7); font-size:clamp(160px,28vw,420px); opacity:.2; z-index:-1; pointer-events:none; }
 .team-page .people-section { padding-block:var(--ui-section-space); scroll-margin-top:24px; }
 .team-page .people-heading { margin-bottom:var(--ui-space-7); }
 .team-page .people-heading h2 { font-size:var(--ui-type-section); color:var(--hy-violine); line-height:var(--ui-leading-title); margin-block:var(--ui-space-5) var(--ui-space-4); letter-spacing:-.035em; }
@@ -16,8 +16,8 @@
 .team-page .people-card { padding:0; display:block; text-align:left; font:inherit; color:var(--hy-violine); background:transparent; border:1px solid color-mix(in srgb,var(--hy-violine) 18%,transparent); border-radius:var(--ui-radius-card); overflow:hidden; cursor:pointer; transition:transform var(--ui-duration-base) var(--ui-ease),border-color var(--ui-duration-base); }
 .team-page .people-photo { position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; aspect-ratio:4/4.5; background:color-mix(in srgb,var(--hy-corail) 20%,var(--hy-beige)); }
 .team-page .people-photo > span { position:relative; font-size:var(--ui-type-label); padding:var(--ui-space-2) var(--ui-space-3); border-radius:32px; background:var(--hy-beige); }
-.team-page .people-photo hyphens-mark { position:absolute; font-size:210px; opacity:.16; transform:rotate(-10deg); transition:transform var(--ui-duration-image) var(--ui-ease); }
-.team-page .people-card:nth-child(even) .people-photo { background:color-mix(in srgb,var(--hy-violine) 10%,var(--hy-beige)); }
+.team-page .people-photo hyphens-mark { position:absolute; font-size:clamp(95px,14vw,180px); opacity:.16; }
+.team-page .people-photo > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
 .team-page .people-card-copy { display:flex; flex-direction:column; padding:var(--ui-space-5); }
 .team-page .people-name { font-size:clamp(1.125rem,1rem + .4vw,1.4rem); line-height:1.2; font-weight:500; }
 .team-page .people-function { font-size:var(--ui-type-label); margin-top:var(--ui-space-2); color:var(--hy-encre); }
@@ -27,7 +27,6 @@
 .team-page .people-plus::after { transform:translate(-50%,-50%) rotate(90deg); }
 .team-page .people-card:is(:hover,:focus-visible) { transform:translateY(-5px); border-color:var(--hy-violine); }
 .team-page .people-card:is(:hover,:focus-visible) .people-plus { background:var(--hy-violine); color:var(--hy-beige); transform:rotate(90deg); }
-.team-page .people-card:is(:hover,:focus-visible) hyphens-mark { transform:rotate(0deg) scale(1.06); }
 .team-page .team-dialogue { padding-block:var(--ui-section-space); background:var(--hy-violine); color:var(--hy-beige); display:grid; grid-template-columns:1fr 1fr; gap:var(--ui-space-8); }
 .team-page .team-dialogue h2,.team-page .team-terrain h2 { font-size:var(--ui-type-section); line-height:var(--ui-leading-title); letter-spacing:-.035em; margin-top:var(--ui-space-5); }
 .team-page .team-dialogue h2,.team-page .team-dialogue h3 { color:var(--hy-beige); }
@@ -51,22 +50,19 @@
 .team-page #member-intro { margin-top:var(--ui-space-6); }
 .team-page .member-detail { margin-top:var(--ui-space-6); padding-top:var(--ui-space-5); border-top:1px solid color-mix(in srgb,var(--hy-violine) 20%,transparent); }
 .team-page .member-detail h3 { font-size:var(--ui-type-lead); color:var(--hy-violine); margin-bottom:var(--ui-space-2); }
-.team-page .member-content .text-link { margin-top:var(--ui-space-7); }
 @media(max-width:1023px) { .team-page .people-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:767px) {
  .team-page .people-hero { padding-block:var(--ui-space-7); }
  .team-page .people-hero::before { background:color-mix(in srgb,var(--hy-encre) 80%,transparent); }
- .team-page .people-hero-mark { right:-15%; top:auto; bottom:-20%; opacity:.28; }
  .team-page .people-grid { gap:var(--ui-space-3); }
  .team-page .people-card-copy { padding:var(--ui-space-4); }
- .team-page .people-photo hyphens-mark { font-size:150px; }
  .team-page .people-card-action { align-items:flex-start; }
  .team-page .team-dialogue,.team-page .team-terrain { grid-template-columns:1fr; gap:var(--ui-space-6); }
  .team-page .member-sheet { border-radius:0; clip-path:inset(0); }
  .team-page .member-sheet-scroll { padding:var(--ui-space-5); }
 }
 @media(max-width:359px) { .team-page .people-grid { grid-template-columns:1fr; } }
-@media(prefers-reduced-motion:reduce) { .team-page .people-card,.team-page .people-photo hyphens-mark,.team-page .people-plus { transition:none; } .team-page .people-card:is(:hover,:focus-visible) { transform:none; } }
+@media(prefers-reduced-motion:reduce) { .team-page .people-card,.team-page .people-plus { transition:none; } .team-page .people-card:is(:hover,:focus-visible) { transform:none; } }
 
 /* Croix SVG centrée et peinture confinée au bouton. */
 .team-page .member-close { isolation:isolate; overflow:hidden; contain:paint; flex-shrink:0; transition:background var(--ui-duration-base),color var(--ui-duration-base),transform var(--ui-duration-fast) var(--ui-ease); }
@@ -84,26 +80,17 @@
  .team-page #member-dialog[open]::backdrop,.team-page #member-dialog[data-closing]::backdrop { animation:none; }
 }
 
-/* Matière et courbes en relief dans le vide sous le titre. */
+/* Fond texturé de la section Dialogue. */
 .team-page .team-dialogue { position:relative; isolation:isolate; overflow:hidden; background:radial-gradient(ellipse at 8% 100%,color-mix(in srgb,var(--hy-corail) 16%,var(--hy-violine)),var(--hy-violine) 65%); }
 .team-page .team-dialogue::before { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; background:var(--hy-beige); opacity:.065; mask:url('assets/grain-texture.svg') repeat; mask-size:192px; }
 .team-page .team-dialogue-heading,.team-page .team-dialogue-body { position:relative; z-index:1; }
-.team-page .team-dialogue-relief { position:absolute; z-index:0; left:var(--site-gutter); bottom:-44px; width:min(38vw,460px); height:300px; pointer-events:none; opacity:.23; }
-.team-page .team-dialogue-relief hyphens-mark { position:absolute; font-size:360px; transform:rotate(90deg); transform-origin:center; filter:drop-shadow(3px 5px 0 color-mix(in srgb,var(--hy-encre) 60%,transparent)) drop-shadow(-1px -1px 0 color-mix(in srgb,var(--hy-corail) 70%,transparent)); }
-.team-page .team-dialogue-relief hyphens-mark:first-child { left:-25px; bottom:-40px; }
-.team-page .team-dialogue-relief hyphens-mark:last-child { left:145px; bottom:-90px; }
 .team-page .team-relationship { padding-top:var(--ui-space-5); border-top:1px solid color-mix(in srgb,var(--hy-corail) 30%,transparent); }
-@media(max-width:767px) {
- .team-page .team-dialogue-relief { left:auto; right:-120px; bottom:-90px; width:300px; opacity:.1; }
- .team-page .team-dialogue-relief hyphens-mark { font-size:300px; }
-}
 
 /* Finition : composition éditoriale, complémentaire des cartes de portraits. */
 @media(min-width:1024px) {
  .team-page .team-dialogue { grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:var(--ui-space-9); }
  .team-page .team-dialogue-intro { max-width:58ch; font-size:var(--ui-type-lead); }
  .team-page .team-relationships { grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--ui-space-6); margin-top:var(--ui-space-8); }
- .team-page .team-dialogue-relief { bottom:-80px; opacity:.15; }
 }
 /* Une vue panoramique suivie d'une légende éditoriale, sans nouveau bloc carte. */
 .team-page .team-terrain { grid-template-columns:1fr; gap:var(--ui-space-6); }

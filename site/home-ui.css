@@ -9,7 +9,6 @@ body.home-motion {
 .home-motion .site-header hyphens-logo { font-size: 2rem; }
 .home-motion .navigation { font-size: var(--ui-type-action); gap: var(--ui-space-6); }
 .home-motion .navigation a { min-height: 44px; display: inline-flex; align-items: center; }
-.home-motion .nav-contact { border-radius: var(--ui-space-2); }
 .home-motion .section-label { font-size: var(--ui-type-label); line-height: 1.5; gap: var(--ui-space-4); }
 .home-motion .page-gutter { max-width: none; }
 .home-motion .text-link, .home-motion .mission-cta { min-height: 44px; font-size: var(--ui-type-action); gap: var(--ui-space-4); }

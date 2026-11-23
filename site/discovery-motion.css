@@ -13,16 +13,13 @@
 .home-discovery .discovery-label { display: flex; align-items: center; gap: var(--ui-space-3); font-size: var(--ui-type-label); line-height: 1.5; }
 .home-discovery .discovery-label::before { content: ''; width: 24px; height: 2px; border-radius: 2px; background: var(--hy-orange); }
 .home-discovery .discovery-panel h3 { margin: var(--ui-space-3) 0 var(--ui-space-5); color: inherit; font-size: var(--ui-type-card); font-weight: 500; letter-spacing: -.025em; line-height: var(--ui-leading-card); }
-.home-discovery .discovery-cta { display: flex; align-items: center; justify-content: space-between; gap: var(--ui-space-4); min-height: 44px; margin-top: auto; padding-top: var(--ui-space-4); border-top: 1px solid var(--discovery-frame); font-size: var(--ui-type-action); line-height: 1.4; }
-.home-discovery .discovery-cta > span { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border: 1px solid currentColor; border-radius: 14px; font-size: 22px; transition: transform var(--ui-duration-base) var(--ui-ease),background var(--ui-duration-base),color var(--ui-duration-base),border-radius var(--ui-duration-base); }
+.home-discovery .discovery-cta { display: flex; align-items: center; justify-content: flex-start; gap: var(--ui-space-3); margin-top: auto; padding-top: var(--ui-space-4); border-top: 1px solid var(--discovery-frame); font-size: var(--ui-type-action); line-height: 1.4; }
 .home-discovery .discovery-work { --discovery-frame: color-mix(in srgb,var(--hy-beige) 28%,transparent); background: var(--hy-violine); color: var(--hy-beige); }
 .home-discovery .discovery-work .discovery-label::before { background: var(--hy-corail); }
 .home-discovery .discovery-work .discovery-art img { object-position: 50% 55%; }
 .home-discovery .discovery-panel:is(:hover,:focus-visible) { border-color: var(--hy-corail); box-shadow: 0 12px 32px color-mix(in srgb,var(--hy-encre) 9%,transparent); }
 .home-discovery .discovery-panel:is(:hover,:focus-visible) .discovery-art img { transform: scale(1.04); }
 .home-discovery .discovery-panel:is(:hover,:focus-visible) .discovery-art::after { inset: var(--ui-space-2); opacity: .65; }
-.home-discovery .discovery-panel:is(:hover,:focus-visible) .discovery-cta > span { transform: translate(2px,-2px); border-radius: 50%; background: var(--hy-violine); color: var(--hy-beige); }
-.home-discovery .discovery-work:is(:hover,:focus-visible) .discovery-cta > span { background: var(--hy-beige); color: var(--hy-violine); }
 @media (max-width:767px) {
   .home-discovery .discovery-heading { gap: var(--ui-space-4); }
   .home-discovery .discovery-panels { grid-template-columns: 1fr; gap: var(--ui-space-5); }
@@ -30,8 +27,8 @@
   .home-discovery .discovery-panel-copy { padding: var(--ui-space-5) var(--ui-space-3) var(--ui-space-3); }
 }
 @media (prefers-reduced-motion:reduce) {
-  .home-discovery .discovery-panel,.home-discovery .discovery-art img,.home-discovery .discovery-art::after,.home-discovery .discovery-cta > span { transition: none; }
-  .home-discovery .discovery-panel:is(:hover,:focus-visible) .discovery-art img,.home-discovery .discovery-panel:is(:hover,:focus-visible) .discovery-cta > span { transform: none; }
+  .home-discovery .discovery-panel,.home-discovery .discovery-art img,.home-discovery .discovery-art::after { transition: none; }
+  .home-discovery .discovery-panel:is(:hover,:focus-visible) .discovery-art img { transform: none; }
 }
 
 /* Accès éditoriaux : deux liens photographiques, distincts des cartes Missions. */
@@ -46,7 +43,6 @@
 .home-discovery .discovery-cta { border-color:color-mix(in srgb,var(--hy-violine) 20%,transparent); font-size:var(--ui-type-label); }
 .home-discovery .discovery-work .discovery-label::before { background:var(--hy-orange); }
 .home-discovery .discovery-panel:is(:hover,:focus-visible) { box-shadow:none; }
-.home-discovery .discovery-work:is(:hover,:focus-visible) .discovery-cta > span { background:var(--hy-violine); color:var(--hy-beige); }
 @media(max-width:1000px) {
  .home-discovery .discovery-heading { display:grid; }
  .home-discovery .discovery-panels { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -58,7 +54,6 @@
  .home-discovery .discovery-panel { grid-template-columns:120px minmax(0,1fr); gap:var(--ui-space-4); }
  .home-discovery .discovery-art { height:100%; min-height:195px; }
  .home-discovery .discovery-cta { align-items:flex-start; gap:var(--ui-space-2); }
- .home-discovery .discovery-cta > span { width:36px; height:36px; flex-basis:36px; }
 }
 
 /* Polissage du 18 novembre : parallaxe discrète des photos et révélation par rideau. */
